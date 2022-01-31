@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#box2{
+  padding: 2% 5% 1% 5%;
+  background-color: white;
+  border-radius: 12px;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 9%;
+  width: 1000px;
+  height: auto;
+}
+#box3{
+  padding: 2% 5% 1% 5%;
+  background-color: white;
+  border-radius: 12px;
+  float: left;
+  margin-top: 7%;
+  margin-left: 2%;
+  margin-right: 9%;
+  width: 1000px;
+  height: auto;
+}
+h5{
+  margin-left:6%;
+  color: #0A9B9B;
+  margin-top: -3%;
+}
+p{
+  color: #353A3A;
+  margin-left: 6%;
+  font-size: 18px;
+}
+#box4{
+  padding: 2% 5% 1% 5%;
+  background-color: white;
+  border: 1px solid #707070;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 9%;
+  width: 860px;
+  height: 110px;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+.imgcir{
+  margin-right:20%;
+}
+.imgcir2{
+  margin-left:96%;
+  margin-top: 1%;
+}
+#box3 h5{
+  margin-left: 78%;
+  color: #0A9B9B;
+  margin-top:-3%;
+}
+.Search{
+  margin-top: 3%;
+  float: right;
+  margin-right: 1%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 2%;
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}</div>
+<div class="sidenav">
+  <a href="hr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+  <a href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="hrperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+  <a href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+  <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">REPORTED ISSUES</label>
+<div id="hiddendiv">
+<div id="box2" class="shadow bg-white">
+  {% for hrreport in emp %}
+  <img src="{% static 'circle.png'%}" width="25" height="25" class="imgcir">
+  <h5>Issue reported by {{ hrreport.reportedby }}</h5>
+    <p>{{ hrreport.issue }}</p>
+</div>
+<div id="box3" class="shadow bg-white">
+  <img src="{% static 'circle.png'%}" width="25" height="25" class="imgcir2">
+  <h5>Actions taken</h5>
+     <input type="hidden" id="leavId" name="team_id" value={{ hrreport.id }}>
+   <p>{{ hrreport.actiontaken }}</p>
+
+          {% endfor %}
+</div>
+</div>
+</div>
+</body>
+</html>

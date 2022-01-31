@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Report issue1</title>
+<style>
+
+
+
+#box2{
+  padding: 5% 5% 3% 5%;
+  background-color: white;
+  float: left;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 19%;
+  width:900px;
+  height: 170px;
+  border: 1px solid #707070;
+  border-radius: 14px;
+
+}
+#firstbox{
+  background-color: white;
+  height: 500px;
+  float: right;
+  width: 65%;
+  margin-right: 9%;
+  border-radius: 12px;
+  margin-top: 2%;
+  }
+#firstbox div{
+  float: left;
+}
+#firstbox h5{
+  margin-left: 4%;
+  padding-top: 14px;
+  color: #189494;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 1%;
+  width: 200px;
+}
+.Search{
+  margin-top: 5%;
+  float: right;
+  margin-right: 3.5%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-bottom: 4%;
+
+
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">REPORT ISSUE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+  <form action="TReportedissue1" method="POST">
+        {% csrf_token %}
+            <h5>DESCRIBE YOUR ISSUE</h5>
+              <textarea rows="7" cols="118" name="issue">
+              </textarea>
+
+            <button type="submit" class="btn btn-primary Search">Report</button>
+  </form>
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="fw-bold">Image CRUD in Django</h1>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Descritpion</th>
+                                    <th>Price</th>
+                                    <th>Image</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in products %}
+                                    <tr>
+                                        <td>{{ p.id }} </td>
+                                        <td>{{ p.name }} </td>
+                                        <td>{{ p.description }} </td>
+                                        <td>{{ p.price }} </td>
+                                        {% if p.image %}
+                                            <td>
+                                                <img src="{{ p.image.url }}" alt="" class="prod-size">
+                                            </td>
+                                        {% else %}
+                                            <td>
+                                                <img src="{% static 'images/product.png' %}" alt="" class="prod-size">
+                                            </td>
+                                        {% endif %}
+                                        <td>
+                                            <a href="{% url 'editProduct' p.id %}" class="btn btn-success badge">EDIT</a>
+                                            <a href="#" class="btn btn-danger badge">Delete</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}

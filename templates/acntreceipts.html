@@ -1,0 +1,119 @@
+{% extends 'acntpayslipsidebar.html' %}
+ {% load static %} {% block content %}
+<style>
+    #firstbox {
+        background-color: white;
+        height: 175px;
+        float: right;
+        width: 79%;
+    }
+    
+    #firstbox div {
+        padding-left: 5%;
+        float: left;
+    }
+    
+    #smallbox {
+        background-color: white;
+        width: 250px;
+        border-radius: 15px;
+        display: inline-flex;
+        margin-left: 15%;
+        margin-top: 1%;
+    }
+    
+    h5 {
+        opacity: 0.65;
+        color: #000000;
+    }
+    
+    #text {
+        text-decoration: none;
+    }
+    
+    #myprofile {
+        opacity: 0.56;
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 4%;
+        padding: 2.2% 2% 1.5% 3%;
+        width: 79%;
+    }
+    /* #smallbox h1 {
+        margin-left: 15%;
+    }
+    
+    #smallbox span {
+        color: #475151;
+    }
+    
+    #boxes {
+        max-width: 75%;
+        float: right;
+        margin-right: -8%;
+        margin-top: 4.5%;
+    }
+    
+    #adname {
+        padding-top: 14px;
+        color: #58B7AA;
+        font-weight: 600;
+        max-width: 300px;
+    }
+    
+    #bigimage {
+        float: right;
+        margin-right: 10%;
+    } */
+</style>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+
+            <label id="myprofile">RECEIPTS</label>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 ">
+                <div id="smallbox" class=" shadow p-3 mb-5 bg-white">
+                    <a href="acntpayhis" id="text">
+                        <h5>
+                            Payment History
+                        </h5>
+                        <div>
+                            <img src="{% static 'Group103.png' %}" width="100" height="80" style="margin-left: 110px">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div id="smallbox" class=" shadow p-3 mb-5 bg-white">
+                    <a href="acntviewreceipts" id="text">
+                        <h5>
+                            View Receipts
+                        </h5>
+                        <div>
+                            <img src="{% static 'Group94.png' %}" width="100" height="80" style="margin-left: 110px">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div id="smallbox" class=" shadow p-3 mb-5 bg-white">
+                    <a href="acntsendpay" id="text">
+                        <h5>
+                            Send Payment Notification
+                        </h5>
+                        <div>
+                            <img src="{% static 'Group93.png' %}" width="90" height="60" style="margin-left: 110px">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}

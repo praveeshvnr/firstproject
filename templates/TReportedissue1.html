@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Reported issue1</title>
+<style>
+
+#box2{
+  padding: 1% 5% 1% 5%;
+  background-color: white;
+  border-radius: 14px;
+  float: left;
+  margin-top: 1%;
+  margin-left: 3%;
+  margin-right: 9%;
+}
+#box2 h5,#box2 img{
+  float: left;
+  margin-right: 83px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  color: #616767;
+}
+h5 span{
+  font-weight: 400;
+  margin-top: 10px;
+  color: #15A7A7;
+
+}
+
+
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+#box2 img{
+  margin-top: 15px;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">REPORTED ISSUES</label>
+<div id="hiddendiv">
+{% for hrreport in names %}
+   {% if forloop.first %} {% endif %}
+    <div id="box2" class="shadow bg-white">
+    <a href="TReportedissue11?empid={{ hrreport.id }}">
+    <img src="{% static 'Icon awesome-circle-notch.png'%}" width="20" height="20">
+    <h5>Reported issue</h5>
+    <h5 style="width: 80px">{{hrreport.reportedby}}</h5>
+    <h5 style="width: 80px">{{ hrreport.designation }}</h5>
+    <h5 style="width: 130px"><span>{{ hrreport.date }}</span></h5>
+    </a>
+    </div>
+{% endfor %}
+</div>
+</div>
+</div>
+</body>
+</html>

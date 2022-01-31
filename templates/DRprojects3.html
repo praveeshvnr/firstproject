@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: left;
+  width: 70%;
+  margin-left: 24%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 40px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  width: 170px;
+}
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span><a href="logout" style="padding-right: 1%;padding-top: 1%;color: white">LOGOUT</a>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="dr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="drtopics" class="col" id="sidebox1">TOPICS</a>
+  <a href="drweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+  <a href="drprojects" class="col" id="sidebox1">PROJECTS</a>
+  <a href="drattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="drreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="drpayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="drapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PROJECTS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+{% for hrassignedtasks in tasks1 %}
+{% if forloop.first %} {% endif %}
+  <div>
+    <label style="width: 5cm;">NAME</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.employee}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">PROJECT TITLE</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.title}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">PLATFORM</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.platform}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">EMAIL</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.email}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">PHONE</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.phone}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">DATE</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.date}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">DUE DATE</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.duedate}}</label>
+  </div>
+  <div>
+    <label style="width: 5cm;">PROJECT DESCRIPTION</label><label style="color: #616767;width: 500px;">{{ hrassignedtasks.descri}}</label>
+  </div>
+  <div>
+      <label style="width: 800px;">DESCRIPTION</label><label style="color: black;width: 1000px;">{{ hrassignedtasks.description}}</label>  </div>
+    {% if hrassignedtasks.screenshot %}
+    <label style="width: 800px;">SCREENSHORT</label>
+    <center><img src="{{hrassignedtasks.screenshot.url}}" width="120" height="120"></center>
+{% endif %}
+    {% if hrassignedtasks.report %}
+  <div>
+      <center><p style="margin-top: 5cm;">Click to download pdf file uploaded by the trainee</p><a href="{{ hrassignedtasks.report.url }}" id="btnSearch" type="button" class="btn btn-primary Search" style="margin-right: 12cm;margin-left: 12cm" >Download</a></center>
+  </div>
+{% endif %}
+</div>
+</div>
+{% endfor %}
+</body>
+</html>

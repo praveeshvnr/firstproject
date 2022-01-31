@@ -1,0 +1,41 @@
+  <table class="table table-bordered">
+    <thead class="thead">
+      <tr>
+        <th>SL.NO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>COLLEGE NAME</th>
+        <th>REG NO</th>
+        <th>COURSE</th>
+        <th>PLATFORM</th>
+        <th>STARTING DATE</th>
+        <th>ENDING DATE</th>
+        <th>MOBILE</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+        <th>VIEW</th>
+        <th>INTERNSHIP CERTIFICATE </th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {%  for inter in names %}
+        <tr>
+            <td>{{ inter.id }}</td>
+            <td>{{ inter.name }}</td>
+            <td>{{ inter.email }}</td>
+            <td>{{ inter.college }}</td>
+            <td>{{ inter.regno }}</td>
+            <td>{{ inter.department }}</td>
+            <td>{{ inter.platform }}</td>
+            <td>{{ inter.startdate }}</td>
+            <td>{{ inter.enddate }}</td>
+            <td>{{ inter.mobile }}</td>
+            <td><a href="editinternship/{{ inter.id }}"  >Update</a><br>
+            <td><a href="deleteinternship/{{ inter.id }}">Delete</a></td>
+            <td><a href="admininternshipview/{{ inter.id }}">View full details</a></td>
+            <td><a href="#">Download</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>

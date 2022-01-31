@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 175px;
+  float: right;
+  width: 79%;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+#bigimage{
+  float: right;
+  margin-right: 10%;
+}
+#smallbox{
+  background-color: white;
+  width: 300px;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-right: 5%;
+  padding: 20px;
+  margin-top: 3%;
+}
+#smallbox h1{
+  margin-left: 15%;
+}
+#smallbox span{
+  color: #475151;
+  font-size: 23px;
+}
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: 8%;
+  margin-top: 4.5%;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="MANmanagerprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="MANtask" class="col" id="sidebox1">TASKS</a>
+  <a href="MANprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="MANperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="MANemployees" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="MANtrainees" class="col" id="sidebox1">TRAINEES </a>
+  <a href="MANreportedissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="MANmarketing" class="col" id="sidebox1">MARKETING</a>
+  <a href="MANPayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="MANmanageHR" class="col" id="sidebox1">MANAGE HR</a>
+  <a href="MANattendance" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">TASKS</label>
+
+<div id="row">
+<li id="smallbox" class="col shadow p-3 mb-5 bg-white"><a href="MANassignedtask">
+  <h5 style="color:#58B7AA">
+    <span>Assigned tasks</span>
+  </h5>
+  <div>
+   <img class="row-sm" src="{% static 'Group18.png' %}" width="130" height="80" style="margin-left: 110px">
+   </div></a>
+   
+</li>
+<li id="smallbox" class="col shadow p-3 mb-5 bg-white"><a href="MANgivetask">
+  <h5 style="color:#58B7AA">
+    <span>Give tasks</span>
+  </h5>
+  <div>
+   <img class="row-sm" src="{% static 'Group4.png' %}" width="100" height="80" style="margin-left: 120px">
+   </div></a>
+   
+</li>
+<li id="smallbox" class="col shadow p-3 mb-5 bg-white"><a href="MANmytasks">
+  <h5 style="color:#58B7AA">
+    <span>My tasks</span></h5>
+    <div>
+   <img class="row-sm" src="{% static 'Group15.png' %}" width="100" height="80" style="margin-left: 110px">
+   </div></a>
+   
+  
+</li>
+</li>
+</div>
+</div>
+</body>
+</html>

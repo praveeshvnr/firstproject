@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ {% load static %}
+      <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>myprofile2</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 175px;
+  float: right;
+  width: 79%;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+#bigimage{
+  float: right;
+  margin-right: 10%;
+}
+#ringchart1{
+  float: left;
+  margin-left: 26%;
+}
+#ringchart2{
+  float: left;
+  margin-left: 2.1%;
+
+  }
+#barchart{
+  background: #A6CEE3 0% 0% no-repeat padding-box;
+  opacity: 1;  color: #FFFFFF;
+  margin-top: 3%;
+  float: right;
+  margin-right: 5%;
+  width: 105px;
+  height: 45px;
+
+
+}
+#piechart{
+  background: #1F78B4 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-color: #1F78B4;
+  color: #FFFFFF;
+  margin-top: 7%;
+  float: right;
+  margin-right: -5.5%;
+  width: 105px;
+  height: 35px;
+}
+.bar{
+  margin-right: 15%;
+
+}
+#firstbox1{
+  background-color: white;
+  height: 330px;
+  float: right;
+  width: 58%;
+  margin-top: 2%;
+  margin-right:21%;
+}
+.bbb{
+  float: right;
+  margin-right:-70%;
+  margin-top: 5%;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">MY PROFILE</label>
+<div id="firstbox" class="shadow p-3 mb-5 bg-white rounded">
+{% for t in results %}
+   {% if forloop.first%}
+  <div class="row-sm">
+    <h3 id="adname">{{ t.name}}</h3>
+    <h4 style="font-weight: 400">{{ t.designation}}</h4>
+    <h5 style="font-weight: 400">
+    <span style="color: #58B7AA">Departments</span>&nbsp&nbsp&nbsp{{ t.platform}}<span style="color: #58B7AA">&nbsp&nbsp&nbsp{{ t.dateofappointment}}</span>&nbsp&nbsp&nbsp21/02/2021
+    <span style="color: #58B7AA">&nbsp&nbsp&nbspTL</span>&nbsp&nbsp&nbsp{{ t.trainer}}</div>
+  <img class="row-sm" src="{% static 'Ellipse2.png' %}" width="150" height="150" id="bigimage"></div></div></h5>
+  <div id="row">
+  <div><label style="color: #74767a;font-size: 20px;float: right;margin-right: 64.5%;margin-top: -2%;" id="performance">PERFORMANCE</label></div>
+  <div id="firstbox1" class="shadow p-3 mb-5 bg-white rounded">
+
+
+    <img src="{% static 'Group62.png' %}" width="380" height="230" style="margin-top: 3.5%;margin-left: 50%">
+
+    <img src="{% static 'Path431.png' %}" height="70" style="margin-left: -811px; margin-top: -170px;">
+       <p style="margin-left: 30px; margin-top: -230px;"> Attendance </p>
+    <img src="{% static 'Rectangle437.png' %}" height="70" style="margin-left: -2px; margin-top: 20px;">
+        <p style="margin-left: 30px; margin-top: -50px;"> Target, Work Performance </p>
+    <img src="{% static 'Rectangle438.png' %}" height="70" style="margin-left: -3px; margin-top: 20px;">
+         <p style="margin-left: 30px; margin-top: -50px;"> Punctuality, Flexible </p>
+
+</div>
+       {% endif %}
+ {% endfor %}
+<div class="bbb">
+<div class="bbb">
+  <div class=""  style="margin-top: 5%;">
+    <a href="Tmyprofile1"><button type="button" class="btn btn-primary active">PieChart</button>
+  </a></div>
+  <div class=""  style="margin-top: 10%;">
+    <a href="Tmyprofile2"><button type="button" class="btn btn-primary disabled">BarChart</button></a></div>
+</div>
+  
+</div>
+
+</body>
+</html>
+</body>
+</html>

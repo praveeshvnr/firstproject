@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>DATE</th>
+        <th>STATUS</th>
+        <th>LOGIN TIME</th>
+        <th>LOGOUT TIME</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for ra in names %}
+     {% if forloop.first %} {% endif %}
+      <tr>
+        <td>{{ ra.date}}</td>
+        <td>{{ ra.status }}</td>
+        <td>10</td>
+        <td>5</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>

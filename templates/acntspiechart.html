@@ -1,0 +1,115 @@
+{%extends 'acntpayslipsidebar.html'%}
+%load static%}
+{% block content %}
+<style>
+  .container{
+  background-color: white;
+  border-radius: 15px;
+  width: 95%;
+  }
+  .container.pie{
+    background: none;
+    width:50%;
+    margin-top: 30px;
+  }
+  @media(max-width:61.938em){
+    #date{
+    display:block;
+    margin-left: -14px;
+     }
+    #date1{
+     position: relative;
+     top:-23px;
+     left:113px;
+    } 
+    .img-fluid{
+      margin-top: -500px;
+    }
+    .container.pie{
+      background: none;
+      width:100%;
+      
+  }
+     #adname{
+       margin-top: 200px;
+     }
+  }
+</style>
+</head>
+<body>
+<div><label id="myprofile"style="margin-left: -0.1%;">MY PROFILE</label>
+  <div class="container shadow p-3 mb-4 bg-white rounded">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+     <div id="firstbox" class="bg-white rounded">
+  {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+    <h3 id="adname">{{ t.name }}</h3>
+    <h4 style="font-weight: 400">{{ t.designation }}</h4>
+    <h5 style="font-weight: 400">
+    <span style="color: #58B7AA">Departments</span>&nbsp&nbsp&nbsp{{ t.department }}<span id="date" style="color: #58B7AA">&nbsp&nbsp&nbspJoining date</span><span id="date1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ t.dateofappoinment}}</span></h5></div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+    <img src="{{t.employeeimage.url}}" class="rounded-circle img-fluid" width="150" height="150"   id="bigimage"></div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+    <div id="firstbox1">
+    <div id="row">
+    <div>
+    <script>
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#e21014', '#f46c22', '#009c3b', '#FFD700', '#00EE00','#FF0000'
+          ],
+
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+  </script>
+    <div class="container pie">
+      <canvas id="pie-chart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#e21014', '#f46c22', '#009c3b', '#FFD700', '#00EE00','#FF0000'
+          ],
+
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+  </script>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>
+{%  endblock %}

@@ -1,0 +1,272 @@
+{% extends 'acntpayslipsidebar.html' %}
+{% load static %}
+{% block content %}
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+/* #firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 50%;
+  margin-right: 25%;
+  border-radius: 15px;
+  /* border:2px solid #707070; */
+  /* margin-top: 0%;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 30px;
+  padding-top: 14px;
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+  width: 250px;
+}
+.Search1{
+  margin-top: -16%;
+  margin-right: 18%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 15px;
+  margin-left: 23%;
+}
+.Search{
+  margin-top: 4%;
+  margin-left: 49%;
+  margin-right: 20%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 15px;
+
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+#box2 img{
+  margin-top: 4px;
+}
+#firstbox1{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 28%;
+  margin-right: 10%;
+  border-radius: 10px;
+  margin-top: -28%;
+}
+#firstbox1 label{
+  color: #131415;
+  opacity: 34%;
+}
+#firstbox1 img{
+  height:550px;
+  width:330px; 
+  margin-top: -47%;
+  padding-top: 5cm;
+} */ 
+
+input{
+  margin-left: -25px;
+}
+button{
+  margin-left: -150px; 
+}
+ #firstbox{
+  background-color: white;
+  border-radius: 10px;
+} 
+  .container{
+    width: 80%; 
+  
+  }
+button{
+  margin-left: -100px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+#box2 img{
+  margin-top: 4px;
+}
+.h-divider{
+  height:1px;
+ width:95%;
+ border-top:1px solid gray;
+ margin-left: 2%;
+}
+.h-divider1{
+ margin-top:4%;
+ margin-bottom:5px;
+ height:1px;
+ width:122%;
+ border-top:1px solid gray;
+ margin-left: 0%;
+ margin-bottom: 4%;
+}
+@media (max-width: 991px){
+  input{
+    width: 70%;
+  }
+  button{
+    margin-left: 5%;
+  }
+  .Search1{
+  margin-top: 10%;
+  /* margin-right: 5px; */
+  padding-left: 4%;
+  padding-right: 10%;
+  border-radius: 15px;
+  /* margin-left: -15%; */
+}
+.Search{
+  /* margin-top: 30%; */
+  /* margin-left: -15%; */
+  /* margin-right: 20%; */
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 15px;
+
+}
+}
+  </style>
+      </head>
+<body>
+<!-- <div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="accounts" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="acntemp" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="acntpayslips" class="col" id="sidebox1">PAYSLIPS </a>
+  <a href="acntreceipts" class="col" id="sidebox1">RECEIPTS</a>
+  <a href="acntexpenses" class="col" id="sidebox1">EXPENSES</a>
+</div> -->
+<div><label id="myprofile">RECEIPTS</label>
+  <div class="container">
+    <div class="form-group">
+    <div class="row">
+        <div class="col-md-12">  
+<div id="firstbox" class="shadow p-3 bg-white">
+  
+    
+    {% for re in mem %}
+    <div class="row  m-4">
+      <div class="col-md-3"></div>
+      <div class="col-md-4">
+    <label style="color: #050505;">Name</label>
+  </div>
+  <div class="col-md-3">
+    <label style="color: #050505;width: 150px;">{{re.name  }}</label> 
+  </div>
+  
+  </div>
+  <div class="row  m-4">
+    <div class="col-md-3"></div>
+  <div class="col-md-4">
+    <label style="color: #050505;width: 150px">Department</label>
+  </div>
+  <div class="col-md-3">
+    <label style="color: #050505;width: 150px">{{ re.department }} </label>
+  </div>
+  </div>
+  <div class="row m-4">
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+    <label style="color: #050505;width: 150px">Due date</label>
+  </div>
+  <div class="col-md-3">
+    <label style="color: #050505;width: 150px">{{ re.duedate}}</label>
+  </div>
+  </div>
+  <div class="row  m-4">
+    <div class="col-md-3"></div>
+  <div class="col-md-4">
+
+    <label style="color: #050505;width: 150px">Payment date</label>
+</div>
+<div class="col-md-3">
+  <label style="color: #050505;width: 150px">{{ re.paymentdate}}</label>
+</div>
+</div>
+<div class="row m-4">
+  <div class="col-md-3"></div>
+  <div class="col-md-4">
+  
+    <label style="color: #050505;width: 150px">Amount paid</label>
+  </div>
+  <div class="col-md-2">
+    <label style="color: #050505;width: 150px">{{ re.amountpaid }}</label>
+  </div>
+  </div>
+  <div class="row m-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <form method="post" action="acntremain" >
+        {% csrf_token %}
+        <label style="color: #050505;width: 150px" >Remaining amount</label><input type="text" class="form-control" style="width: 200px;" name="pending">
+    </div>    
+    <div class="col-md-4">
+        <input type="hidden" name="team_id" value={{ re.id }}>
+    </div>
+  </div>
+  <div class="row m-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <form method="post" action="acntremain" >
+        {% csrf_token %}
+        <input type="hidden"  name="team_id" value={{ re.id }}>
+        <button type="submit" class="btn btn-primary Search" style=" width: 60%;" name="confirm" value="confirm">Confirm</button>
+      </form>
+    </div>    
+</form>
+  <div class="col-md-4">
+     <form method="post" action="acntrdecline" >
+            {% csrf_token %}
+    <input type="hidden"  name="team_id" value={{ re.id }}>
+ <button type="submit" class="btn btn-primary Search1" style=" width: 60%;" name="decline" value="declined">Decline</button>
+     </form>
+     </div>
+     </div>
+</div>
+</div>
+        </div>
+</div>
+
+    {% endfor %}
+
+</body>
+</html>
+{% endblock %}

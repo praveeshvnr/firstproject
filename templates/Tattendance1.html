@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+      <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>attendance1</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 120px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+.Search{
+  margin-top: 4%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+thead{
+  color: #58B7AA;
+}
+table{
+  float: left;
+  margin-left: 75%;
+  margin-top: 20%;
+}
+#date{
+  width: 450px;
+  padding: 0.5%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">ATTENDANCE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+    <div class="">
+      <label>SELECT FROM DATE</label>&nbsp
+      <input type="date" name="fromdate" id="fromid">
+    </div>
+
+
+    <div class="">
+      <label>SELECT TO DATE</label>&nbsp
+      <input type="date" name="todate" id="toid">
+    </div>
+    <button type="button" id="buttonsearch" class="btn btn-primary Search">Search</button>
+
+  <div id="hiddendiv">
+
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+        $("#buttonsearch").click(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const fromid = $("#fromid").val();
+        const toid = $("#toid").val();
+        $.ajax({
+            url: 'DEVattendancenew1',
+            data: {
+                'from_id': fromid,
+                'to_id':toid,
+            },
+            success: function (data) {
+                $("#hiddendiv").html(data);
+            }
+        });
+    });
+  function showDiv() {
+   document.getElementById('hiddendiv').style.display = "block";
+}
+</script>
+
+
+
+</body>
+</html>

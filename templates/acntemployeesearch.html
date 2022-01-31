@@ -1,0 +1,27 @@
+{% for regdetails in names %}
+    <div id="box2" class="shadow bg-white" >
+   <a href="acntemp1?empid={{ regdetails.employeeid }}">
+       <div class="container">
+           <div class="formgroup">
+               <div class="row">
+                   
+                   <div class="col-md-3">
+   <img src="{{ regdetails.employeeimage.url }}" class="rounded-circle" style="margin-top:3px" width="40" height="38">
+</div>
+<div class="col-md-3">
+   <h5>{{regdetails.name}}</h5>
+   </div>
+   <div class="col-md-3">
+   <h5>{{regdetails.designation}}</h5>
+   </div>
+   <div class="col-md-3">
+   <h5>{{ regdetails.dateofappoinment }}</h5>
+   </div>
+   
+   </div>
+</div>
+</div>
+    </a>
+    
+</div>
+{% endfor %}

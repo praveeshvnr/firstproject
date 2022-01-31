@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 60%;
+  margin-right: 10%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  font-size: 25px;
+  margin-left: 10%;
+  width: 500px;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="icon.png" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="adminregistration" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">REMOVE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+  <div>
+    <label style="margin-top: 13%;color: #58B7AA;">Are you sure,Do you want to Permanently Delete this date?</label>
+  </div>
+  <div>
+    <img src="regdelete.png" style="padding-bottom: 40px;"><br>
+        <a href="adminregistrationdetails2.html"><button class="btn shadow" style="padding-right: 15px;padding-left: 15px;color: #58B7AA">Cancel</button></a>
+        <a href="deleteinternship"><button class="btn shadow" style="padding-right: 30px;padding-left: 30px;color: #58B7AA">Yes</button></a>
+
+
+  </div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+</body>
+</html>

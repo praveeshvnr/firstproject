@@ -1,0 +1,1 @@
+from infoxcoreproject.wsgi import application

@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 75%;
+  margin-right: 1%;
+  border-radius: 15px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 30px;
+  padding-top: 14px;
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+  width: 200px;
+}
+.Search{
+  margin-top: 4%;
+  float: right;
+  margin-right: 15%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.Search1{
+  margin-top: 4%;
+  float: right;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-right: -21%
+
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  text-align: left;
+  color: #1CA9BE;
+  font-size: 28px;
+  margin-left: 2%;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+#firstbox2{
+  height: 40px;
+  width: 95%;
+  margin-left: 2%;
+  background: #1CB1BD 0% 0% no-repeat padding-box;
+
+}
+#firstbox3{
+  height: auto;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox3 label{
+  padding-bottom: 0.1%;
+  padding-top: 0.1%;
+  color: #2F3232;
+}
+#firstbox4{
+  height: 60px;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox4 label{
+  color: #2F3232;
+  width: 900px;
+  text-align: center;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+  }
+table{
+  margin-top: 4%;
+  margin-left: 0%;
+  border:1px solid #1CB1BD;
+
+}
+th,td,thead,tbody{
+  width: 5.66%;
+  text-align: center;
+  color: #2F3232;
+  font-weight: 400;
+  border:1px solid #1CB1BD;
+
+}
+table.table-bordered{
+    border:1px solid #1CB1BD;
+  }
+#firstbox5{
+  height: auto;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox5 label{
+  padding-bottom: 0.1%;
+  padding-top: 0.1%;
+  color: #2F3232;
+}
+#firstbox6{
+  height: auto;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox6 label{
+  padding-bottom: 0.1%;
+  padding-top: 0.1%;
+  color: #2F3232;
+  width: 800px;
+  margin-left: 18%;
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}</div>
+<div class="sidenav">
+  <a href="tl" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="tltasks" class="col" id="sidebox1">TRAINEES</a>
+  <a href="tlprojects" class="col" id="sidebox1">TASKS</a>
+  <a href="tlperformance" class="col" id="sidebox1">PROJECTS</a>
+  <a href="tlemployeess" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="tlreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="tlPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="tlattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PAYMENTS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+{% for pa in pays %}
+<h5><b>INFOX TECHNOLOGIES</b></h5>
+<div id="firstbox2"></div>
+<div id="firstbox3" class="shadow p-3 bg-white">
+  <label style="width:200px;">Name of employee</label><label style="width:200px;">{{ pa.ename}}</label>
+  <label style="width:200px;">Employee code</label><label style="width:200px;">{{ pa.eno}}</label>
+  <label style="width:200px;">Date of joining</label><label style="width:200px;">{{ pa.datejoin}}</label>
+  <label style="width:200px;">Designation</label><label style="width:200px;">{{ pa.designation}}</label>
+  <label style="width:200px;">Leaves taken</label><label style="width:200px;">{{ pa.leavesno}}</label>
+  <label style="width:200px;">Department</label><label style="width:200px;">{{ pa.department}}</label>
+  <label style="width:200px;">Month</label><label style="width:200px;">{{ pa.dateef}}</label></div>
+<div class="table">
+  <table class="table table-bordered" style="border-color: #1CB1BD">
+      <tr  style="border-color: #1CB1BD" >
+        <th  style="border-color: #1CB1BD" >Particulars</th>
+        <th colspan="2"  style="border-color: #1CB1BD" >Amount Rs</th>
+        <th  colspan="2"  style="border-color: #1CB1BD">Deductions </th>
+
+      </tr>
+      <tr  style="border-color: #1CB1BD">
+        <th style="border-color: #1CB1BD" ></th>
+        <th  style="border-color: #1CB1BD">Gross</th>
+        <th  style="border-color: #1CB1BD"> Payable</th>
+        <th  style="border-color: #1CB1BD"></th>
+        <th  style="border-color: #1CB1BD"></th>
+
+      </tr>
+    <tbody  style="border-color: #1CB1BD">
+      <tr  style="border-color: #1CB1BD">
+          <td  style="border-color: #1CB1BD">Basic salary</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.basictype == 'Earning for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.basictype == 'Earning for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.basictype == 'Deduction for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.basictype == 'Deduction for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr  style="border-color: #1CB1BD">
+        <td  style="border-color: #1CB1BD">Hra</td>
+         <td  style="border-color: #1CB1BD">
+            {% if pa.hratype == 'Earning for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.hratype == 'Earning for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.hratype == 'Deduction for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.hratype == 'Deduction for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+
+      </tr>
+      <tr  style="border-color: #1CB1BD">
+        <td  style="border-color: #1CB1BD">Conveyence allowance</td>
+        <td  style="border-color: #1CB1BD">{% if pa.contype == 'Earning for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.contype == 'Earning for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.contype == 'Deduction for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.contype == 'Deduction for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr  style="border-color: #1CB1BD">
+        <td  style="border-color: #1CB1BD">Profesional tax</td>
+        <td  style="border-color: #1CB1BD">{% if pa.protype == 'Earning for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.protype == 'Earning for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.protype == 'Deduction for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td  style="border-color: #1CB1BD">
+            {% if pa.protype == 'Deduction for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr  style="border-color: #1CB1BD">
+      <th  style="border-color: #1CB1BD">Total </th>
+      <th id="totalsalary7"  name="totalearning" colspan="2"  style="border-color: #1CB1BD"></th>
+      <th id="totalsalary8" name="totalduduction" colspan="2"  style="border-color: #1CB1BD"></th>
+      </tr>
+      <tr style="border-color: #1CB1BD" >
+      <th colspan="5 "  style="border-color: #1CB1BD">Net Salary</th>
+      </tr>
+      <tr  style="border-color: #1CB1BD">
+      <th id="totalsalary" class="subjects" hidden  style="border-color: #1CB1BD"></th>
+      <th id="totalsalary5" class="subjects"  hidden  style="border-color: #1CB1BD" ></th>
+      <th id="TotMarks" class="subjects" name="netamt"  colspan="5"   style="border-color: #1CB1BD" ></th>
+      </tr>
+    </tbody>
+  </table>
+       {% endfor %}
+
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function () {
+        var empsalary;
+        var totalsalary = 0;
+        $('td:nth-child(2)').each(function () {
+            empsalary = $(this).html();
+            totalsalary += parseInt(empsalary);
+            $('#totalsalary').text(totalsalary);
+        });
+    });
+        $(document).ready(function () {
+        var empsalary3;
+        var totalsalary3 = 0;
+        $('td:nth-child(3)').each(function () {
+            empsalary3 = $(this).html();
+            totalsalary3 += parseInt(empsalary3);
+            $('#totalsalary3').text(totalsalary3);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary4;
+        var totalsalary4 = 0;
+        $('td:nth-child(4)').each(function () {
+            empsalary4 = $(this).html();
+            totalsalary4 += parseInt(empsalary4);
+            $('#totalsalary4').text(totalsalary4);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary5;
+        var totalsalary5 = 0;
+        $('td:nth-child(5)').each(function () {
+            empsalary5 = $(this).html();
+            totalsalary5 += parseInt(empsalary5);
+            $('#totalsalary5').text(totalsalary5);
+        });
+    });
+    $('#A, #B').on('input',function(e){
+    $('#C').val(parseInt($('#A').val()) * parseInt($('#B').val()));
+    });
+    $(document).ready(function ()
+    {
+       $('tr').each(function ()
+       {
+        var totmarks=0;
+        $(this).find('.subjects').each(function ()
+        {
+          var marks=$(this).text();
+          if (marks.length!==0)
+          {
+              totmarks=-parseFloat(marks)-totmarks;
+          }
+       });
+        $(this).find('#TotMarks').html(totmarks);
+       });
+    });
+            $(document).ready(function () {
+        var empsalary7;
+        var totalsalary7 = 0;
+        $('td:nth-child(3)').each(function () {
+            empsalary7 = $(this).html();
+            totalsalary7 += parseInt(empsalary7);
+            $('#totalsalary7').text(totalsalary7);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary8;
+        var totalsalary8 = 0;
+        $('td:nth-child(4)').each(function () {
+            empsalary8 = $(this).html();
+            totalsalary8 += parseInt(empsalary8);
+            $('#totalsalary8').text(totalsalary8);
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 50%;
+  margin-right: 15%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 40px;
+  padding-top: 18px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  width: 120px;
+}
+button{
+  padding-right: 10px 0px 10px 0px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="icon.png" width="50" height="50" id="img2" class="topimg"></span>
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+
+</div>
+<div><label id="myprofile">BRANCH</label>
+    {% for intern in intern %}
+    {% if forloop.first %} {% endif %}
+<div id="firstbox" class="shadow p-3 bg-white">
+  <div class="col-sm-8">
+    <label>Name</label><label style="color: black;width: 200px;">{{ intern.name }}</label>
+    <label>Designation</label><label style="color: black;width: 200px;">{{ intern.designation }}</label>
+    <label>Branch</label><label style="color: black;width: 200px;">{{ intern.branch }}</label>
+    <label>D.O.B</label><label style="color: black;width: 200px;">{{ intern.dob }}</label>
+    <label>Email</label><label style="color: black;width: 200px;">{{ intern.email }}</label>
+    <label>Phone</label><label style="color: black;width: 200px;">{{ intern.mobile }}</label>
+  </div>
+  <div class="col-sm-4">
+    <center><img src="{{ intern.employeeimage.url }}" width="120" height="120"></center>
+  </div>
+  <div class="" style="margin-left: 400px;">
+    <a href="adminhrattendance1"><button class="btn btn-primary">Attendance</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="adminempperhr1.html"><button class="btn btn-primary">Performance</button></a>
+  </div>
+</div>
+</div>
+{% endfor %}
+</body>
+</html>

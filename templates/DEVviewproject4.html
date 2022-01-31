@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>DEVview project4</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 475px;
+  float: left;
+  width: 1030px;
+  margin-left: 420px;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: -8%;
+  margin-top: 4.5%;
+}
+h5{
+  opacity: 0.55;
+  color:#000000;
+}
+#box2{
+
+  background-color: white;
+  border-radius: 10px;
+  width: 800px;
+  height: 100px;
+  float: left;
+  margin-top: 5%;
+  margin-left: 6%;
+  margin-right: 9%;
+}
+#box2 h5,#box2 img{
+  float: left;
+  margin-right: 30px;
+
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  color: black;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse1.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+<a href="DEVmyprof1" class="col" id="sidebox1">MY PROFILE</a>
+      <a href="DEVtrainees1" class="col" id="sidebox1">TRAINEES</a>
+      <a href="DEVtask" class="col" id="sidebox1">TASKS</a>
+      <a href="DEVproject" class="col" id="sidebox1">PROJECTS</a>
+      <a href="DEVattendance3" class="col" id="sidebox1">ATTENDANCE</a>
+      <a href="DEVreportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+      <a href="DEVpayments" class="col" id="sidebox1">PAYMENTS</a>
+      <a href="DEVapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">VIEW PROJECTS</label>
+    <div id="firstbox" class="shadow p-3 bg-white">
+
+        <div class="">
+          <h5 style="color: #58B7AA; margin-top: 40px;">&nbsp&nbspUPDATE PERFORMANCE&nbsp&nbsp&nbsp&nbsp&nbsp<br><br><br></h5>
+          <div id="box2" class="shadow bg-white">
+            <form>
+                <div>
+                  <input id="rangeInput" type="range" min="0" max="100" oninput="amount.value=rangeInput.value" style="width: 650px; margin-top: 40px; margin-left: -30px;"/>
+                  <input id="amount" type="" value="100" min="0" max="100" oninput="rangeInput.value=amount.value" style="width: 40px; margin-top: 30px;"/>
+                </div>
+              </form>
+
+          </div>
+
+
+
+
+
+
+
+        <a href="" style="color: blue;"><button type="button" class="btn btn-light Search" style="margin-left: 400px;  margin-top: 70px; border-radius: 2px; font-size: 20px;color: blue;">&nbsp&nbspSave&nbsp&nbsp</button></a>
+      </div>
+    </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function showDiv() {
+     document.getElementById('hiddendiv').style.display = "block";
+
+    }
+
+
+
+</script>
+</body>
+</html>

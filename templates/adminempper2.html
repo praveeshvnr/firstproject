@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  width: 79%;
+  float: right;
+  margin-left: 21%;
+}
+#firstbox label{
+  width: 150px;
+}
+#firstbox div{
+  padding-left: 5%;
+
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 400px;
+}
+#bigimage{
+  float: left;
+}
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="icon.png" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">BRANCH</label>
+<div id="firstbox" class="shadow p-3 bg-white rounded col-sm-12">
+  <div class="row">
+    <img class="row" src="icon.png" width="150" height="150" id="bigimage">
+    <div style="margin-left: 70px;margin-top: 20px;"><h4 id="adname"style="">Basil Vargheese</h4>
+    <h5 style="font-weight: 400;margin-top: 10px;">
+    <span style="">Manager</span><span style="color: #58B7AA;width: 300px;margin-left: 30px;">Branch</span><span style="margin-left: 20px;">Infox Kakkanad</span><span style="margin-left: 30px;color: #58B7AA;">Joining Date</span><span style="margin-left: 20px;">20/01/2021</span></h5></div>
+  </div></div></div>
+<div id="firstbox" class="shadow p-3 bg-white rounded col-sm-12" style="margin-top: 10px;">
+  <div style="margin-bottom: 20px;"><label style="color: #1F78B4;font-size: 20px;margin-left: 100px">ATTENDANCE</label><label style="color: #1F78B4;font-size: 20px;margin-left: 230px;">WORKS</label></div>
+  <span style="margin-left: 150px;"><img src="80.png" height="150" width="150">
+    <label style="margin-left: -115px;font-size: 40px;color:#1F78B4; ">80%</label></span>
+  <span style="margin-left: 140px;"><img src="60.png" height="200" width="200">
+    <input style="margin-left: -150px;font-size: 40px;color:#1F78B4;width: 70px;border-width: 0px;"id="textInput" value="60"><label style="font-size: 40px;color:#1F78B4;">%</label></span>
+
+
+
+
+  <input type="range" name="rangeInput" min="0" max="100" value="60" onchange="updateTextInput(this.value);" style="margin-top: 20px;margin-left: 520px;">
+
+<!--
+    <div style="margin-top: 20px;margin-left: 450px;"><input type="range" value="100" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+    <output style="">100</output></div>
+-->
+
+
+  <div style="margin-left: 500px;margin-top: 10px;"><a href="adminempper1.html"><button class="btn btn-light">Save</button></a></div>
+
+<script type="text/javascript">function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+}
+</script>
+</div>
+</body>
+</html>

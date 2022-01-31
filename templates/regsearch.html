@@ -1,0 +1,11 @@
+{% for regdetails in brs %}
+   {% if forloop.first %} {% endif %}
+
+<div id="firstbox" class="shadow p-3 bg-white">
+   <h5>{{regdetails.city}}</h5>
+   <h5>{{regdetails.country}}</h5>
+   <h5>{{ regdetails.city }}</h5>
+
+</div>
+
+{% endfor %}

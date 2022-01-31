@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+
+
+#box2{
+  padding: 5% 5% 3% 5%;
+  background-color: white;
+  float: left;
+  margin-top: 7%;
+  margin-left: 35%;
+  margin-right: 19%;
+  width:700px;
+  height: 170px;
+
+}
+
+h5{
+
+  font-weight: 400;
+  margin-top: 0.9%;
+  margin-left:20%;
+  font-size: 20px;
+  color: #19688F;
+
+}
+
+#box2 h5{
+   float: left;
+
+
+}
+ .imgsuc{
+   margin-left: 70%;
+   margin-top: -13%;
+  }
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'icon.png'%}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="dr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="drtopics" class="col" id="sidebox1">TOPICS</a>
+  <a href="drweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+  <a href="drprojects" class="col" id="sidebox1">PROJECTS</a>
+  <a href="drattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="drreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="drpayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="drapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">SYLLABUS</label>
+  <div id="box2" class="shadow bg-white">
+    <center><h5>Review submitted succesfully</h5></center>
+    <img src="{% static 'Group1.png' %}" width="100" height="100" class="imgsuc">
+  </div>
+</div>
+</body>
+</html>
+
+

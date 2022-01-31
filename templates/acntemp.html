@@ -1,0 +1,165 @@
+{% extends 'acntpayslipsidebar.html' %}
+{% load static %}
+{% block content %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: left;
+  width: 77%;
+  margin-left: 12%;
+  border-radius: 15px;
+  
+}
+
+#firstbox label{
+  margin-left: 75px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 40%;
+}
+
+#box2{
+  padding: 0.8% 5% 0.8% 4%;
+  background-color: white;
+  border-radius: 10px;
+  float: left;
+  margin-top: 1.5%;
+  margin-left: 7%;
+  width: 79%;
+  margin-right: 6%;
+}
+#box2 h5,#box2 img{
+  float: left;
+  margin-right: 78px;
+  color: #393D3D;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  color:  #393D3D;
+}
+#hiddendiv{
+  height: auto;
+  margin-left: 5%;
+  width: 100%;
+ 
+
+}
+
+
+.drop{
+    height: 45px;
+    width: 98%;
+    margin-left:1%;
+    border-radius: 5px;
+   
+
+}
+#nav{
+  width:100%;
+}
+
+
+
+
+  </style>
+      </head>
+
+<label id="myprofile" style="margin-left: 10%;">EMPLOYEES</label>
+<div class="row mt-3">
+<div class="col-xl-12">
+<div id="firstbox" class="shadow p-3 bg-white">
+    
+  <div class="row ">
+      <label style="margin-left: 1PX;">SELECT DEPPARTMENT</label>&nbsp;
+      
+       <select id="regdetailsdept" name="regdetails" class="drop form-control" required>
+       <option value=""> </option>
+          {% for regdetails in edepartments %}
+             <option value="{{ regdetails.department}}">{{ regdetails.department }}</option>
+          {% endfor %}
+      </select>
+    </div>
+    
+
+    <div class="row ">
+      <label style="margin-left: 0PX;">SELECT DESIGNATION </label>&nbsp;
+      
+        <select id="regdetailsDesig" name="regdetails" class="drop mr-5 form-control" required>
+          <option value=""> </option>
+          
+       </select>
+      </div>
+      
+<div class="row ">
+  <div class="col-md-4 "></div>
+  <div class="col-md-4 "></div>
+  <div class="col-md-4 ">
+    
+    <button id="btnSearch" type="button" class="btn btn-primary Search w-100 mt-3"  >Search</button>
+  </div>
+  </div>
+  </div>
+  
+<div class="row w-100">
+  <div class="col-md-12">
+<div id="hiddendiv" >
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+    $("#regdetailsdept").change(function () {
+         const url = $("#personForm").attr("data-cities-url"); 
+        const deptId = $(this).val();
+
+        $.ajax({
+            url: 'acntempdesi',
+            data: {
+                'dept_id': deptId
+            },
+            success: function (data) {
+                $("#regdetailsDesig").html(data);
+                console.log(data);
+            }
+        });
+
+    });
+    $("#btnSearch").click(function () {
+       const url = $("#personForm").attr("data-cities-url"); 
+        const deptId = $("#regdetailsdept").val();
+        const desgId = $("#regdetailsDesig").val();
+
+
+        $.ajax({
+            url: 'accountemp',
+            data: {
+                'dept_id': deptId,
+                'desig_id':desgId
+            },
+            success: function (data) {
+                $("#hiddendiv").html(data);
+            }
+        });
+    });
+  function showDiv() {
+      document.getElementById('hiddendiv').style.display = "block";
+  }
+</script>
+
+</body>
+
+</html>
+{% endblock %}

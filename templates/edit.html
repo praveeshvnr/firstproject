@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 6%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 20px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 180px;
+}
+.Search{
+  margin-top: 5%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+#bigbox{
+  width: 325px;
+  padding: 0.75% 0% 0.75% 0%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+#right{
+  margin-left: 150px;
+}
+#date,#inpt,select{
+  width: 185px;
+  padding: 1% 0% 1% 0%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+.clg{
+  background-color: #565AA8;
+  color: white;
+  margin-top: 2.5%;
+  margin-left: 5%;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static '/icon.png' %}" width="50" height="50" id="img2" class="topimg rounded-circle"></span>
+</div>
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="addProduct" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">INTERNSHIP REGISTRATION</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+{% block content %}
+
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                                <a href="admininsertcollege"><button class="btn clg" style="background-color: darkviolet;">Insert college</button></a>
+
+        {% csrf_token %}
+        <div class="dropdown">
+      <label>SELECT COLLEGE</label>&nbsp&nbsp
+      <select name="college" id="college">
+      <option> {{ prod.college }}</option>
+      <option value=""></option>
+         {%  for college in colleges %}
+            <option value="{{ college.collegename }}">{{ college.collegename }}</option>
+         {% endfor %}
+
+      </select>
+    </div>
+            <div class="row">
+            <div>
+              &nbsp;&nbsp;&nbsp;<label>REG NO</label>&nbsp
+              &nbsp;<input type="text" name="regno" id="bigbox" value="{{ prod.regno }}">
+            </div>
+            <div>
+              &nbsp;&nbsp;&nbsp;<label>STUDENT NAME</label>&nbsp
+              &nbsp;<input type="text" name="name" id="bigbox" value="{{ prod.name }}">
+            </div>
+        </div>
+
+    <div>
+      <label>PLATFORM</label>&nbsp
+        <select name="platform" id="">
+            <option>{{ prod.platform }}</option>
+            <option value=""></option>
+            <option value="Python">Python</option>
+            <option value="Machine learning">Machine learning</option>
+        </select>
+    </div>
+    <div id="right">
+      <label>DEPARTMENT</label>&nbsp
+        <select name="department" id="">
+            <option>{{ prod.department }}</option>
+            <option value=""></option>
+            <option value="Python">Python</option>
+            <option value="PHP">PHP</option>
+            <option value="ML">ML</option>
+            <option value="Android">Android</option>
+        </select>
+
+    </div>
+
+    <div>
+      <label>STARTING DATE</label>&nbsp
+      <input id="date" type="date" name="startdate"  value="{{ prod.startdate }}">
+    </div>
+    <div id="right">
+      <label>ENDIND DATE</label>&nbsp
+      <input id="date" type="date" name="enddate" value="{{ prod.enddate }}">
+    </div>
+
+    <div>
+      <label>REFERENCE ID</label>&nbsp
+      <input type="text" name="refid" id="inpt" value="{{ prod.refid }}">
+    </div>
+    <div id="right">
+      <label>PAYEMENT</label>&nbsp
+      <input type="text" name="payment" id="inpt" value="{{ prod.payment }}">
+    </div>
+    <div class="dropdown">
+      <label>SELECT COUNTRY</label>&nbsp
+      <select name="country" id="country">
+      <option>{{ prod.country }}</option>
+        <option value=""></option>
+         {%  for branch in countrys %}
+            <option value="{{ branch.country }}">{{ branch.country }}</option>
+         {% endfor %}
+
+      </select>
+    </div>
+    <div class="dropdown" id="right">
+      <label>BRANCH</label>&nbsp
+      <select name="branch" id="branch">
+      <option>{{ prod.branch }}</option>
+        <option value=""></option>
+         {%  for branch in branches %}
+            <option value="{{ branch.branch }}">{{ branch.branch }}</option>
+         {% endfor %}
+      </select>
+    </div>
+    <div id="">
+      <label>COURSE</label>&nbsp
+      <input type="text" name="course" id="inpt" value="{{ prod.course }}">
+    </div>
+    <div id="right">
+      <label>EMAIL</label>&nbsp
+      <input type="text" name="email" id="inpt"  value="{{ prod.email }}">
+    </div>
+        <div id="">
+      <label>MOBILE</label>&nbsp
+      <input type="text" name="mobile" id="inpt"  value="{{ prod.mobile }}">
+    </div>
+                             <div class="col">
+
+                                <label for="" class="form-label">IMAGE</label>
+                                <input type="file" name="image" class="form-control">
+
+                                <label for="" class="form-label">ID PROOF</label>
+                                <input type="file" name="idproof" class="form-control">
+                            </div>
+                        <div>
+
+                            <button type="submit" class="btn btn-primary" style="margin-left: 23.3cm;margin-top: 1cm;width: 2.5cm;">Update</button>
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

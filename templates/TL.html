@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 175px;
+  float: right;
+  width: 79%;
+  margin-left: 21%;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+#bigimage{
+  float: right;
+  margin-right: 10%;
+}
+#smallbox{
+  background-color: white;
+  width: 300px;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-left: 50px;
+  padding: 20px;
+}
+#smallbox h1{
+  margin-left: 15%;
+}
+#smallbox span{
+  color: #475151;
+}
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: 8%;
+  margin-top: 4.5%;
+}
+#ringchart1{
+  float: left;
+  margin-left: 24%;
+  margin-top: 30px;
+}
+#ringchart2{
+  float: left;
+  margin-left: 4%;
+  margin-top: 30px;
+
+  }
+  #hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+.bbb{
+  float: right;
+  margin-right: 15%;
+  margin-top: 5%;
+}
+#performance{
+  opacity: 0.36;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 21%;
+  padding: 0% 2% 1.5% 3%;
+}
+   </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2">
+        <a href="/" style="margin-left: 10px;">Log out</a>
+        </span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="tl" class="col" id="sidebox1">MY PROFILE</a>
+  <!--<a href="one" class="col" id="sidebox1">one</a>-->
+
+  <a href="tltasks" class="col" id="sidebox1">TRAINEES</a>
+  <a href="tlprojects" class="col" id="sidebox1">TASKS</a>
+  <a href="tlperformance" class="col" id="sidebox1">PROJECTS</a>
+  <a href="tlemployeess" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="tlreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="tlPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="tlattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">MY PROFILE</label>
+<div id="firstbox" class="shadow bg-white rounded">
+    {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+  <div class="row-sm">
+    <h3 id="adname">{{ t.name }}</h3>
+    <h4 style="font-weight: 400">{{ t.designation }}</h4>
+    <h5 style="font-weight: 400">
+    <span style="color: #58B7AA">Joining date</span>&nbsp{{ t.dateofappoinment}}</h5>
+    <h5 style="font-weight: 400">
+    <span style="color: #58B7AA">Employee ID</span>&nbsp{{ t.employeeid}}</h5>    
+  </div>
+  <img src="{{ t.employeeimage.url }}" class="rounded-circle" width="150" height="150" id="bigimage"></div>
+  </div>
+<div id="row">
+    <div class="col">
+</div>
+<div class="bbb">
+  <div class=""  style="margin-top: 5%;">
+    <a href="tlmypropie_chart?empid={{ t.id }}"><button type="button" class="btn btn-primary active">PieChart</button>
+  </a></div>
+  <div class=""  style="margin-top: 10%;">
+    <a href="tl1?empid={{ t.id }}"><button type="button" class="btn btn-primary disabled">BarChart</button></a></div>
+</div>
+</div>
+</div>
+{% endfor %}
+</body>
+</html>

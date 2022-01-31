@@ -1,0 +1,44 @@
+{% load static %}
+
+  {% for view in names %}
+   {% if forloop.first %} {% endif %}
+    <a href="acntview1?empid={{ view.id }}"><div id="box2" class="shadow bg-white">
+      <div class="container">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="{% static 'circle.png' %}" style="margin-top: 2%;"  width="30" height="30">
+            </div>
+            <div class="col-md-3">
+
+    <h5  style="color: #574F4F">{{ view.name }}</h5>
+    </div>
+    <div class="col-md-3">
+    <h5 style="color: #15A7A7">View Receipt</h5>
+    </div>
+    <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+    <h5 style="color: #15A7A7">Amount paid</h5>
+  </div>
+  <div class="col-md-3">
+    <h5 style="color: #574F4F">{{ view.amountpaid }}</h5>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+<div class="col-md-3">
+    <h5 style="color: #15A7A7">Payment date</h5>
+  </div>
+  <div class="col-md-3">
+    <h5 style="color: #574F4F">{{ view.paymentdate }}</h5>
+  </div>
+  <div class="col-md-3"></div>
+    </div>
+  </div>
+    </div>
+  </div></a>
+{% endfor %}

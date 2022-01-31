@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'idcard.css' %}">
+    <title>Title</title>
+    <style>
+        #smallbox{
+  background-color: white;
+  width: 88px;
+            height: 109px;
+  border-radius: 8px;
+  display: inline-flex;
+  float: left;
+            margin-top: 5cm;
+  margin-left: 3.5cm;
+
+  padding: 20px;
+}
+        #box{
+              background-color: black;
+  width: 150px;
+            height: 50px;
+  border-radius: 15px;
+  display: inline-flex;
+  float: left;
+            margin-top: 9cm;
+  margin-left: -4.2cm;
+
+  padding: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    {% for regdetails in names %}
+    {% if forloop.first %} {% endif %}
+        <div id="smallbox">
+            <img src="{{ regdetails.employeeimage.url }}" style="margin-top:-14%;margin-left:-8%;" alt="..." height="133px" width="110px"><br>
+        </div>
+        <div id="box">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:white;">{{ regdetails.name }}<br>{{ regdetails.designation }}</span>
+
+        </div>
+        {% endfor %}
+&nbsp;&nbsp;&nbsp;&nbsp;
+    <!--<button type="hidden" id="" class="btn btn-primary" onclick="window.print();" style="background-color: white; color: black;margin-top: 19cm;"></button>-->
+<script>
+    $(function() {
+    $("#btnSave").click(function() {
+        html2canvas($("#widget"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+
+
+                canvas.toBlob(function(blob) {
+                    saveAs(blob, "Dashboard.png");
+                });
+            }
+        });
+    });
+});
+</script>
+
+    <script>
+    window.onload = function () {
+        document.getElementById("download")
+            .addEventListener("click", () => {
+                const invoice = this.document.getElementById("invoice");
+                console.log(invoice);
+                console.log(window);
+                var opt = {
+                    margin: 1,
+                    filename: 'myfile.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().from(invoice).set(opt).save();
+            })
+    }
+</script>
+
+</body>
+</html>

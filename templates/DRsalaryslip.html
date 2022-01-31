@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 175px;
+  float: right;
+  width: 79%;
+  margin-top: 30%;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: right;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+#bigimage{
+  float: right;
+  margin-right: 10%;
+}
+#smallbox1{
+  background-color: white;
+  width: 40%;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-right: 35%;
+  padding: 20px;
+  margin-top: 3%;
+}
+#smallbox1 h1{
+  margin-left: 15%;
+}
+#smallbox1 span{
+  color: #475151;
+}
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: 8%;
+  margin-top: 4.5%;
+}
+#smallbox{
+  background-color: white;
+  width: 20%;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-right: 10%;
+  padding: 20px;
+  margin-top: 3%;
+}
+#smallbox h1{
+  margin-left: 15%;
+}
+#smallbox span{
+  color: #475151;
+}
+.Search{
+  margin-top: 1%;
+  float: right;
+  margin-right: 8%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: white;
+  color: #2294ba;
+
+
+
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span><a href="logout" style="padding-right: 1%;padding-top: 1%;color: white">LOGOUT</a>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="dr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="drtopics" class="col" id="sidebox1">TOPICS</a>
+  <a href="drweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+  <a href="drprojects" class="col" id="sidebox1">PROJECTS</a>
+  <a href="drattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="drreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="drpayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="drapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PAYMENTS</label>
+
+<div id="row">
+<li id="smallbox1" class="col shadow p-3 mb-5 bg-white">
+                          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+  <h4 style="font-size: 34px;color: #475151"><span style="color: #54c5eb;font-size: 20">Confirmed</span>&nbsp&nbspsalary &nbsp&nbsp <b style="font-size: 40px">{{ t.confirmsalary }}</b> </h4>
+
+
+
+</li>
+</div>
+
+<div id="row">
+<li id="smallbox" class="col shadow p-3 mb-5 bg-white" style="margin-right: 6%">
+  <h4 style="color:#475151">
+    <span>Increment</span>
+  </h4>
+  <div><br>
+   <h3 style="color: #475151;font-size: 35px">{{ t.increment }}</h3>
+   </div>
+  </li>
+<li id="smallbox" style="margin-right: 4%" class="col shadow p-3 mb-5 bg-white">
+  <h4 style="color:#58B7AA">
+    <span>Incentive</span></h4>
+    <div><br>
+      <h3 style="color: #475151;font-size: 35px">{{ t.intensive }}</h3>
+   <!--<img class="row-sm" src="Group 63.png" width="100" height="80" style="margin-left: 110px">-->
+   </div>
+</li>
+<li id="smallbox" style="margin-right: 4%" class="col shadow p-3 mb-5 bg-white">
+  <h4 style="color:#58B7AA">
+    <span>Deduction</span></h4><br>
+    <div><br>
+   <h3 style="color: #475151;font-size: 35px">{{ t.deduction }}</h3>
+   </div>
+</li>
+<a href="drPaymentsViewDetailButton"><button type="button" class="btn btn-default Search " style="margin-left: 20%">View Details</button></a></div>
+</div>
+
+</div>
+{% endfor %}
+</body>
+</html>

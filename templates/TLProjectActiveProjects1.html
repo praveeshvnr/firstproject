@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      body{
+  background-color: #F6F6F6;
+}#bigimage{
+    border-radius: 50%;
+}
+      #nav{
+    padding-top: 0.5%;
+    background-color: #FFFFFF;
+    display: flex;
+    margin-left: 24%;
+}
+
+#pro{
+  font-size: 220%;
+  color: #4C80A8;
+
+}
+.one{
+      color: white;
+
+}
+.two{
+  flex-grow: 1;
+    color: #4C80A8;
+}
+.three{
+  flex-grow: 50;
+    color: #4C80A8;
+}
+.sidenav {
+
+   height: 100%;
+  width: 24%;
+  position: fixed;
+  z-index: -1;
+  top: 0%;
+  left: 0%;
+  overflow-x: hidden;
+  padding-top: 2%;
+    background-image: url({% static 'bluebar.png' %});
+}
+.sidenav h3{
+  margin-top: 0%;
+  margin-left:0px;
+  font-size: 22px;
+  color: white;
+}
+.sidenav a {
+
+  padding: 2% 3% 2% 5%;
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  display: block;
+  background-color: #a5becf;
+
+
+
+}
+.sidenav a:hover {
+  color: #687980;
+  background-color: #F5CEBE;
+
+}
+#sidebox1{
+  margin-top: 1.5%;
+  margin-left: 24%;
+  border-radius: 17px;
+
+}
+
+#firstbox1{
+  margin-top: 3%;
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 60%;
+  margin-right: 13%;
+  border-radius: 20px;
+}
+#firstbox1 div{
+  float: left;
+}
+#firstbox1 label{
+  margin-left: 20px;
+  padding-top: 14px;
+  color:  #045491;
+  font-weight: 400;
+  font-size: 21px;
+  margin-top: 8px;
+  width: 200px;
+}
+#firstbox1 a{
+  margin-left: 20px;
+  padding-top: 12px;
+
+  font-weight: 400;
+  font-size: 21px;
+  margin-top: 8px;
+  width: 200px;
+}
+#firstbox1 h3{
+  margin-top: 0%;
+  margin-left: 2%;
+  font-size: 24px;
+  color: #045491;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+td,th
+{
+  font-size: 17px;
+  width: 220px;
+
+
+}
+.bor{
+  margin-left: 1%;
+  border-style: groove;
+  border-width: 1px;
+  width: 800px;
+  height: auto;
+  margin-top: 3%;
+}
+#myModal,#myModal1{
+  margin-left: 500px;
+  margin-top: 90px;
+  height: auto;
+  width: 1000px;
+
+}
+button{
+  margin-top: 4%;
+  float: right;
+  margin-left: 6%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 90px;
+  background-color: #6C63FF;
+  color: white;
+
+}
+.Search{
+  margin-top: 2%;
+
+  margin-bottom: 1%;
+
+
+  width: 120px;
+  background-color: #6C63FF;
+  color: white;
+
+}
+h5{
+  font-size: 16px;
+}
+.progress{
+  width: 200px;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" id="nav">
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+         <a style="color: #4C80A8;font-size: 18px;font-style: italic;" class="nav-link" href="DEProfileJobDetails"><b>Profile</b></a>
+      </li><br><br>
+     <li class="nav-item active">
+        <a style="color: #4C80A8;font-size: 18px;font-style: italic;" class="nav-link" href="DEProjectActiveProjects"><b>Project</b></a>
+
+      </li><br>
+      <li class="nav-item">
+        <a  style="color: #4C80A8;font-size: 18px;font-style: italic;" class="nav-link" href="logout"><b>Logout</b></a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<div class="continer">
+    <div class="sidenav">
+      <div class="row-sm">
+      <h3 style="font-size: 26px" class="#"><b><center>Manage PRO</center></b></h3>
+      </div>
+     {% for p in per %}
+      <div class="row-sm">
+    <img class="row-sm" src="{{p.photo.url}}" width="160" height="160" id="bigimage" style="margin-left: 26%;margin-top: 5%"></div>
+    <div class="row-sm"><h3 style="margin-top: 1%"><center>{{ p.fullname}}</center> </h3></div>
+     <div class="row-sm"><h3><center>{{ p.designation.designation }}</center></h3></div>
+        {% endfor %}
+  <a href="DEProjectActiveProjects" class="col" id="sidebox1" style="margin-top: 14%"> Active Projects</a>
+  <a href="DEProjectCompletedProjects" class="col" id="sidebox1">Completed projects</a>
+    </div>
+</div>
+<div class="col">  <h3 style="margin-left: 410px;margin-top: 3%;color:#2B8ACA;height: 15px">Active Project </h3></div>
+<div id="firstbox1" class="shadow p-3 bg-white">
+<div class="container">
+
+ <table class="table table-bordered" style="border-color: #1CB1BD">
+    <thead>
+      <tr style="background-color:  #a5becf">
+        <th style="column-width: 100px">Task name</th>
+        <th>Assigned</th>
+        <th>Status</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in tas1 %}
+      <tr>
+        <td>{{ i.taskname}}</td>
+        <td style="column-width: 300px"><img  src="{{i.assignedto.photo.url}}" id="bigimage" width="50" height="50" >{{ i.assignedto.fullname }} </td>
+        <td><a href="" data-toggle="modal" data-target="#myModal{{ i.id }}">See status</a></td>
+
+      <td><div class="progress" data-toggle="modal" data-target="#myModal1{{ i.id }}" style="height:20px;background-color: #C2F0EB">
+    <div class="progress-bar" style="width:{{ i.progress }}%;height:20px">{{ i.progress }}%</div>
+  </div><br></td>
+</tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+{% for key, value in rep.items %}
+ <div class="modal fade" id="myModal{{ key }}">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col">  <h3 style="font-size: 24px;color: #53d4af">Sub task</h3>
+    </div>
+
+         <button type="button" class="close" data-dismiss="modal" style="height: 2px;margin-right: -11px">&times;</button>
+        </div>
+        <div class="modal-body"style=" height: 80vh;
+    overflow-y: auto;" >
+
+   <!-- <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>-->
+   <div class="row">
+       {% for i in tas1 %}
+     <div class="col"><h5 style="color:#2B8ACA;width: 110px;margin-left: 40px">Start date</h5></div>
+    <div class="col"><h5>{{ i.startdate }}</h5></div>
+    <div class="col"><h5 style="color: #2B8ACA;width: 110px;margin-left: 450px">End date</h5></div>
+   <div class="col"> <h5 style="width: 110px">{{ i.enddate }}</h5></div>
+   {% endfor %}
+  </div>
+
+          <table class="table table-bordered" style="border-color: #1CB1BD">
+    <thead>
+      <tr style="background-color:  #a5becf">
+        <th>Date</th>
+        <th style="width: 310px">Work done</th>
+        <th>Files</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for x in value %}
+    <tr>
+        <td>{{ x.date}}</td>
+        <td style="width: 310px">{{ x.workdone}}</td>
+
+    <td>  {% if x.attach1 %}
+        <a href="{{x.attach1.url}}" style=" margin-left: 5%; font-size: 17px;margin-top: 9px"> Download File</a>
+{% endif %}
+    {% if x.attach2 %}
+      <a href="{{x.attach2.url}}" style=" margin-left: 5%; font-size: 17px;margin-top: 9px"> Download File</a>
+    {% endif %}
+        </td>
+
+      </tr>
+{% endfor %}
+    <form action="DEProjectActiveProjects1add" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+        {% for i in tas1 %}
+             <input type="hidden" name="taskid" value="{{ i.id }}">
+        {% endfor %}
+      <tr>
+
+        <td><input type="date" name="wdate"></td>
+        <td style="width: 300px"><textarea  rows="5" cols="30" name="work"></textarea></td>
+        <td style="width: 100px"><input type="file" id="myfile" name="attach1"><br><br>
+          <input type="file" id="myfile" name="attach2"><br><br></td>
+        <td><button type="submit">Save</button> </td>
+      </tr>
+
+    </form>
+     <!-- <tr>
+        <td>12/02/2019</td>
+        <td style="width: 310px">Jobkit front end started</td>
+        <td><button type="button">Upload</button> </td>
+        <td><button type="button">Save</button> </td>
+      </tr>-->
+            </tbody>
+      </table>
+        </div>
+
+        <!-- Modal footer
+       <button type="button" class="btn Search" style="margin-left: 640px">Ok</button>-->
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
+{% for i in tas1 %}
+   <div class="modal fade" id="myModal1{{ i.id }}">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div class="col">  <h3 style="font-size: 24px;color: #53d4af;width: 400px">Sub task</h3>
+    </div>
+
+         <button type="button" class="close" data-dismiss="modal" style="height: 2px;margin-right: 5px;width: 300px">&times;</button>
+        </div>
+        <div class="modal-body">
+
+    <!--<div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div><br>-->
+ <form action="DEProjectactiveprojectstatus" method="post">
+        {% csrf_token %}
+            <input type="hidden"  name="team_id" value={{ i.id }}>
+   <div class="row">
+     <div class="col"><h5 style="width: 100px;margin-left: 20px">Start date</h5></div>
+    <div class="col"><h5 style="width: 100px">{{ i.startdate}}</h5></div>
+    <div class="col"><h5 style="width: 100px;margin-left: 143px">End date</h5></div>
+   <div class="col"> <h5 style="width: 100px">{{ i.enddate}}</h5></div>
+  </div><br><br><br>
+  <div class="row">
+     <div class="col"><h5 style=";width: 90px;margin-left: 20px">Assigned to</h5></div>
+    <div class="col"><h5 style="width: 180px;margin-left: 0px">{{ i.assignedto.fullname }} </h5></div>
+    <div class="col"><h5 style="width: 70px;margin-left: 70px">Progress</h5></div>
+   <div class="col">
+     <div class="progress" style="height:20px;background-color: #C2F0EB">
+    <div class="progress-bar" style="width:{{ i.progress }}%;height:20px">{{ i.progress }}%</div>
+
+  </div>
+</div>
+  <br>
+  </div><br><br>
+  <div class="row">
+     <div class="col"> <h5 style="margin-left: 20px;width: 90px"> Status</h5></div>
+  <div class="col">
+         <select id="statusid" name="status" class="drop" style="margin-left: -20px;width: 120px" required>
+              <option value="" selected="selected">Not selected</option>
+                <option value="Inprogress" class="1">In progress</option>
+                <option value="pending" class="2">pending</option>
+              <option value="completed" class="3">completed</option>
+      </select></div>
+      <div class="col"><h5 style=";width: 140px;margin-left: 150px">Current status</h5></div>
+    <div class="col"><h5 style="width: 100px;margin-left: 0px">{{ i.status }} </h5></div>
+               </div><br><br>
+     <div class="row">
+     <div class="col"><h5 style=";width: 140px;margin-left: 15px;margin-top: 8px">Progress:</h5></div>
+    <div class="col"><input type="text" name="progre" style="width: 120px;margin-left: -64px;margin-top: 8px"></div>
+     </div>
+     <button type="submit" class="btn Search" style="margin-right: 8%">start work</button>
+ </form>
+  </div>
+
+   <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>
+   <div class="col">  <h4 style="margin-left: 10px;color: #53d4af;font-size: 18px">Project description</h4></div>
+    <div class="col"> <a style="height: 40px;margin-top: 10px;width: 300px;margin-left: 10px;font-size: 16px">{{ i.taskdescri }}</a>
+  </div><br><br>
+
+    <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>
+   <div class="col">  <h4 style="margin-left: 10px;color: #53d4af;font-size: 18px">Attached files</h4></div>
+  <div class="row">
+      {% if i.attach1 %}
+   <div class="col"> <a href="{{i.attach1.url}}" style=" margin-left: 12%; font-size: 17px;margin-top: 9px;width: 300px"> Download File</a> </div>
+      {% endif %}
+   {% if i.attach3 %}
+      <div class="col"> <a href="{{i.attach3.url}}" style=" margin-left: 12%; font-size: 17px;margin-top: 9px"> Download File</a> </div>
+      {% endif %}
+   {% if i.attach2 %}
+       <div class="col"> <a href="{{i.attach2.url}}" style=" margin-left: 12%; font-size: 17px;margin-top: 9px"> Download File</a> </div>
+      {% endif %}
+   {% if i.attach4 %}
+      <div class="col"> <a href="{{i.attach4.url}}" style=" margin-left: 12%; font-size: 17px;margin-top: 9px"> Download File</a> </div>
+{% endif %}
+
+   </div>
+    <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 3%">
+   </div>
+
+        <!-- Modal footer -->
+
+
+        </div>
+      </div>
+    </div>
+{% endfor %}c
+  </div>
+</body>
+
+</html>

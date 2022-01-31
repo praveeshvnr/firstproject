@@ -1,0 +1,55 @@
+
+<script>
+  var config = {
+    type: 'pie',
+    data: {
+      datasets: [{
+        data: {{ data|safe }},
+        backgroundColor: [
+          '#009c3b', '#f46c22', '#C0C0C0', '#e21014', '#D3D3D3'
+        ],
+        label: 'Population'
+
+      }],
+      labels: {{ labels|safe }}
+    },
+    options: {
+      responsive: true
+    }
+  };
+
+  window.onload = function() {
+    var ctx = document.getElementById('pie-chart').getContext('2d');
+    window.myPie = new Chart(ctx, config);
+  };
+</script>
+<div id="container" style="width: 75%;">
+  <canvas id="pie-chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+
+  var config = {
+    type: 'bar',
+    data: {
+      datasets: [{
+        data: {{ data|safe }},
+        backgroundColor: [
+          '#58B7AA', '#f46c22', '#C0C0C0', '#e21014', '#D3D3D3'
+        ],
+        label: 'Population'
+      }],
+      labels: {{ labels|safe }}
+    },
+    options: {
+      responsive: true
+    }
+  };
+
+  window.onload = function() {
+    var ctx = document.getElementById('pie-chart').getContext('2d');
+    window.myPie = new Chart(ctx, config);
+  };
+
+</script>

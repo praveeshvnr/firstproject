@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+
+
+#box2{
+  padding: 1% 5% 1% 5%;
+  background-color: white;
+  border-radius: 13px;
+  float: left;
+  margin-top: 1%;
+  margin-left: 6%;
+  margin-right: 9%;
+    width: 81%;
+
+}
+#box2 label,#box2 img{
+  float: left;
+  margin-right: 25px;
+  font-size: 21px;
+}
+label{
+  font-weight: 400;
+  margin-top: 4px;
+  
+  
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  margin-left:25px;
+  font-size: 18px;
+
+}
+#box3{
+  padding: 1% 5% 1% 2%;
+  background-color: white;
+  border-radius: 10px;
+  float: left;
+  margin-top: 15%;
+  width: 60%;
+  margin-left: 30%;
+
+}
+
+
+#box2 h5{
+   float: left;
+
+
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+.Search{
+  margin-top: 1.2%;
+  float: right;
+  margin-right: -6%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="MANmanagerprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="MANtask" class="col" id="sidebox1">TASKS</a>
+  <a href="MANprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="MANperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="MANemployees" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="MANtrainees" class="col" id="sidebox1">TRAINEES </a>
+  <a href="MANreportedissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="MANmarketing" class="col" id="sidebox1">MARKETING</a>
+  <a href="MANPayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="MANmanageHR" class="col" id="sidebox1">MANAGE HR</a>
+  <a href="MANattendance" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">MY TASKS</label>
+<div id="hiddendiv">
+    {% for ta in tasks1 %}
+
+ <div id="box2" class="shadow bg-white">
+   <div class="row">
+    <div class="col-sm-1">
+    <label style="color: #4ec3c7">Task</label></div>
+    <div class="col-sm-11">
+      <h5 style="color: #3C4A4A"> {{ ta.desc}} </h5></div>
+    </div>
+   <div class="row">
+    <div class="col-sm-1">
+    <label style="color: #4ec3c7">Date</label></div>
+     <div class="col-sm-11">
+    <h5 style="color: #3C4A4A">{{ ta.date }}</h5> </div>
+   </div>
+  <div class="row">
+       {% if ta.attach1 %}
+    <div class="col-sm-1">
+    <label style="color: #4ec3c7;width: 200px;margin-top: -2px">Attach File</label></div>
+
+    <div class="col-sm-11">
+      <a href="{{ta.attach1.url}}" style=" margin-left: 12%; font-size: 17px;margin-top: 9px"> View File
+</a></div>
+      {% endif %}
+    </div>
+  </div></div>
+
+          <div id="box3" class="shadow bg-white">
+    <form action="MANmydupdate" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{form.as_p}}
+              <!-- <textarea  rows="2" cols="80" name="status" required></textarea>
+            <input id="csv" name="myfile" type="file" />-->
+        <input type="hidden" id="leavId" name="team_id" value={{ta.id}}>
+    <button type="submit" class="btn btn-lg btn-success">Upload</button>
+    </form>
+      {% endfor %}
+</div>
+</div>
+</body>
+</html>

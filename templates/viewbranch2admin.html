@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#box2{
+  padding: 0.75% 5% 0.75% 5%;
+  background-color: white;
+  border-radius: 20px;
+  float: left;
+  margin-top: 1%;
+  margin-left: 10%;
+  margin-right: 15%;
+}
+#box2 h4,#box2 img{
+  float: left;
+  margin-right: 30px;
+}
+h4{
+  font-weight: 400;
+  margin-top: 10px;
+  color: black;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+#box2 img{
+  margin-top: 15px;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static '/icon.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="adminregistration" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">LEAVE REQUESTS</label>
+
+<div id="hiddendiv">
+{% for br in names %}
+    {% if forloop.first %} {% endif %}
+  <a href="adminviewbranch3.html"><div id="box2" class="shadow bg-white">
+    <img src="{% static '/circle.png' %}" width="25" height="25">
+    <h4 style="color: #58B7AA">Infox Technologies</h4>
+    <h4>{{ br.area}}</h4>
+    <h4>{{ br.city}}</h4>
+    <h4>{{ br.state}}</h4>
+  </div></a>
+{% endfor %}
+</div>
+</div>
+</div>
+</body>
+</html>

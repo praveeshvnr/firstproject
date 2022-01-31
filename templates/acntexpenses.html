@@ -1,0 +1,164 @@
+{% extends 'acntpayslipsidebar.html' %}
+{%load static%}
+
+{%block content%}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: left;
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+table {
+  border: 2px;
+  color: #000000;
+  opacity: 1;
+  padding: 10px;
+}
+th{
+  font-weight: 300;
+  color: #101011;
+  
+}
+td:hover{
+  background-color: rgba(29, 212, 29, 0.219);
+}
+h5{
+  font-weight:500;
+  color:#565AA8;
+  margin-left: 0.8%;
+}
+.h-divider{
+ margin-top:6px;
+ margin-bottom:5px;
+ height:1px;
+ width:100%;
+ border-top:1px solid gray;
+}
+.newt{
+  border-radius: 20px;
+  margin-left:85%;
+  margin-top: 1%;
+}
+th,td{
+  text-align: center;
+  margin-top: 1%;
+}
+thead{
+  background-color: #CEFFF8;
+}
+@media (max-width: 61.938em){
+  #firstbox{
+    background-color: white;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px;
+    width: 100%; 
+    /* margin-left: 50%; */
+    overflow:auto;
+  }
+  .h-divider{
+    margin-top:6px;
+    margin-bottom:5px;
+    height:1px;
+    width:100%;
+    border-top:1px solid gray;
+   }
+   .newt{
+     border-radius: 20px;
+     margin-left:70%;
+     margin-top: 1%;
+   }
+}
+  </style>
+      </head>
+<body>
+
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        {% endfor %}
+</div>
+
+
+  <!-- <label id="myprofile" style="margin-left: -250px;margin-top: -22px;">EXPENSES</label> -->
+  <div class="container">
+    <div class="form-group">
+      
+      <div id="firstbox" class="shadow p-3 bg-white"> 
+  <h5>EXPENSES</h5>
+  <div class="h-divider"></div>
+  <a href="acntnewt"><button class="btn btn-primary newt" type="button">New transaction</button></a><br><br>
+      
+    <table class="table table-bordered table-responsive">
+    <thead class="thead">
+      <tr>
+        <th>DATE</th>
+        <th>PAYEE</th>
+        <th>CATEGORY</th>
+        <th>TOTAL BEFORE TAX</th>
+        <th>TAX</th>
+        <th>TOTAL</th>
+        <th>ACTION</th>
+      </tr>
+    <tbody>
+   {% for ac in names %}
+   {% if forloop.first %} {% endif %}
+      <tr>
+        <td>{{ ac.paydate}}</td>
+        <td>{{ ac.payee }}</td>
+        <td>{{ ac.category }}</td>
+        <td id="A">{{ ac.amount }}</td>
+        <td id="B">{{ ac.tax }}</td>
+  
+        <td id="c">{{ ac.total }}</td>
+        <td><a href="acntexpviewedit?empid={{ ac.id }}">View/edit</a></td>
+      </tr>
+    </tbody>
+      {% endfor %}
+    <tr>
+        <td colspan="5"><b>Total</b></td>
+        <td id="totalsalary" colspan="2"></td>
+    </tr>
+  </table>
+  </div>
+        
+</div>
+</div>
+
+  <script>
+    $(document).ready(function () {
+        var empsalary;
+        var totalsalary =0;
+       
+        $('td:nth-child(6)').each(function () {
+            empsalary = $(this).html();
+            console.log(typeof(empsalary));
+            a=parseInt(empsalary)
+            totalsalary += a;
+            console.log(a);
+            console.log(totalsalary);
+           
+            $('#totalsalary').text(totalsalary);
+            
+        });
+    });
+
+
+            
+  </script>
+
+</body>
+
+{%endblock%}

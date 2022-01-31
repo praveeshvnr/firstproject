@@ -1,0 +1,113 @@
+{% extends 'sidebarnew.html'%}
+{%load static%}
+{%block content%}
+<style>
+  #firstbox1{
+  background-color: white;
+  height: 275px;
+  
+  width: 79%;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+#container{
+  width: 50%; 
+  margin-left: 15%;
+}
+@media (max-width: 61.938em){
+  #container{
+    width: 190%; 
+    margin-left: 5%;
+    
+  }
+  #firstbox1{
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  /* float: left; */
+  width: 90%;
+  /* margin-left: 5%; */
+  margin-top: 3%;
+  overflow: auto;
+  }
+}
+  </style>
+      <!-- </head>
+<body>
+  
+ <div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four"><img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div> -->
+<!-- <div class="sidenav">
+  <a href="hr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+  <a href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="hrperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+  <a href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+  <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div> --> 
+<div><label id="myprofile">PERFORMANCE</label>
+        <div id="firstbox1">
+    <script>
+    var config = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#e21014', '#f46c22', '#009c3b', '#FFD700', '#00EE00','#FF0000'
+          ],
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+  </script>
+  <div id="container">
+    <canvas id="pie-chart"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+    var config = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            '#e21014', '#f46c22', '#009c3b', '#FFD700', '#00EE00','#FF0000'
+          ],
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+  </script>
+
+</div>
+</div>
+{%endblock%}
+
+

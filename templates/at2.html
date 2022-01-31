@@ -1,0 +1,38 @@
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+<style>
+#but{
+  background-color: white;
+  float: left;
+  width: 500px;
+    height: 2cm;
+  padding: 0% 0% 0% 10%;
+  border-radius: 10px;
+  margin-top: 10%;
+    margin-left: 40%;
+}
+#buttons{
+  float: left;
+  margin: 0% 0% 0% 10%;
+}
+#allbut{
+  width: 1000px;
+  float: right;
+  margin: 0% 12% 0% 5%;
+}
+</style>
+{% for regdetails in Desig %}
+   {% if forloop.first %} {% endif %}
+    <div id="allbut">
+        <div id="buttons">
+          <a href="admintraineebranch2?empid={{ regdetails.name }}"><div id="but" class="shadow p-3 bg-white">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static '/circle.png' %}" height="40" width="40">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size: 20px;color: black">{{ regdetails.name }}</label><br>
+            <center><label style="color: black;">{{ regdetails.designation }}</label></center>
+          </div></a>
+        </div>
+
+
+    </div>
+
+{% endfor %}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>salaryslip1</title>
+<style>
+
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 20px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 200px;
+}
+.Search{
+  margin-top: 3%;
+  float: right;
+  margin-right: 13%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 110px;
+}
+thead{
+  color: #58B7AA;
+}
+table{
+  float: left;
+  margin-left: 20%;
+  margin-top: 10%;
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+
+</div>
+
+<div><label id="myprofile">PAYMENTS</label>
+<div id="firstbox" class="shadow p-3 bg-white">    
+    <div class="row">
+    <label style="width: 355px;font-size: 21px;color: #475151">Select month to see the salary slip</label>
+    <input type="date" name="birthday" style="width: 400px;height: 40px;margin-top: 30px">
+    </div>
+        <a href="Tsalaryslip2"><button type="button" class="btn btn-primary Search" >Search</button></a>
+  
+  
+</div>
+</div>
+
+</body>
+</html>

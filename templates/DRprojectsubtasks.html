@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+
+<script type="text/javascript">
+    function setselected(id) {
+        $('input[name="selected"]').val(id);
+    }
+</script>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: left;
+  width: 70%;
+  margin-left: 26%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 40px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 18px;
+  width: 170px;
+}
+td,th
+{
+  font-size: 17px;
+  width: 220px;
+ }
+.progress{
+  width: 200px;
+}
+h5{
+  font-size: 16px;
+}
+button{
+  margin-top: 4%;
+  float: right;
+  margin-left: 6%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 90px;
+  background-color: #6C63FF;
+  color: white;
+}
+.Search{
+  margin-top: 2%;
+  margin-bottom: 1%;
+  width: 120px;
+  background-color: #6C63FF;
+  color: white;
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span><a href="logout" style="padding-right: 1%;padding-top: 1%;color: white">LOGOUT</a>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="dr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="drtopics" class="col" id="sidebox1">TOPICS</a>
+  <a href="drweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+  <a href="drprojects" class="col" id="sidebox1">PROJECTS</a>
+  <a href="drattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="drreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="drpayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="drapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PROJECTS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+
+<div class="container">
+
+ <table class="table table-bordered" style="border-color: #1CB1BD">
+    <thead>
+      <tr style="background-color:  #a5becf">
+        <th style="column-width: 100px">Task name</th>
+        <th>Assigned</th>
+        <th>Status</th>
+            <th>Tester Status</th>
+           <th style="width: 230px">Extension</th>
+        <th>Project Details</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in tas1 %}
+      <tr>
+        <td>{{ i.subtaskname}}</td>
+        <td style="column-width: 300px">{{ i.assignedto.name }} </td>
+        <td><a href="" data-toggle="modal" data-target="#myModal{{ i.id }}" onclick="setselected({{ i.id }})">See status</a></td>
+          <td><a href="" data-toggle="modal" data-target="#myModal2{{ i.id }}">Testerstatus</a></td>
+          <td style="width: 220px"><a  style="width: 230px;font-size: 18px"href="" data-toggle="modal" data-target="#myModal3{{ i.id }}">Extension status</a></td>
+               <td><div class="progress" data-toggle="modal" data-target="#myModal1{{ i.id }}" style="height:20px;background-color: #C2F0EB">
+    <div class="progress-bar" style="width:{{ i.progress }}%;height:20px">{{ i.progress }}%</div>
+  </div><br></td>
+</tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+<!--========================mymodal3========================-->
+ {% for key, value in extndmap.items %}
+    <div class="modal fade" id="myModal3{{ key }}" style="height: 500px;margin-left: 30px">
+    <div class="modal-dialog modal-lg" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col">  <h3 style="font-size: 24px;color: #53d4af">Extension Request</h3>
+    </div>
+
+         <button type="button" class="close" data-dismiss="modal" style="height: 2px;margin-right: -11px; ">&times;</button>
+        </div>
+        <div class="modal-body" style=" height: 80vh;
+    overflow-y: auto;">
+<form method="POST" action="DRprojectsubtaskextensionrqst">
+ {% csrf_token %}
+       {% for dt in value %}
+            <input type="hidden" id="leavId" name="team_id" value={{ dt.id }}><br>
+   <div class="row">
+     <div class="col"><h5 style=";width: 140px;margin-left: 15px;margin-top: 8px">Requested Days</h5></div>
+    <div class="col"><input type="text" name="days" style="width: 120px;margin-left: 0px;margin-top: 8px"></div>
+     </div><br><br>
+           <br>
+    <div class="row">
+     <div class="col"><h5 style=";width: 140px;margin-left: 15px;margin-top: 8px">Reason</h5></div>
+    <div class="col"><textarea  rows="5" cols="50" name="reason" style="margin-left: 0px;margin-top: 8px"></textarea> </div>
+     </div><br>
+           <br>
+
+            <div class="row">
+            <div class="col"><h5 style=";width: 140px;margin-left: 15px;margin-top: 8px">last requested days</h5></div>
+    <div class="col"><h5 style="width: 120px;margin-left: 0px;margin-top: 8px">{{ dt.reqdays }}</h5> </div>
+     <div class="col"><h5 style=";width: 140px;margin-left: 15px;margin-top: 8px">Last Status</h5></div>
+    <div class="col"><h5 style="width: 120px;margin-left: 0px;margin-top: 8px">{{ dt.status }}</h5> </div>
+     </div><br>
+           <br>
+
+
+            <button type="submit" class="btn Search" style="margin-right: 8%">Submit</button>
+
+{% endfor %}
+</form>
+        </div>
+
+        <!-- Modal footer
+       <button type="button" class="btn Search" style="margin-left: 640px">Ok</button>-->
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+<!--================================myModal================-->
+
+
+{% for key, value in rep.items %}
+
+ <div class="modal fade" id="myModal{{ key }}">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col">  <h3 style="font-size: 24px;color: #53d4af">Sub task</h3>
+    </div>
+
+         <button type="button" class="close" data-dismiss="modal" style="height: 2px;margin-right: -11px">&times;</button>
+        </div>
+        <div class="modal-body"style=" height: 80vh;
+    overflow-y: auto;" >
+
+   <!-- <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>-->
+
+
+          <table class="table table-bordered" style="border-color: #1CB1BD">
+    <thead>
+      <tr style="background-color:  #a5becf">
+        <th>Date</th>
+        <th style="width: 310px">Work done</th>
+
+        <th>Files</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for x in value %}
+    <tr>
+        <td>{{ x.date}}</td>
+        <td style="width: 310px">{{ x.workdone}}</td>
+
+
+    <td>  {% for ss in x.json_attachfile %}
+            <a href="{{ss}}" style="font-size: 15px">Download</a>
+            {% endfor %}
+        </td>
+      </tr>
+{% endfor %}
+    <form action="DRprojectsubtasksAddReport" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+        <input type="hidden" name="selected" id="selected" value="">
+        {% for i in tas1 %}
+             <input type="hidden" name="subtaskid" value="{{ i.id }}">
+             <input type="hidden" name="assignedby" value="{{ i.assignedto_id }}">
+            <input type="hidden" name="assignedto" value="{{ i.assignedby_id }}">
+            <input type="hidden" name="projectid" value="{{ i.project.id }}">
+            <input type="hidden" name="taskid" value="{{ i.task.id }}">
+            <input type="hidden" name="testerid" value="{{ i.testerid.id }}">
+             <input type="hidden" name="duedate" value="{{ i.duedate }}">
+
+        {% endfor %}
+      <tr>
+          
+        <!--<td><input type="date" name="wdate"></td>-->
+        
+        <td><h5 name="wdate">{% now 'd-M-Y' %}</h5></td>
+        
+        <td style="width: 300px"><textarea  rows="5" cols="33" name="work"></textarea></td>
+        <td style="width: 100px"><input style="padding-left: 0px;margin-top: 0px" required name="taskattachfile" type="file" multiple accept="file/*" class="form-control-file">
+<br><br></td>
+        <td><button type="submit">Save</button> </td>
+      </tr>
+    </form>
+     <!-- <tr>
+        <td>12/02/2019</td>
+        <td style="width: 310px">Jobkit front end started</td>
+        <td><button type="button">Upload</button> </td>
+        <td><button type="button">Save</button> </td>
+      </tr>-->
+            </tbody>
+      </table>
+        </div>
+
+        <!-- Modal footer
+       <button type="button" class="btn Search" style="margin-left: 640px">Ok</button>-->
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+<!--============================mymodal2====================-->
+ {% for key, value in test.items %}
+    <div class="modal fade" id="myModal2{{ key }}">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col">  <h3 style="font-size: 24px;color: #53d4af">Tester Report</h3>
+    </div>
+
+         <button type="button" class="close" data-dismiss="modal" style="height: 2px;margin-right: -11px; ">&times;</button>
+        </div>
+        <div class="modal-body" style=" height: 80vh;
+    overflow-y: auto;">
+
+    <!--<div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>-->
+
+
+
+          <table class="table table-bordered" style="border-color: #1CB1BD">
+
+    <thead>
+      <tr style="background-color:  #a5becf">
+        <th style="width: 160px">Date</th>
+        <th style="width: 160px">Task</th>
+          <th style="width: 280px">Description</th>
+          <th style="width: 150px">Status</th>
+            <th style="width: 100px">Delay</th>
+          <th style="width: 250px">Files</th>
+           <th style="width: 160px">TestBy</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for f in value %}
+      <tr>
+        <td style="width: 160px">{{ f.date }}</td>
+        <td style="width: 160px">{{ f.reportid.subtask.subtaskname }}</td>
+          <td style="width: 280px">{{ f.testerdescri}}</td>
+          <td style="width:150px">{{ f.testerstatus }}</td>
+          <td style="width: 100px">{{ f.date_diff }}</td>
+          <td style="width: 250px">
+       {% for ss in f.json_attachfile %}
+            <a href="{{ss}}" style="font-size: 15px">Download</a>
+            {% endfor %}</td>
+      <td style="width: 160px">{{ f.testerid.name }}</td>
+      </tr>
+    {% endfor %}
+        </tbody>
+      </table>
+        </div>
+        <!-- Modal footer
+       <button type="button" class="btn Search" style="margin-left: 640px">Ok</button>-->
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
+<!--========================================================-->
+
+     {% for key, value in subtas1.items %}
+   <div class="modal fade" id="myModal1{{ key}}">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col">  <h3 style="font-size: 24px;color: #53d4af;width: 400px">Sub task</h3>
+    </div>
+
+         <button type="button" class="close" data-dismiss="modal" style="height: 2px;margin-right: 5px;width: 300px">&times;</button>
+        </div>
+        <div class="modal-body">
+
+    <!--<div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div><br>-->
+            {% for i in value %}
+ <form action="DRprojectsubtasksAddStatus" method="post">
+        {% csrf_token %}
+            <input type="hidden"  name="team_id" value={{ i.id }}>
+   <div class="row">
+     <div class="col"><h5 style="width: 100px;margin-left: 20px">Start date</h5></div>
+    <div class="col"><h5 style="width: 100px">{{ i.startdate}}</h5></div>
+    <div class="col"><h5 style="width: 100px;margin-left: 143px">End date</h5></div>
+   <div class="col"> <h5 style="width: 100px">{{ i.duedate}}</h5></div>
+  </div><br><br><br>
+  <div class="row">
+     <div class="col"><h5 style=";width: 90px;margin-left: 20px">Assigned to</h5></div>
+    <div class="col"><h5 style="width: 180px;margin-left: 0px">{{ i.assignedto.name }} </h5></div>
+    <div class="col"><h5 style="width: 70px;margin-left: 70px">Progress</h5></div>
+   <div class="col">
+     <div class="progress" style="height:20px;background-color: #C2F0EB">
+    <div class="progress-bar" style="width:{{ i.progress }}%;height:20px">{{ i.progress }}%</div>
+  </div>
+</div>
+  <br>
+  </div><br><br>
+  <div class="row">
+     <div class="col"> <h5 style="margin-left: 20px;width: 90px"> Status</h5></div>
+  <div class="col">
+         <select id="statusid" name="status" class="drop" style="margin-left: -20px;width: 120px" required>
+              <option value="" selected="selected">Not selected</option>
+                <option value="Inprogress" class="1">In progress</option>
+                <option value="pending" class="2">pending</option>
+              <option value="completed" class="3">completed</option>
+      </select></div>
+      <div class="col"><h5 style=";width: 140px;margin-left: 150px">Current status</h5></div>
+    <div class="col"><h5 style="width: 100px;margin-left: 0px">{{ i.prostatus }} </h5></div>
+               </div><br><br>
+     <div class="row">
+     <div class="col"><h5 style=";width: 140px;margin-left: 15px;margin-top: 8px">Progress:</h5></div>
+    <div class="col"><input type="text" name="progre" style="width: 120px;margin-left: -64px;margin-top: 8px"></div>
+     </div>
+     <button type="submit" class="btn Search" style="margin-right: 8%">start work</button>
+ </form>
+  </div>
+
+   <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>
+   <div class="col">  <h4 style="margin-left: 10px;color: #53d4af;font-size: 18px">Project description</h4></div>
+    <div class="col"> <a style="height: 40px;margin-top: 10px;width: 300px;margin-left: 10px;font-size: 16px">{{ i.subdescri }}</a>
+  </div><br><br>
+
+    <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 0%">
+   </div>
+   <div class="col">  <h4 style="margin-left: 10px;color: #53d4af;font-size: 18px">Attached files</h4></div>
+  <div class="row">
+       {% for ss in i.json_taskattachfile %}
+            <a href="{{ss}}" style="font-size: 17px;margin-left: 8%">Download</a>
+            {% endfor %}
+   </div>
+    <div class="col">
+      <hr style="height:0.5px;border-width:0;color:gray;background-color:gray;width: 100%;margin-left: 0%;margin-top: 3%">
+   </div>
+
+        <!-- Modal footer -->
+
+
+        </div>
+      </div>
+    </div>
+                {% endfor %}
+{% endfor %}
+  </div>
+</body>
+</html>

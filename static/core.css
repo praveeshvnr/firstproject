@@ -1,0 +1,74 @@
+#nav{
+  padding-top: 0.8%;
+  background-image: linear-gradient(to right,  #2F04D2 , #27ED5A);
+  display: flex;
+}
+body{
+  background-image: url("background.png");
+}
+#infox{
+  font-size: 220%;
+  margin-left: 4%;
+  color: white;
+}
+#core{
+  font-size: 130%;
+  color: white;
+  padding-top: 1.2%;
+}
+.sidenav {
+  height: 100%;
+  width: 21%;
+  position: fixed;
+  z-index: -1;
+  top: 0%;
+  left: 0%;
+  overflow-x: hidden;
+  padding-top: 11.5%;
+  background-image: linear-gradient(to bottom, #18D7B6 , #2828D5);
+}
+.sidenav a {
+  padding: 2% 3% 2% 5%;
+  text-decoration: none;
+  font-size: 140%;
+  color: white;
+  display: block;
+}
+.sidenav a:hover {
+  color: #00FFF8;
+}
+.one{
+  flex-grow: 1;
+}
+.two{
+  flex-grow: 1;
+}
+.three{
+  flex-grow: 50;
+}
+.four{
+  flex-grow: 50;
+}
+.topimg{
+  display: flex;
+  margin-left:75% ;
+  margin-top: 1%;
+}
+#sidebox1{
+  margin-top: 3px;
+  background-color:rgba(37,30,30,0.24);
+  height: 8.2%;
+}
+#img2{
+  margin-top: 2px;
+  margin-bottom: 18px;
+}
+#myprofile{
+  opacity: 0.36;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 21%;
+  padding: 2.2% 2% 1.5% 3%;
+  width: 79%;
+}

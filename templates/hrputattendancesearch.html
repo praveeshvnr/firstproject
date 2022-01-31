@@ -1,0 +1,36 @@
+<form method="post" action="empattend" enctype="multipart/form-data" >
+    {% csrf_token %}
+<div id="firstbox2" class="shadow bg-white">
+      <label style="margin-left: 15%;width: 180px">SELECT DATE</label>&nbsp
+      <input type="date" name="date" id="date" required>
+{% for regdetails in names %}
+   {% if forloop.first %} {% endif %}
+    <div id="box2" class="shadow bg-white">
+    <img src="{{ regdetails.employeeimage.url }}" width="40" height="38">
+    <h5 name="employee">{{ regdetails.name }}</h5>
+    <input type="hidden" name="employee" value={{ regdetails.name }}>
+    <input type="hidden" name="department" value={{ regdetails.department }}>
+    <input type="hidden" name="branch" value="{{ regdetails.branch }}">
+
+    <h5 name="designation">{{ regdetails.designation}}</h5>
+    <h5><input type="radio" name="status"  id="{{ regdetails.id }}"  value="Leave" > Leave</h5>
+    <h5><input type="radio" name="status" id="{{ regdetails.id }}"  value="Present">Present</h5>
+    <h5 style="width: 100px"> <input type="text" style="width: 100px" name="login">Login time</h5>
+    <h5 style="width: 120px"><input type="text" style="width: 100px" name="logout">Logout time</h5>
+
+    </div><br><br><br>
+{% endfor %}
+
+</div>
+   <button type="submit" class="btn btn-primary Search">Save</button>
+</form>
+<script>
+$('input:radio').each(function() {
+  if($(this).is(':checked')) {
+    // You have a checked radio button here...
+  }
+  else {
+    // Or an unchecked one here...
+  }
+});
+</script>

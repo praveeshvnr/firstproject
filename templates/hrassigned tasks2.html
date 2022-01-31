@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static%}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#box2{
+  padding: 5% 5% 3% 5%;
+  background-color: white;
+  border-radius: 14px;
+  float: left;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 9%;
+  width: 60%;
+}
+label{
+  font-weight: 400;
+  margin-top: 7px;
+  font-size: 16px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 18px;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+ .imgrec{
+   margin-left: 15%;
+  }
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="hr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+  <a href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="hrperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+  <a href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+  <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">ASSIGNED TASKS</label>
+<div id="hiddendiv">
+    {% for t in names %}
+    {% if forloop.first %}{% endif %}
+  <div id="box2" class="shadow bg-white">
+    <div class="row">
+    <div class="col-sm-1">
+    <label style="color: #189494;">TASK</label></div>
+     <div class="col-sm-11">
+    <h5 style="color: #616767;margin-left: 18%;">{{ t.task }}</h5> </div> </div> <br>
+   <div class="row">
+    <div class="col-sm-1">
+    <label style="color: #189494">DUE&nbsp;DATE</label></div>
+    <div class="col-sm-11">
+      <h5 style="color:#616767;margin-left: 18%;"> {{ t.duedate }}</h5></div><br><br>
+    </div>
+   <div class="row">
+    <div class="col-sm-1">
+    <label style="color: #189494">SCREENSHOTS</label></div>
+    <div class="col-sm-11">
+      <img src="{{ t.screenshot.url }}" width="140" height="80" class="imgrec" style="margin-left: 18%; margin-top: 6%;">
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-sm-2">
+      <label style="color: #189494">DESCRIPTION</label></div>
+    <h5 style="margin-left: -5%;color: #616767;margin-top: 8%;">{{ t.description }}</h5>
+</div>
+      {% endfor %}
+</div>
+</div>
+</div>
+</body>
+</html>

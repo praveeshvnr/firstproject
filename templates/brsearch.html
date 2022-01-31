@@ -1,0 +1,140 @@
+{% for regdetails in names %}
+   {% if forloop.first %} {% endif %}
+<div><label id="myprofile">EXPERIENCE CERTIFICATE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+       <div>
+           <label id="labl"><span>SL.NO</span>{{ regdetails.name }}</label>
+       </div>
+   <h5>{{regdetails.name}}</h5>
+   <h5>{{regdetails.area}}</h5>
+   <h5>{{ regdetails.area }}</h5>
+
+</div>
+
+</div>
+{% endfor %}
+<!--
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Hello, world!</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 80px;
+  padding-top: 14px;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 700px;
+}
+#firstbox span{
+  color:#58B7AA ;
+  width: 250px;
+  float: left;
+}
+button{
+  float: right;
+  margin-top: 100px;
+  margin-right: 10px;
+}
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="icon.png" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">EXPERIENCE CERTIFICATE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+  <div>
+    <label id="labl"><span>SL.NO</span>{{ names.slno }}</label>
+  </div>
+  <div>
+    <label id="labl"><span>NAME</span>ANANDHU</label>
+  </div>
+  <div>
+    <label id="labl"><span>EMAIL</span>anandhu@gmail.com</label>
+  </div>
+  <div>
+    <label id="labl"><span>PASSWORD</span>anandhu123</label>
+  </div>
+  <div>
+    <label id="labl"><span>QUALIFICATION</span>B-Tech</label>
+  </div>
+  <div>
+    <label id="labl"><span>DUARATION</span>4 months</label>
+  </div>
+  <div>
+    <label id="labl"><span>PLATFORM</span>Python</label>
+  </div>
+  <div>
+    <label id="labl"><span>STARTING DATE</span>20/01/2021</label>
+  </div>
+  <div>
+    <label id="labl"><span>ENDING DATE</span>20/05/2021</label>
+  </div>
+  <div>
+    <label id="labl"><span>REG ID</span>RTEFD</label>
+  </div>
+  <div>
+    <label id="labl"><span>PAYMENT</span>20</label>
+  </div>
+  <div>
+    <label id="labl"><span>HR</span>Basil</label>
+  </div>
+  <div>
+    <label id="labl"><span>PERFORMANCE</span>Good</label>
+  </div>
+  <div style="margin-right: 10px;"><div>
+    <a href="adminupdateexp.html"><button class="btn btn-primary">UPDATE</button></a>
+  </div>
+  <div>
+    <a href=""><button class="btn btn-primary">Download<br>certificate</button></a>
+  </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
+-->

@@ -1,0 +1,36 @@
+{##}
+{#{% extends 'base.html' %}#}
+{#{% block body %}#}
+{#   <h2 style="..."><b>LOGIN</b></h2>&nbsp;&nbsp;&nbsp;&nbsp;#}
+{##}
+{#<form class="form-inline" action="DEVhome" method="POST" input align="center">#}
+{#    {% csrf_token %}#}
+{#    <div class="form-group">#}
+{##}
+{#        <label for="uname">Username</label>#}
+{#        <input type="text" name="email" class="form-control" style="..." required="required"><br><br><br><br>#}
+{##}
+{#        <label for="password">Password</label>#}
+{#        <input type="password" name="password" class="form-control" style="..." required="required"><br><br>#}
+{##}
+{#        <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon-plus"></span> SUBMIT</button>#}
+{##}
+{#    </div>#}
+{#</form>#}
+{#<br/>#}
+{##}
+{##}
+{##}
+{#{% endblock %}#}
+
+
+<h1>Hello, world!</h1>
+<div class="container">
+<form action="index" method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+{{form.as_p}}
+
+<button type="submit" class="btn btn-lg btn-success">Upload</button>
+</form>
+</div>

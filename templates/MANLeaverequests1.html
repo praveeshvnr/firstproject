@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+ #firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 120px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+.col h5{
+  font-weight: 400;
+  margin-left: 4%;
+}
+.col span{
+  color: #58B7AA;
+  width:200px;
+  float: left;
+}
+#firstbox .col{
+  float: left;
+}
+.Search{
+  margin-top: 3%;
+  float: right;
+  margin-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+   <a href="MANmanagerprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="MANtask" class="col" id="sidebox1">TASKS</a>
+  <a href="MANprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="MANperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="MANemployees" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="MANtrainees" class="col" id="sidebox1">TRAINEES </a>
+  <a href="MANreportedissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="MANmarketing" class="col" id="sidebox1">MARKETING</a>
+  <a href="MANPayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="MANmanageHR" class="col" id="sidebox1">MANAGE HR</a>
+  <a href="MANattendance" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">LEAVE REQUESTS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+    {% for le in levs %}
+  <div class="col">
+    <h5><span>Employee name </span>{{ le.assignedBy }}</h5>
+  </div><br><br>
+  <div class="col">
+    <h5><span>Department </span>{{ le.department }}</h5>
+  </div><br><br>
+  <div class="col">
+    <h5 style="width: 400px"><span>Leavefrom </span>{{ le.leavefrom }}</h5>
+  </div><br><br>
+  <div class="col">
+    <h5><span>Leaveto </span>{{ le.leaveto }}</h5>
+  </div><br><br>
+  <div class="col">
+    <h5><span>Reason</span></h5>
+  </div><br><br>
+  <div class="col">
+    <h5>{{ le.reason }}</h5>
+  </div><br><br>
+  <div class="col">
+    <h5></h5>
+  </div><br><br>
+  <form method="POST" action="accptORreject">
+      {%csrf_token%}
+    <input type="hidden" id="leavId" name="team_id" value={{ le.id }}>
+    <input  type="submit" value="reject" name="status" class="btn btn-primary Search">
+    <input type="submit" value="accept" name="status" class="btn btn-primary Search">
+  </form>
+{% endfor %}
+  <!--  <button type="button" class="btn btn-primary Search">Reject</button></a>
+    <button type="button" class="btn btn-primary Search">Accept</button></a>-->
+</div>
+</div>
+</body>
+</html>

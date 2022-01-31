@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 80px;
+  padding-top: 14px;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+#firstbox span{
+  color:#58B7AA ;
+  float: left;
+}
+
+input{
+  width: 500px;
+  margin-top: 10px;
+  padding-top: 14px;
+}
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">UPDATE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+
+        <form action="updateregdetails" method="post">
+        {% csrf_token %}
+{% for inter in emp %}
+
+          <input type="hidden"  name="team_id" value={{ inter.id }}>
+
+
+  <div>
+    <label id="labl"><span>Employee ID</span></label>
+    <input type="text" name="employeeid" value="{{ inter.employeeid }}">
+  </div>
+  <div>
+    <label id="labl"><span>Name</span></label>
+    <input type="text" name="name" value="{{ inter.name }}">
+  </div>
+  <div>
+    <label id="labl"><span>Email</span></label>
+    <input type="text" name="email" value="{{ inter.email }}">
+  </div>
+  <div>
+    <label id="labl"><span>Mobile</span></label>
+    <input type="text" name="mobile" value="{{ inter.mobile }}">
+  </div>
+  <div>
+    <label id="labl"><span>Qualification</span></label>
+    <input type="text" name="qualification" value="{{ inter.qualification }}">
+  </div>
+  <div>
+    <label id="labl"><span>Platform</span></label>
+    <input type="text" name="platform" value="{{ inter.platform }}">
+  </div>
+  <div>
+    <label id="labl"><span>Duration</span></label>
+    <input type="text" name="duration" value="{{ inter.duration }}">
+  </div>
+  <div>
+    <label id="labl"><span>Department</span></label>
+      <select name="department" id="" style="width: 13.2cm;height: 1cm;">
+    <!--<input type="drop" name="department" value="">-->
+          <option>{{ inter.department }}</option>
+          <option>ty</option>
+      </select>
+  </div>
+  <!--<div>
+    <label id="labl"><span>Date of appointment</span></label>
+    <input type="date" name="dateofappoinment" value="{{ inter.dateofappoinment }}">
+  </div>-->
+  <div>
+    <label id="labl"><span>Date of relieving</span></label>
+    <input type="date" name="dateofrelieve" value="{{ inter.dateofrelieve }}" >
+  </div>
+  <div>
+    <label id="labl"><span>Reference id</span></label>
+    <input type="text" name="refid" value="{{ inter.refid }}">
+  </div>
+  <div>
+    <label id="labl"><span>Payment</span></label>
+    <input type="text" name="payment" value="{{ inter.payment }}">
+  </div>
+  <div>
+    <label id="labl"><span>Internship start date</span></label>
+    <input type="date" name="intenshipstart" value="{{ inter.intenshipstart }}">
+  </div>
+  <div>
+    <label id="labl"><span>Internship end date</span></label>
+    <input type="date" name="intenshipend" value="{{ inter.intenshipend }}">
+  </div>
+  <div>
+    <label id="labl"><span>Update condition</span></label>
+    <input type="text" name="updatecondition" value="{{ inter.updatecondition }}">
+  </div>
+  <div>
+    <label id="labl"><span>Add condition no</span></label>
+    <input type="text" name="addconditionno" value="{{ inter.addconditionno }}">
+  </div>
+  <div>
+    <label id="labl"><span>Add condition</span></label>
+    <input type="text" name="addcondition" value="{{ inter.addcondition }}">
+  </div>
+  <div>
+    <label id="labl"><span>Certificate and designation</span></label>
+    <input type="text" name="certfanddesig" value="{{ inter.certfanddesig }}">
+  </div>
+
+  
+   <div>
+    <label id="labl"><span>Branch</span></label>
+      <select name="branch" id="" style="width: 13.2cm;height: 1cm;">
+      <option>{{ inter.branch }}</option>
+      <option value=""></option>
+         {%  for college in br %}
+            <option value="{{ college.branch }}">{{ college.branch }}</option>
+         {% endfor %}
+
+      </select>
+  </div> 
+  
+  <div>
+    <label id="labl"><span>Designation</span></label>
+      <select name="designation" id="" style="width: 13.2cm;height: 1cm;">
+                <option>{{ inter.designation }}</option>
+                <option>MANAGER</option>
+          <option>Executive</option>
+          <option>account</option>
+          <option>TL</option>
+          <option>Python</option>
+          <option>ML</option>
+          <option>PHP</option>
+          <option>Android</option>
+            </select>
+  </div>
+  <div>
+    <label id="labl"><span>Trainer</span></label>
+      <select name="trainer" id="" style="width: 13.2cm;height: 1cm;">
+      <option>{{ inter.trainer }}</option>
+      <option value=""></option>
+         {%  for college in br2 %}
+            <option value="{{ college.name }}">{{ college.name }}</option>
+         {% endfor %}
+
+      </select>
+  </div>
+
+
+
+
+  <div>
+    <label id="labl"><span>Incentive</span></label>
+    <input type="text" name="intensive" value="{{ inter.intensive }}" id="E">
+  </div>
+  <div>
+    <label id="labl"><span>Increment</span></label>
+    <input type="text" name="increment" value="{{ inter.increment }}" id="F">
+  </div>
+
+  <div>
+
+    <label id="labl"><span>Confirmed salary</span></label>
+    <input type="text" name="confirmsalary" value="{{ inter.confirmsalary }}" id="confirmsalary">
+  </div>
+   <div class="">
+       <label id="labl"><span>TO CALCULATE DELAY</span></label>&nbsp
+      <br>
+       <label id="labl"><span>Select from date</span></label>&nbsp
+      <input type="date" name="fromdate" id="regfd" style="width: 490px">
+    </div>
+    <div class="">
+        <label id="labl"><span>Select to date</span></label>&nbsp
+      <input type="date" name="todate" id="regtd" style="width: 490px">
+    </div>
+    <button id="btnSearch" type="button" class="btn btn-primary Search" style="margin-right: 50%;margin-left: 72%;margin-top: 2%" >Search</button>
+<div id="hiddendiv">
+</div>
+
+
+      <div>
+    <label id="labl"><span>Delay</span></label>
+    <input type="text" name="delay" id="delay">
+  </div>
+      <div>
+    <label id="labl"><span>Deduction</span></label>
+    <input type="text"  value="{{ inter.deduction }}" id="C" name="deduction">
+  </div>
+
+  <div>
+    <label id="labl"><span>Total salary</span></label>
+    <input type="text" name="totalsalary" id="D">
+  </div>
+ <input type="hidden" id="totaldays" value="31" />
+
+   <!--<div style="margin-top: 30px;float: right;margin-right: 200px;">
+    <button class="btn btn-primary">Update</button>
+  </div>
+
+        </form>-->
+
+
+
+
+
+<div style="margin-top: 30px;float: right;margin-right: 200px;">
+    <button class="btn btn-primary">Update</button>
+  </div>
+        </form>
+</div>
+</div>
+<script>
+      $('#confirmsalary, #delay').on('input',function(e){
+    $('#C').val(parseInt($('#confirmsalary').val()) / parseInt($('#totaldays').val()) * parseInt($('#delay').val()));
+    });
+
+    $('#confirmsalary, #C, #delay').on('input',function(e){
+    $('#D').val(parseInt($('#confirmsalary').val()) - parseInt($('#C').val()) + parseInt($('#E').val())+parseInt($('#F').val()));
+    });
+</script>
+{% endfor %}
+
+{% for promark in promark %}
+    {% if forloop.first %} {% endif %}
+<script type="text/javascript">
+        $("#btnSearch").click(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const deptId = $("#regfd").val();
+        const desgId = $("#regtd").val();
+        $.ajax({
+            url: 'adminattenmy112?empid={{ promark.reportid.reportedby_id }}',
+            data: {
+                'dept_id': deptId,
+                'desig_id':desgId
+            },
+            success: function (data) {
+                $("#hiddendiv").html(data);
+            }
+        });
+    });
+  function showDiv() {
+   document.getElementById('hiddendiv').style.display = "block";
+}
+</script>
+{% endfor %}
+</body>
+</html>

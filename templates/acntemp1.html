@@ -1,0 +1,434 @@
+{% extends 'acntpayslipsidebar.html' %}
+{% load static %}
+{% block content %}
+<!--<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title> -->
+  <head>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;}
+  /* {% comment %} float: right;
+  width: 75%;
+   margin-right: 1%; {% endcomment %}
+  border-radius: 15px;
+  {% comment %} border:2px solid #707070; {% endcomment %}
+}
+#firstbox div{
+  {% comment %} float: left; {% endcomment %}
+}
+#firstbox label{
+  {% comment %} margin-left: 30px;
+  padding-top: 14px; {% endcomment %}
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+ {% comment %} width: 258px; {% endcomment %}
+} */
+/* .Search{
+  {% comment %} margin-top: 4%;
+  float: right; {% endcomment %}
+  {% comment %} margin-right: 3%;
+  padding-left: 7%;
+  padding-right: 7%; {% endcomment %}
+} */
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+#box2 img{
+  margin-top: 4px;
+}
+.h-divider{
+/* {% comment %} margin-top:8%;
+ margin-bottom:5px; {% endcomment %} */
+ height:1px;
+ width:95%;
+ border-top:1px solid gray;
+ margin-left: 2%;
+}
+ /* /* {% comment %} .vl {
+  border-left: 1px solid gray;
+  height: 670px;
+  margin-left: 0%;
+  margin-top: -0.5% {% endcomment %} 
+} */
+.h-divider1{
+ margin-top:4%;
+ margin-bottom:5px;
+ height:1px;
+ width:122%;
+ border-top:1px solid gray;
+ margin-left: 0%;
+ margin-bottom: 4%;
+}
+  </style>
+      </head>
+
+<!--<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="accounts"class="col" id="sidebox1">MY PROFILE</a>
+  <a href="acntemp" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="acntpayslips" class="col" id="sidebox1">PAYSLIPS </a>
+  <a href="acntreceipts" class="col" id="sidebox1">RECEIPTS</a>
+  <a href="acntexpenses" class="col" id="sidebox1">EXPENSES</a>
+</div>-->
+<label id="myprofile">EMPLOYEES</label>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">  
+          <div id="firstbox" style="margin: 30px;" class="shadow p-3 bg-white">
+
+              <form action="acntempupdate" method="post">
+                  {% csrf_token %}
+                    {% for st in emp %}
+                    <div class="row  m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>EMPLOYEE NAME</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{st.name }}</label>
+                        </div>
+                    <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>DISPLAY NAME IN REPORT AS</label>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="dispname" value="{{ st.dispname }}">
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>DATE OF JOINING</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;">{{st.dateofappoinment  }}</label>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <a href="acntemp2?empid={{ st.employeeid }}"><label style="color: blue;">DEFINE SALARY DETAILS</label></a>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="h-divider">
+                    </div>
+                    <div class="row  m-4">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <h5 style="font-weight: bolder; color: #0d6efd; text-align: center;">GENERAL INFORMATION</h5>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label >EMPLOYEE NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label name="empno" style="color: #050505;width: 250px;">{{ st.employeeid }}</label> <br>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="hidden" class="form-control"  name="team_id" value={{ st.id }}>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>DEPARTMENT</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{ st.department }}</label><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>DESIGNATION</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{ st.designation }}</label><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>LOCATION</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{ st.branch }}</label><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>GENDER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="gender" style="margin-left: 0% ;width:250px" value="{{ st.gender}}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>BLOOD GROUP</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="blood" style="margin-left: 0% ;width:250px" value="{{ st.blood}}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>FATHERS NAME</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{ st.dadname}}</label><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>ADDRESS</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{ st.permanantadd1 }}</label><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>EMAIL</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #050505;width: 250px;">{{ st.email }}</label><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>BANK NAME</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="bankname" style="margin-left: 0% ;width:250px" value="{{ st.bankname }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>BANK ACCOUNT NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="acntno" style="margin-left: 0% ;width:250px" value="{{ st.acntno }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>IFSC CODE</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="ifsc" style="margin-left: 0% ;" value="{{ st.ifsc }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="h-divider"></div>
+                    <div class="row m-4">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <h5 style="font-weight: bolder; color: #0d6efd; text-align: center;">STATUTORY DETAILS</h5>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>APPLICABLE TAX REGIME</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="taxregime" style="margin-left: 6% ;width:250px" value="{{ st.taxregime }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                              <label>INCOME TAX NUMBER(PAN)</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="pan" style="margin-left: 6% ;width:250px" value="{{ st.pan }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                              <label>AADHAR NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="aadhar" style="margin-left: 6% ;width:250px" value="{{ st.aadhar }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>UNIVERSAL ACCOUNT NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="uan" style="margin-left: 6% ;width:250px" value="{{ st.uan }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>PF ACCOUNT NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="pf" style="margin-left: 6% ;width:250px" value="{{ st.pf }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                              <label>EPS ACCOUNT NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="eps" style="margin-left: 6% ;width:250px" value="{{ st.eps }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                          <div class="col-md-4">
+                              <label>DATE OF JOINING FOR PF</label>
+                          </div>
+                          <div class="col-md-4">
+                              <input type="text" class="form-control" name="datepf" style="margin-left: 6% ;width:250px" value="{{ st.datepf }}"><br>
+                          </div>
+                          <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                          <div class="col-md-4">
+                              <label>PR ACCOUNT NUMBER</label>
+                          </div>
+                          <div class="col-md-4">
+                              <input type="text" class="form-control" name="pr" style="margin-left: 6% ;width:250px"value="{{ st.pr }}"><br>
+                          </div>
+                          <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>ESI NUMBER</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="esi" style="margin-left: 6% ;width:250px "value="{{ st.esi }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>ESI DISPENSARY NAME</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="esiname" style="margin-left: 6% ;width:250px"value="{{ st.esiname }}">
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="h-divider"></div>
+    
+                    <div class="row m-4">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <h5 style="font-weight: bolder; color: #0d6efd; text-align: center;">CONTRACT DETAILS</h5>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+    
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>CONTRACT START DATE</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="contractstart" style="margin-left: 6% ;width:250px" value="{{ st.contractstart }}"><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <label>CONTRACT EXPIRY DATE</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="contractexpry" style="margin-left: 6% ;width:250px"value="{{ st.contractexpry }}" ><br>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row m-4">
+                        <div class="col-md-4"></div>
+                        <center>
+                        <div class="col-md-4">
+                            <button type="submit" style="width: 100%;" class="btn btn-primary Search">Save</button>
+                        </div>
+                    </center>
+                        <div class="col-md-4"></div>
+                    </div>
+                {% endfor %} 
+    
+              </form>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+{% endblock %}

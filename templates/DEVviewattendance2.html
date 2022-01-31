@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>DEVview attendance</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height:400px;
+  float: right;
+  width: 700px;
+  margin-top: 120px;
+  margin-right: 300px;
+  border-radius: 15px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 120px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+.Search{
+  margin-top: 4%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+thead{
+  color: #58B7AA;
+}
+table{
+
+  margin-left: 200px;
+  margin-top: 5%;
+  border-color: black;
+
+
+
+
+}/*
+#date{
+  width: 200px;
+  padding: 0.5%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+*/
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+      <a href="DEVmyprof1" class="col" id="sidebox1">MY PROFILE</a>
+      <a href="DEVtrainees1" class="col" id="sidebox1">TRAINEES</a>
+      <a href="DEVtask" class="col" id="sidebox1">TASKS</a>
+      <a href="DEVproject" class="col" id="sidebox1">PROJECTS</a>
+      <a href="DEVattendance3" class="col" id="sidebox1">ATTENDANCE</a>
+      <a href="DEVreportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+      <a href="DEVpayments" class="col" id="sidebox1">PAYMENTS</a>
+      <a href="DEVapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">ATTENDANCE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+
+  <table class="table table-bordered" style="width: 150px;" >
+    <thead>
+      <tr style="padding-top: -5px;">
+        <th>DATE</th>
+        <th>STATUS</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>20/03/2021</td>
+        <td>PRESENT</td>
+
+      </tr>
+      <tr>
+        <td>20/03/2021</td>
+        <td>PRESENT</td>
+
+      </tr>
+      <tr>
+        <td>20/03/2021</td>
+        <td>PRESENT</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+</body>
+</html>

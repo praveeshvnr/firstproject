@@ -1,0 +1,14 @@
+{% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+{% for regdetails in names %}
+   {% if forloop.first %} {% endif %}
+   <div id="box2" class="shadow bg-white">
+   <a href="hrtrainees?empid={{ regdetails.topic }}">
+   <img src="{% static 'circle.png'%}" width="20" height="20">
+   <h5 >{{regdetails.topic}}</h5>
+   <h5 style="color: #15A7A7;">{{regdetails.date}}</h5>
+   <h5 style="color: #15A7A7;">{{ regdetails.duedate }}</h5>
+   <h5 style="color: #EA1B7B;">Reports</h5>
+    </a>
+    </div>
+{% endfor %}

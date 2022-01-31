@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+      <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Apply leave1</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 475px;
+  float: left;
+  width: 1030px;
+  margin-left: 420px;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: -8%;
+  margin-top: 4.5%;
+}
+h5{
+  opacity: 0.55;
+  color:#000000;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">APPLY LEAVE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+<div class="box">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h5 style="color: #58B7AA; margin-top: 40px;">&nbsp&nbspLEAVE FROM&nbsp&nbsp&nbsp<input type="date" name="leavefrom" style="margin-top: -90px; width: 200px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLEAVE TO&nbsp&nbsp&nbsp&nbsp&nbsp<input type="date" name="leaveto" style="margin-top: -90px; width: 200px;"><br><br><br></h5>
+
+        <h4 style="color: #58B7AA; margin-top: 10px;">&nbsp&nbspReason</h4>&nbsp
+
+
+        <input type="text" name="reason"  style="margin-top: 20px; width: 800px; height: 130px; margin-left: 20px;">
+{#        <input type="submit" value="Submit"  style="margin-left: 730px;  margin-top: 50px; border-radius: 2px;">#}
+       <button type="submit" class="btn btn-primary Search" >Submit</button>
+
+    </form>
+
+
+
+{#        <a href="DEVapplyleave1"><button type="button" class="btn btn-primary Search" style="margin-left: 730px;  margin-top: 50px; border-radius: 2px;">&nbsp&nbspApply&nbsp&nbsp</button></a>#}
+
+</div>
+</div>
+{#  <div class="col">#}
+{#    <h5><span>Leave from</span>{{ le.leavefrom }}</h5>#}
+{#  </div><br><br>#}
+{#  <div class="col">#}
+{#    <h5><span>Leave to</span>{{ le.leaveto }}</h5>#}
+{#  </div><br><br>#}
+{#  <div class="col">#}
+{#    <h5><span>Reason</span></h5>#}
+{#  </div><br><br>#}
+{#  <div class="col">#}
+{#    <h5>{{ le.reason }}</h5>#}
+{#  </div><br><br>#}
+{#  <div class="col">#}
+{#    <h5></h5>#}
+{#  </div><br><br>#}
+{#  <div class="col last">#}
+{#    <h5 style="color: red"><span style="color:#58B7AA;">Status</span>{{ le.status }}</h5>#}
+{#  </div><br><br>#}
+{##}
+{##}
+{#<form method="POST" action="accptORreject">#}
+{#      {%csrf_token%}#}
+{#    <input type="hidden" id="leavId" name="team_id" value={{ le.id }}>#}
+{#    <input  type="submit" value="reject" name="status" class="btn btn-primary Search">#}
+{#    <input type="submit" value="accept" name="status" class="btn btn-primary Search">#}
+{#  </form>#}
+{#</div>#}
+{##}
+{##}
+{#</div>#}
+{#{% endfor %}#}
+
+
+<script type="text/javascript">
+    function showDiv() {
+     document.getElementById('hiddendiv').style.display = "block";
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{% extends 'sidebarnew.html'%}
+{%load static%}
+{%block content%}
+<style>
+
+
+
+#box2{
+  padding: 1% 5% 1% 5%;
+  background-color: white;
+  border-radius: 20px;
+   float: left;
+  margin-top: 1%;
+  margin-left: -26%;
+  margin-right: 9%; 
+  width: 97%;
+}
+#box2 h5,#box2 img{
+  float: left;
+  margin-right: 20px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  width:150px;
+
+}
+h5 span{
+  font-weight: 400;
+  margin-top: 10px;
+  color: #15A7A7;
+
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right; 
+
+}
+#box2 img{
+  margin-top: 15px;
+}
+
+#bigimage{
+  float: right;
+  margin-right: 10%;
+}
+#name{
+  color: #4ec3c7;
+  width: 110px;
+
+}
+#date{
+  color: #3C4A4A;
+  width: 90px;
+}
+#date1{
+  color: #4ec3c7;
+  width: 110px;
+}
+#date2{
+  color: #3C4A4A;
+  width: 90px;
+}
+#date3{
+  color: #4ec3c7;
+  width: 160px;
+}
+@media (max-width: 61.938em){
+  #box2{
+    padding: 1% 5% 1% 5%; 
+    background-color: white;
+    border-radius: 20px;
+    margin-left:auto;
+    margin-top: 1%;
+    margin-right:auto; 
+    width: 100%;
+  }
+  #hiddendiv{
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }#name{
+    color: #4ec3c7;
+    width: 140px;
+  }
+  #date{
+    color: #3C4A4A;
+    width: 100px;
+  }
+  #date1{
+    color: #4ec3c7;
+    width: 140px;
+  }
+  #date2{
+    color: #3C4A4A;
+    width: 100px;
+  }
+  #date3{
+    color: #4ec3c7;
+    width: 150px;
+  }
+
+}
+</style>
+
+<!-- <div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four"><img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="hr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+  <a href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="hrperformance" class="col" id="sidebox1">PERFOMANCE </a>
+  <a href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+  <a href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+  <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div> -->
+<div><label id="myprofile">VIEW ALL PROJECTS</label>
+<div id="hiddendiv">
+    {% for t in pro %}
+    <div id="box2" class="shadow bg-white">
+      <a href="HRMANmyprojectsubtask?prid={{ t.id }}" ><img src="{% static 'circle.png' %}" width="20" height="20">
+        <h5 id="name">{{t.projectname}}</h5>
+        <h5 id="date">Start date</h5>
+        <h5 id="date1"><span>{{ t.startdate }}</span></h5>
+        <h5  id="date2">End date</h5>
+        <h5 id="date3"><span>{{ t.duedate }}</span></h5></a>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,43 @@
+<style>
+    #firstbox1{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 100%;
+  margin-top:2%;
+  margin-right: 4.5%;
+  border-radius: 15px;
+}
+#firstbox1 div{
+  padding-left: 5%;
+  float: left;
+}
+#firstbox1 label{
+  margin-left: 13%;
+  margin-top: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  color: #1076B9;
+  font-weight: 400;
+  font-size: 20px;
+}
+</style>
+{% for pa in names %}
+<div id="firstbox1" class="shadow p-3 mb-5 bg-white rounded">
+  <form action="tltrrperinsert" method="post">
+    {% csrf_token %}
+  <label style="width:200px;">Attendance</label><input type="text" name="punctuality" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Timely Completion</label><input type="text" name="creativity" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Punctuality</label><input type="text" name="perfo" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Extra work</label><input type="text" name="extra" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Performance</label><input type="text" name="tim" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Creativity</label><input type="text" name="attend" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Work completion</label><input type="text" name="tim" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Perfection</label><input type="text" name="attend" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Attitude</label><input type="text" name="tim" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Accuracy</label><input type="text" name="attend" style="height: 30px; width:70px;"><br>
+  <input type="hidden" id="leavId" name="team_id" value={{ pa.id }}>
+  <a href="tltrperformance"><button type="submit" class="btn btn-default Search " style="color: #1F78B4">Save</button></a>
+{% endfor %}
+</form>
+</div>

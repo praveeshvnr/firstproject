@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<title></title>
+    {% load static %}
+	<link href="{% static 'css/applogin.css' %}" rel="stylesheet">
+	<link href="{% static 'css/all.min.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<style>
+		input[type-text]{
+			width: 100%;
+			border: 2px solid #aaa;
+			border-radius: 4px;
+			margin: 8px 0;
+			outline: none;
+			padding: 8px;
+			box-sizing: border-box;
+			transition: .3s;
+		}
+		input[type-text]:focus{
+			border-color: dodgerblue;
+			box-shadow: 0 0 8px 0 dodgerblue;
+		}
+		.inputWithIcon input[type=text]{
+			padding-left: 40px;
+
+		}
+		.inputWithIcon input[type=password]{
+			padding-left: 40px;
+
+		}
+		.inputWithIcon{
+			position: relative;
+		}
+		.inputWithIcon1{
+			position: absolute;
+			left : 0 ;
+			top: 8px;
+			padding: 9px 8px;
+			color : #aaa;
+			transition: .35;
+		}
+		.inputWithIcon input[type=text] + i{
+			color: ;
+
+		}
+	</style>
+    <link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.input-icons i {
+			position: absolute;
+		}
+
+		.input-icons {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.icon {
+			padding: 10px;
+			min-width: 40px;
+		}
+
+		.input-field {
+			width: 100%;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	<div class="wrapper"  style=" height: 10px; ">
+		
+        <nav id="sidebar" class="sidebar" style="background-image: url({% static 'img/bgpic.png' %}); background-color: transparent;" ></nav>
+			
+        </a>
+
+				
+            </div>
+
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg" style="height: 65px;">
+				
+
+				<form class="d-none d-sm-inline-block" style="color: white; font-size: 30px; font-family:'Segoe UI';"><b>iNFOX core</b></form>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+								<div class="position-relative">
+									
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										
+									</div>
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												
+											</div>
+											<div class="col-10 ps-2">
+												
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												
+											</div>
+											<div class="col-10 ps-2">
+												
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												
+											</div>
+											<div class="col-10 ps-2">
+												
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												
+											</div>
+											<div class="col-10 ps-2">
+												
+											</div>
+										</div>
+									</a>
+								</div>
+								
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<!-- <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                <i class="align-middle" data-feather="settings"></i> -->
+              </a>
+
+							<!-- <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown"> -->
+              </a>
+							<!-- <div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Log out</a>
+							</div> -->
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content" style="background-image: url({% static 'img/bgpic.png' %}); background-repeat: no-repeat;">
+				<div class="col-12 mb-2 mb-xl-3 d-flex" style="width: 190%; display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));">
+					<div class="box" style="height: 300px;width: 500px; margin-left: 460px; margin-top: 110px;padding: 30px; color:grey;border: 2px solid white; position: relative; border-radius: 20px; background-color: white;">
+						<h2 style="color: blue;font-weight: bold; text-align: center;"><b>iNFOX core</b></h2><br>
+<!--{#						<form method="post" class="form-inline" action="{% url 'profile' %}">#}-->
+<!--{#                            {%  csrf_token %}#}-->
+                            <div style="max-width:400px;margin:auto;">
+                                <div class="input-icons">
+                                    <form action="#" method="POST">
+                                        {%  csrf_token %}
+                                        <i class="fa fa-user icon fa-lg" style="margin-top: 6px;"></i>
+                                        <input class="input-field" type="text" name="username" placeholder="username" ><br>
+                                        <i class="fa fa-lock icon fa-lg" style="margin-top: 30px;"></i>
+                                        <input class="input-field" type="password" name="password" placeholder="password" style="margin-top: 25px;">
+                                        <input type="submit" value="Login" style="border-radius: 5px; width: 90px; background-color: white; height: 30px; margin-top: 30px; margin-left: 150px; "> </input>
+                                    </form>
+
+                                </div>
+                            </div>
+<!--{#
+<!--{#						</form>#}-->
+
+					</div>
+				</div>
+
+			</main>
+
+
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

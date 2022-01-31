@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 65%;
+  margin-right: 15%;
+  border-radius: 20px;
+  width: 60%;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 50px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 10px;
+  width: 180px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #58B7AA;
+
+}
+.birthday{
+  font-weight: 400;
+  margin-top: 30px;
+  margin-left:10px;
+  font-size: 18px;
+
+
+}
+.dp{
+  float: right;
+  margin-top: 10px;
+}
+.dropdown-menu{
+  width: 350px;
+
+}
+.Search{
+  margin-top: 2%;
+  float: right;
+  margin-right: 20%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+
+.inputlg{
+  margin-top: 1%;
+  margin-left: 40%;
+  height: auto;
+  width: 70px;
+
+
+  }
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'icon.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="MANmanagerprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="MANtask" class="col" id="sidebox1">TASKS</a>
+  <a href="MANprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="MANperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="MANemployees" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="MANtrainees" class="col" id="sidebox1">TRAINEES </a>
+  <a href="MANreportedissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="MANmarketing" class="col" id="sidebox1">MARKETING</a>
+  <a href="MANPayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="MANmanageHR" class="col" id="sidebox1">MANAGE HR</a>
+  <a href="MANattendance" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">ASSIGN WORK</label>
+
+<div id="firstbox" class="shadow p-3 bg-white">
+    <form action="MANmarketingDirectMarketerfn" method="post">
+        {% csrf_token %}
+        {% for f in marks %}
+    <div>
+        <input type="hidden" id="leavId" name="team_id" value={{ f.id }}>
+        <label style="color: #4ec3c7">Select Direct Marketer</label>&nbsp
+        <input id="marketerid" type="text" name="directmarketer" style="width: 448px" required>
+    </div>
+     <button type="submit" class="btn btn-primary Search">Assign</button>
+        {% endfor %}
+    </form>
+    </div>
+
+  </div>
+</body>
+</html>

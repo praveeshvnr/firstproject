@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load  static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 65%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 50px;
+  padding-top: 14px;
+  color: #2a8ba8;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 170px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #58B7AA; 
+
+}
+.birthday{
+  font-weight: 400;
+  margin-top: 30px;
+  margin-left:10px;
+  font-size: 18px;
+ 
+
+}
+.dp{
+  float: right;
+  margin-top: 10px;
+}
+.dropdown-menu{
+  width: 350px;
+
+}
+.Search{
+  margin-top: 3%;
+  float: right;
+  margin-right: 25%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.drop{
+    height: 40px;
+    width: 450px;
+    margin-left: 0%;
+    border-radius: 5px;
+    margin-top: 0%;
+
+}
+.inputlg{
+  margin-top: 1%;
+  margin-left: 40%;
+  height: auto;
+  width: 70px;
+
+
+  }
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+   <a href="MANmanagerprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="MANtask" class="col" id="sidebox1">TASKS</a>
+  <a href="MANprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="MANperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="MANemployees" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="MANtrainees" class="col" id="sidebox1">TRAINEES </a>
+  <a href="MANreportedissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="MANmarketing" class="col" id="sidebox1">MARKETING</a>
+  <a href="MANPayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="MANmanageHR" class="col" id="sidebox1">MANAGE HR</a>
+  <a href="MANattendance" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+
+<div><label id="myprofile">HR ATTENDANCE</label>
+
+<div id="firstbox" class="shadow p-3 bg-white">
+    <form action="Mhrattendance" method="POST">
+         {% csrf_token %}
+    <div>
+      <label>Select HR</label>&nbsp
+       <select id="hr2" name="employee" class="drop" required>
+      <option value=""> </option>
+          {% for h in hr %}
+             <option value="{{ h.name}}">{{ h.name }}</option>
+           {% endfor %}
+      </select>
+    {% for h in hr1 %}
+        {% if forloop.first %} {% endif %}
+        <input type="hidden" name="branch" value="{{ h.branch }}">
+        <input type="hidden" name="department" value="{{ h.department }}">
+    {% endfor %}
+     </div>
+
+   <div>
+       <label>Select Date</label>
+        <input type="date" id="dateid" name="datename" style="width: 440px" required>
+    </div>    
+      
+    <div class="radio">
+        <label>Status</label>
+        <label style="margin-left: 7px;color: black"><input type="radio" name="status"  value="Present">Present</label>
+        <label style="margin-left: 7px;color: black"><input type="radio" name="status"  value="Leave">Leave</label>
+        <label style="margin-left: 7px;color: black"><input type="radio" name="status"  value="Half day">Half day</label>
+    </div>      
+      
+     <div>
+        <label>Login Time</label>&nbsp
+        <input id="inputlg" type="text" name="login" style="width: 440px">
+    </div>
+    <div>
+        <label>Logout Time</label>&nbsp
+        <input id="inputld" type="text" name="logout" style="width: 440px">
+    </div>
+
+      <button type="submit" class="btn btn-primary Search">Save</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

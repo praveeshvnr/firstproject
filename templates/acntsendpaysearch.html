@@ -1,0 +1,71 @@
+<!-- <form method="post" action="acntsendinsert" >
+    {% csrf_token %}
+{% for regdetails in names %}
+    <div id="box2" class="shadow bg-white">
+   <img src="{{ regdetails.employeeimage.url }}"  width="40" height="38" class="rounded-circle">
+    <h5 style="color: #574F4F;width: 10cm;padding-left: 1cm" name="name">{{ regdetails.name}}</h5>
+
+    <input type="hidden"  name="refid" value={{ regdetails.refid }}>
+    <input type="hidden"  name="duration" value={{ regdetails.duration }}>
+    <input type="hidden"  name="mobile" value={{ regdetails.mobile }}>
+    <input type="hidden"  name="designation" value={{ regdetails.designation }}>
+   
+    <input type="hidden"  name="name" value={{ regdetails.name }}>
+    <input type="hidden"  name="department" value={{ regdetails.department }}>
+    <input type="hidden"  name="branch" value={{ regdetails.branch }}>
+    <h5 style="color: #15A7A7;padding-right: 1cm;width: 5cm">Due date</h5>
+    <input type="date" style="width: 4cm" class="birthday" name="duedate">
+    <button type="submit" class="btn btn-primary Send">Send</button>
+    </div>
+
+{% endfor %}
+</form> -->
+
+
+<form method="post" action="acntsendinsert" >
+    {% csrf_token %}
+{% for regdetails in names %}
+    <div id="box2" class="shadow bg-white">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ regdetails.employeeimage.url }}"  width="40" height="38" class="rounded-circle">
+            </div>
+            <div class="col-md-6">
+                <h5 style="color: #574F4F;width: 10cm;padding-left: 0cm;margin-right: 5%;" name="name">{{ regdetails.name}}</h5>
+            </div>
+        </div>
+   
+    <input type="hidden"  name="refid" value={{ regdetails.refid }}>
+    <input type="hidden"  name="duration" value={{ regdetails.duration }}>
+    <input type="hidden"  name="mobile" value={{ regdetails.mobile }}>
+    <input type="hidden"  name="designation" value={{ regdetails.designation }}>
+    <!--<input type="hidden"  name="team_id" value={{ regdetails.id }}>-->
+    <input type="hidden"  name="name" value={{ regdetails.name }}>
+    <input type="hidden"  name="department" value={{ regdetails.department }}>
+    <input type="hidden"  name="branch" value={{ regdetails.branch }}>
+
+    <!--<h5 style="color: #15A7A7">Amount paid</h5>
+    <h5 style="color: #574F4F">{{ regdetails.amountpaid}}</h5>
+    <h5 style="color: #15A7A7">Pending</h5>
+    <h5 style="color: #574F4F">{{ regdetails.payment}}</h5>-->
+    <div class="row">
+        <div class="col-md-6">
+            <h5 style="color: #15A7A7;padding-right: 1cm;width: 5cm;margin-top: 5%;">Due date</h5>
+        </div>
+        <div class="col-md-6">
+            <input type="date" style="width: 100%;margin-left: 1%; margin-top: 3%;" class="birthday form-control" name="duedate">
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-4 "></div>
+        <div class="col-md-4 "></div>
+        <div class="col-md-4 ">
+          
+          <button id="btnSearch" type="submit" class="btn btn-primary Send w-100 mt-3"  >Send</button>
+        </div>
+        </div>
+    <!-- <button type="submit" class="btn btn-primary Send">Send</button>  -->
+    </div>
+
+{% endfor %}
+</form>

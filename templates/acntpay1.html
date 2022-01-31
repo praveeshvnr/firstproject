@@ -1,0 +1,451 @@
+{%extends 'acntpayslipsidebar.html'%}
+{%load static%}
+
+{%block content%}
+
+
+<style>
+  #firstbox{
+  background-color: white;
+  height: auto;
+  float: left;
+  width: 90%;
+  margin-right: 1%;
+  margin-left: 5%;
+  border-radius: 15px;
+  border:2px solid #707070;
+  }
+  #firstbox div{
+  float: left;
+  }
+  #firstbox label{
+  margin-left: 30px;
+  padding-top: 14px;
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+  width: 200px;
+  }
+  .Search{
+  margin-top: 4%;
+  float: right;
+  margin-right: 15%;
+  padding-left: 3%;
+  padding-right: 3%;
+  }
+  .Search2{
+  margin-top: 4%;
+  float: right;
+  margin-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
+  }
+  .Search1{
+  margin-top: 4%;
+  float: right;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-right: -21%
+  }
+  h5{
+  font-weight: 400;
+  margin-top: 10px;
+  text-align: center;
+  }
+  #hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+  }
+
+  #label1{
+  width:200px;
+  }
+
+  #label2{
+  width:180px;
+  }
+
+  #label3{
+  width:200px;
+  }
+
+  #label4{
+  width:180px;
+  }
+
+  #label5{
+  width:200px;
+  }
+
+  #label6{
+  width:180px;
+  }
+
+  #label7{
+  width:200px;
+  }
+
+  #label8{
+  width:180px;
+  }
+
+  #label9{
+  width:200px;
+  }
+  #label10{
+  width:180px;
+  }
+  #label11{
+  width:200px;
+  }
+  #label12{
+  width:180px;
+  }
+  #label13{
+  width:200px;
+  }
+
+  @media (max-width: 61.938em){
+    #firstbox{
+    background-color: white;
+    height: auto;
+    float: right;
+    width: 100%;
+    margin-right: 1%;
+    border-radius: 15px;
+    border:2px solid #707070;
+    overflow:auto;
+    }
+
+    #hiddendiv{
+    height: auto;
+    width: 75%;
+    float: right;
+    overflow:auto;
+  
+    }
+
+    #table1{
+    overflow:auto;
+    }
+
+  
+    #label1{
+    width:100px;
+    margin-right:2%;
+    }
+
+    #label2{
+    width:300px;
+    }
+
+    #label3{
+    width:200px;
+    }
+
+    #label4{
+    width:300px;
+    }
+
+    #label5{
+    width:200px;
+    }
+
+    #label6{
+    width:180px;
+
+    }
+
+    #label7{
+    width:200px;
+    }
+
+    #label8{
+    width:180px;
+    }
+
+    #label9{
+    width:200px;
+    } 
+    #label10{
+    width:180px;
+    }
+    #label11{
+    width:200px;
+    }
+    #label12{
+    width:180px;
+    }
+    #label13{
+    width:200px;
+    }
+
+
+}
+  </style>
+      </head>
+<body>
+<!--<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="accounts" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="acntemp" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="acntpayslips" class="col" id="sidebox1">PAYSLIPS </a>
+  <a href="acntreceipts" class="col" id="sidebox1">RECEIPTS</a>
+  <a href="acntexpenses" class="col" id="sidebox1">EXPENSES</a>
+</div>-->
+<div><label id="myprofile">PAYSLIPS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+        <form action="acntpayinsert" method="post">
+        {% csrf_token %}
+   {% for pa in emp %}
+   {% if forloop.first %} {% endif %}
+   <input type="hidden"  name="team_id" value={{ pa.id }}>
+<h4 style="text-align:center;">PAYSLIP FOR {{ pa.dateef}}</h4>
+<h5>{{ pa.ename }}</h5>
+<br>
+<label>Employee number</label><label id="label1" >{{ pa.eno }}</label>
+<label id="label2" >Tax engine</label><label>{{ pa.taxengime}}</label>
+<label>Department</label><label id="label3" >{{ pa.department}}</label>
+<label id="label4" >Income tax number</label><label>{{ pa.incometax}}</label>
+<label>Designation</label><label id="label5" >{{ pa.designation}}</label>
+<label id="label6" >Universal account number</label><label>{{ pa.uan}}</label>
+<label>Location</label><label id="label7" >{{ pa.branch }}</label>
+<label id="label8" >PF account number</label><label>{{ pa.pf}}</label>
+<label>Bank details</label><label id="label9" >{{ pa.bank}}</label>
+<label id="label10" >ESI number</label><label>{{ pa.esi}}</label>
+<label>Date of joining</label><label id="label11" >{{ pa.datejoin }}</label>
+<label id="label12" >PR account number</label><label>{{ pa.pr }}</label>
+<label >Leaves Taken</label><label id="label13" ><input type="text" id="A" style="width: 180px" name="leaveno" value="{{ pa.leavesno }}"></label>
+<br><br><br>
+<input type="hidden" id="B" value="500">
+
+
+  <table id="table1" class="table table-bordered">
+      <tr>
+        <th>Particulars</th>
+        <th colspan="2" >Earnings</th>
+        <th colspan="2">Deductions </th>
+      </tr>
+      <tr>
+        <th></th>
+        <th >Gross</th>
+        <th >Payable</th>
+        <th>Gross</th>
+        <th>Payable</th>
+      </tr>
+    <tbody>
+      <tr>
+          <td>Basic salary</td>
+          <td>
+            {% if pa.basictype == 'Earning for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.basictype == 'Earning for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.basictype == 'Deduction for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.basictype == 'Deduction for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+        <td>Hra</td>
+         <td>
+            {% if pa.hratype == 'Earning for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.hratype == 'Earning for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.hratype == 'Deduction for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.hratype == 'Deduction for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>        
+        <td>Conveyence allowance</td>
+        <td>{% if pa.contype == 'Earning for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.contype == 'Earning for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.contype == 'Deduction for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.contype == 'Deduction for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+        <td>Profesional tax</td>
+        <td>{% if pa.protype == 'Earning for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.protype == 'Earning for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.protype == 'Deduction for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.protype == 'Deduction for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+      <th>Total </th>
+      <th id="totalsalary7"  colspan="2 " ></th>
+      <th id="totalsalary8"  colspan="2"></th>
+      </tr>
+      <tr>
+      <th colspan="4">Net Amount</th>
+      <th id="totalsalary" class="subjects" hidden></th>
+      <th id="totalsalary5" class="subjects"  hidden ></th>
+      <th id="TotMarks" class="subjects" name="netamt"  ></th>
+      </tr>
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary Search2">Save</button>
+
+        </form>
+<a href="acntprint?empid={{ pa.id }}"> <button class="btn btn-primary Search"> Print</button></a>
+
+  {% endfor %}
+<script>
+    $(document).ready(function () {
+        var empsalary;
+        var totalsalary = 0;
+        $('td:nth-child(2)').each(function () {
+            empsalary = $(this).html();
+            totalsalary += parseInt(empsalary);
+            $('#totalsalary').text(totalsalary);
+        });
+    });
+        $(document).ready(function () {
+        var empsalary3;
+        var totalsalary3 = 0;
+        $('td:nth-child(3)').each(function () {
+            empsalary3 = $(this).html();
+            totalsalary3 += parseInt(empsalary3);
+            $('#totalsalary3').text(totalsalary3);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary4;
+        var totalsalary4 = 0;
+        $('td:nth-child(4)').each(function () {
+            empsalary4 = $(this).html();
+            totalsalary4 += parseInt(empsalary4);
+            $('#totalsalary4').text(totalsalary4);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary5;
+        var totalsalary5 = 0;
+        $('td:nth-child(5)').each(function () {
+            empsalary5 = $(this).html();
+            totalsalary5 += parseInt(empsalary5);
+            $('#totalsalary5').text(totalsalary5);
+        });
+    });
+    $('#A, #B').on('input',function(e){
+    $('#C').val(parseInt($('#A').val()) * parseInt($('#B').val()));
+    });
+    $(document).ready(function ()
+    {
+       $('tr').each(function ()
+       {
+        var totmarks=0;
+        $(this).find('.subjects').each(function ()
+        {
+          var marks=$(this).text();
+          if (marks.length!==0)
+          {
+              totmarks=-parseFloat(marks)-totmarks;
+          }
+       });
+        $(this).find('#TotMarks').html(totmarks);
+       });
+    });
+            $(document).ready(function () {
+        var empsalary7;
+        var totalsalary7 = 0;
+        $('td:nth-child(3)').each(function () {
+            empsalary7 = $(this).html();
+            totalsalary7 += parseInt(empsalary7);
+            $('#totalsalary7').text(totalsalary7);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary8;
+        var totalsalary8 = 0;
+        $('td:nth-child(4)').each(function () {
+            empsalary8 = $(this).html();
+            totalsalary8 += parseInt(empsalary8);
+            $('#totalsalary8').text(totalsalary8);
+        });
+    });
+</script>
+</div>
+</div>
+</body>
+</html>  
+
+{%endblock%}

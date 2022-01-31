@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Hello, world!</title>
+<style>
+#box2{
+  padding: 1% 5% 1% 5%;
+  background-color: white;
+  border-radius: 14px;
+  float: left;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 9%;
+  width: 95%;
+}
+#box2 img{
+  float: left;
+  margin-right: 83px;
+}
+#box2 h5{
+    float: left;
+  margin-right: 40px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  color: #616767;
+}
+h5 span{
+  font-weight: 400;
+  margin-top: 10px;
+  color: #15A7A7;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+#box2 img{
+  margin-top: 15px;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="tl" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="tltasks" class="col" id="sidebox1">TRAINEES</a>
+  <a href="tlprojects" class="col" id="sidebox1">TASKS</a>
+  <a href="tlperformance" class="col" id="sidebox1">PROJECTS</a>
+  <a href="tlemployeess" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="tlreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="tlPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="tlattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PROJECTS</label>
+<div id="hiddendiv">
+{% for i in name %}
+{% if forloop.first %} {% endif %}
+    <div id="box2" class="shadow bg-white">
+    <a href="TLProjectTasks?prid={{ i.project_id }}">
+    <img src="{% static 'circle.png'%}" width="20" height="20">
+    <h5 style="width: 220px;margin-left: -56px">{{ i.project.projectname }}</h5>
+        <h5 style="width:100px; margin-left: -20px">startdate</h5>
+    <h5 style="width: 125px;margin-left: -45px"><span>{{ i.project.startdate}}</span></h5>
+    <h5 style="width: 100px;margin-left: -40px">enddate</h5>
+    <h5 style="width: 125px;margin-left: -45px"><span>{{ i.project.duedate}}</span></h5>
+
+    </a>
+    </div>
+{% endfor %}</div>
+</div>
+</div>
+</body>
+</html>

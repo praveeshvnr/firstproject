@@ -1,0 +1,11 @@
+.assign-list{
+    color: blue!important;
+    border: none!important;
+    min-width: 130px!important;
+    text-align: center;
+    appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+
+}

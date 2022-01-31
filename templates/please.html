@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login1.css' %}">
+
+
+     <!-- Navbar -->
+
+    <nav class="nav navbar navbar-expand-lg navbar-dark py-3">
+        <div class="container">
+            <a href="/" class="navbar-brand Display-1"><h1 class="logo" style="color: #FFFFFF;"> </h1></a>
+        </div>
+    </nav>
+    <section class="text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start" >
+        <div class="container">
+            <!-- Flexbox -->
+            <div>
+                <div>
+                    <h1 style="width: 400px;text-align: left;margin-top: 4%;font-family: Segoe UI;font-size: 36px;color: white"></h1>
+                    <a href="login" style="color: white;"><h6 class="si" style="color: white"></h6></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <section class="py-5 mt-5">
+        <div class="container py-5">
+            <div class="card csty" style="max-width: 4000px;height: auto">
+                <div class="card-body mx-3 px-5">
+                    <br>
+                    <div style="font-family: 'Segoe UI'; font-size: 23px;">
+                        <form method="post" action="loginold">
+                            {% csrf_token %}
+                                    <h5 style="margin-left: 35%;margin-top: -4%;font-family: Segoe UI;color: white"></h5>
+                                    <h6 style="margin-left: 19%;margin-top: 1%;font-family: Segoe UI;"></h6>
+                                <h6 class="h6">Name</h6>                            <div class="row">
+                                <div class="col-auto col-md-12 py-3">
+                                    <input type="text" name="" class="form-control inpbox" style="max-width: 940px;" required>
+                                </div>
+                            </div>
+                        <h6 class="h6">Email </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="text" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>
+                        <h6 class="h6">Qualification </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="text" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>                        <h6 class="h6">Designation </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="text" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>
+                        <h6 class="h6">Phone </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="text" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>
+                        <h6 class="h6">Joining date </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="password" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>
+                        <h6 class="h6">Releiving date </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="password" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>
+                        <h6 class="h6">Performance </h6>
+                            <div class="row">
+                                <div class="col-auto col-md-12 pt-3 pb-2">
+                                    <input type="password" name="" class="form-control inpbox"  style="max-width: 940px;"  required>
+                                </div>
+                            </div>
+                            <div class="col-auto pt-5 pb-3">
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+          </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

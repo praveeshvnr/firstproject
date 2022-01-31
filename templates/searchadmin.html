@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+.thead{
+  background-color: #00CEFF;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #00CEFF;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static '/icon.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">REGISTRATION DETAILS</label>
+
+<!--<div id="firstbox" class="shadow p-3 bg-white">
+    <input type="text" id="regdetailsid" name="enterid" class="bigbox" style="width: 27.5cm;" placeholder="Search">
+</div>-->
+<!--<form action="searchadmin" method="get">
+
+    <center><input type="text" name="q" placeholder="search">
+    <button type="submit">SEARCH</button></center>
+        <button id="btnSearch" type="button" class="btn btn-primary Search" >SEARCH</button></center>
+</form>-->
+<form action="dynamic_articles_view">
+    <input type="text" name="search" placeholder="Search by title" value="{{request.GET.title}}">
+    <input type="submit" value="Search">
+</form>
+<div id="firstbox" class="shadow p-3 bg-white">
+<div class="container" style="overflow-x:auto;">
+<br>
+  <table class="table table-bordered">
+    <thead class="thead">
+      <tr>
+        <th>SL.NO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th>QUALIFICATION</th>
+        <th>DESIGNATION</th>
+        <th>TRAINER</th>
+        <th>APPLIED DATE</th>
+        <th>REG ID</th>
+        <th>PAYMENT</th>
+        <th>INTERNSHIP CERTIFICATE</th>
+        <th>VIEW DETAIL</th>
+        <th>UPDATE</th>
+        <th>REMOVE</th>
+        <!--<th>INTERNSHIP REGISTER</th>-->
+        <th>OFFER LETTER</th>
+        <th>UPDATE</th>
+        <th>ID CARD</th>
+        <th>EMPLOYEE TYPE</th>
+        <th>EMPLOYEE ID</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%  for inter in intern %}
+        <tr>
+            <td>{{ inter.slno }}</td>
+            <td>{{ inter.name }}</td>
+            <td>{{ inter.email }}</td>
+            <td>{{ inter.password }}</td>
+            <td>{{ inter.qualification }}</td>
+            <td>{{ inter.designation }}</td>
+            <td>{{ inter.trainer }}</td>
+            <td>{{ inter.applieddate }}</td>
+            <td>{{ inter.regid }}</td>
+            <td>{{ inter.payment }}</td>
+
+            <td><a href="#">Download</a></td>
+
+
+            {% if forloop.first %} {% endif %}
+            <td><a href="adminregistrationdetailsview?empid={{ inter.id }}">View</a></td>
+            <!--<td><a href="adminregistrationdetailsview">View</a></td>-->
+            <td><a href="adminregistrationdetailsedit/{{ inter.id }}" >Update</a></td>
+            <td><a href="deleteregdetails/{{ inter.id }}">Remove</a></td>
+            <!--<td><a href="adminregistrationdetails2sign.html">Signup</a></td>-->
+            <td><a href="#">Download</a></td>
+            <td><a href="#">Update</a></td>
+            <td><a href="#">Download</a></td>
+            <td><div class="dropdown">
+                              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Select Type</button>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Permanent</a>
+                                <a class="dropdown-item" href="#">Temporary</a>
+                            </div></div></td>
+            <td>{{ inter.employeeid }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

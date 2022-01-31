@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: 160px;
+  float: right;
+  width: 79%;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#firstbox1{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 79%;
+  margin-top:2%;
+}
+#firstbox1 div{
+  padding-left: 5%;
+  float: left;
+}
+#firstbox1 label{
+  margin-left: 2%;
+  margin-top: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  color: #1076B9;
+  font-weight: 400;
+  font-size: 20px;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+#bigimage{
+  float: left;
+}
+#smallbox{
+  background-color: white;
+  width: 300px;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-left: 50px;
+  padding: 20px;
+}
+#smallbox h1{
+  margin-left: 15%;
+}
+#smallbox span{
+  color: #475151;
+}
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: 8%;
+  margin-top: 4.5%;
+}
+.Search{
+  margin-top: 2%;
+  padding-left: 3%;
+  padding-right:3%;
+  width: 120px;
+  background-color: white;
+  color: #2294ba;
+  box-shadow: 0px 3px 12px #2E2EBD;
+  border-radius:20px;
+  margin-left: 85%;
+
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">PERFORMANCE</label>
+        {% for pa in emp %}
+    <div id="firstbox" class="shadow p-3 bg-white rounded col-sm-12">
+    <img src="{{ pa.employeeimage.url }}" class="rounded-circle" width="140" height="140" id="bigimage">
+    <div style="margin-left: 70px;margin-top: 20px;"><h4 id="adname"style="">{{ pa.name }}</h4>
+    <h5 style="font-weight: 400;margin-top: 10px;">
+    <span style="">{{ pa.designation}}</span><span style="color: #58B7AA;width: 300px;margin-left: 30px;">Department</span><span style="margin-left: 20px;">{{ pa.department }}</span><span style="margin-left: 30px;color: #58B7AA;">Joining Date</span><span style="margin-left: 20px;">{{ pa.dateofappoinment}}</span></h5></div>
+  </div></div>
+<div id="firstbox1" class="shadow p-3 mb-5 bg-white rounded">
+  <form action="adminperinsert" method="post">
+    {% csrf_token %}
+  <label style="width:200px;">Punctuality</label><input type="text" name="punctuality" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Creativity</label><input type="text" name="creativity" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Performance</label><input type="text" name="perfo" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Extra work</label><input type="text" name="extra" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Timely Completion</label><input type="text" name="tim" style="height: 30px; width:70px;">
+  <label style="width:200px; margin-left: 15%;">Attendance</label><input type="text" name="attend" style="height: 30px; width:70px;"><br>
+  <input type="hidden" id="leavId" name="team_id" value={{ pa.id }}>
+  <a href="adminperformance1"><button type="submit" class="btn btn-default Search ">Save</button></a>
+{% endfor %}
+</form>
+</div>
+</body>
+</html>

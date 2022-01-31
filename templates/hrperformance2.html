@@ -1,0 +1,275 @@
+{% extends 'sidebarnew.html'%}
+{%load static%}
+{%block content%}
+<style>
+#firstbox{
+  background-color: white;
+  height: 160px;
+  float: right;
+  width: 79%;
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#firstbox1{
+  background-color: white;
+
+  float: left;
+  margin-left: 6%;
+  width: 75%;
+  margin-top:2%;
+}
+#firstbox1 div{
+  padding-left: 5%;
+  float: left;
+}
+#firstbox1 label{
+  margin-left: 2%;
+  margin-top: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  color: #1076B9;
+  font-weight: 400;
+  font-size: 20px;
+}
+#adname{
+  /* padding-top: 14px; */
+  color: #58B7AA;
+  font-weight: 600;
+  /* max-width: 300px; */
+}
+#bigimage{
+  float: left;
+}
+#smallbox{
+  background-color: white;
+  width: 300px;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-left: 50px;
+  padding: 20px;
+}
+#smallbox h1{
+  margin-left: 15%;
+}
+#smallbox span{
+  color: #475151;
+}
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: 8%;
+  margin-top: 4.5%;
+}
+.Search{
+  margin-top: 2%;
+  padding-left: 3%;
+  padding-right:3%;
+  width: 120px;
+  background-color: white;
+  color: #2294ba;
+  box-shadow: 0px 3px 12px #2E2EBD;
+  border-radius:20px;
+  margin-left: 85%;
+
+}
+#span{
+  width: 300px;
+  margin-left: 30px;
+}
+#l{
+  margin-left: 15%;
+}
+.container{
+    background-color: white;
+    height: 160px;
+    float: left;
+    width: 77%;
+    margin-left: 5%;
+
+  }
+  #names{
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  #des{
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  #date{
+    margin-left: 30px;
+    color: #58B7AA;
+  }
+  #dept{
+    margin-left: 20px;
+  }
+  #appointment{
+    margin-left: 20px;
+  }
+  #designation1{
+    float: left;
+  }
+@media (max-width: 61.938em){
+  #firstbox{
+    background-color: white;
+    height: 160px;
+    float: left;
+    margin-left: 40%;
+    width: 79%;
+    overflow: auto;
+  }
+  #firstbox div{
+    padding-left: 5%;
+    float: left;
+  }
+  .container{
+    background-color: white;
+    height: 300px;
+    float: right;
+    width: 100%;
+    /* margin-left: 50%; */
+    overflow: auto;
+  }
+  #span{
+    /* width: 300px; */
+    /* margin-left: 5px; */
+  }
+  #firstbox1{
+    background-color: white;
+    height: auto;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top:1%;
+  }
+  #firstbox1 label{
+    margin-left: 1%;
+    margin-top: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    color: #1076B9;
+    font-weight: 400;
+    font-size: 15px;
+  }
+   #l{
+    margin-left: 1%;
+  }
+  .Search{
+    margin-top: 5%;
+    padding-left: 3%;
+    padding-right:3%;
+    width: 90px;
+    background-color: white;
+    color: #2294ba;
+    box-shadow: 0px 3px 12px #2E2EBD;
+    border-radius:20px;
+    margin-left: 60%;
+  }
+  #col{
+    width:120%;
+  }
+  #adname{
+    padding-top: 14px;
+    color: #58B7AA;
+    font-weight: 600;
+    max-width: 300px;
+  }
+
+
+  #names{
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  #des{
+    font-weight: 400;
+    margin-top: 30%;
+  }
+  #date{
+    margin-top:20px;
+    margin-left: 20px;
+    color: #58B7AA;
+  }
+  #dept{
+    margin-left: 20px;
+  }
+  #appointment{
+
+    margin-left: 10px;
+  }
+  #designation1{
+    width: 600px;
+   
+  }
+
+}
+  </style>
+      </head>
+<body>
+<!-- <div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four"><img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="hr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+  <a href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="hrperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+  <a href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+  <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>  -->
+<div><label id="myprofile">PERFORMANCE</label>
+        {% for pa in emp %}
+        <div class="container shadow p-3 bg-white rounded ">
+          <div class="row"id="col">
+            <div class="col-lg-12"> 
+              <div class="col-sm-4"><img src="{{ pa.employeeimage.url }}"  width="140" height="140" id="bigimage"></div>
+              <div id="names"><h4 id="adname"style="">{{ pa.name }}</h4></div>
+              <h5 id="des">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-2">
+                        <div id="designation1">{{ pa.designation}}</div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div  style="color: #58B7AA;">Department <span style="color: black;">{{ pa.department }}</span></div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div style="color: #58B7AA;">Joining Date  <span style="color:black" >  {{ pa.dateofappoinment}}</span></div>
+                      </div>
+                  </div>
+                </div>
+              </h5>
+            </div>
+            
+            </div>
+          </div>
+          </div>
+          
+<div id="firstbox1" class="shadow p-3 mb-5 bg-white rounded">
+  <form action="hrperinsert" method="post">
+    {% csrf_token %}
+  <label style="width:200px;">Punctuality</label><input type="text" name="punctuality" style="height: 30px; width:70px;">
+  <label id="l" style="width:200px; ">Creativity</label><input type="text" name="creativity" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Performance</label><input type="text" name="perfo" style="height: 30px; width:70px;">
+  <label id="l" style="width:200px; ">Extra work</label><input type="text" name="extra" style="height: 30px; width:70px;"><br>
+  <label style="width:200px;">Timely Completion</label><input type="text" name="tim" style="height: 30px; width:70px;">
+  <label id="l" style="width:200px;">Attendance</label><input type="text" name="attend" style="height: 30px; width:70px;"><br>
+  <input type="hidden" id="leavId" name="team_id" value={{ pa.id }}>
+  <a href="hrperformance1"><button type="submit" class="btn btn-default Search ">Save</button></a>
+{% endfor %}
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 62%;
+  margin-right: 10%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 50px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #58B7AA;
+
+}
+.birthday {
+    height: 40px;
+    width: 450px;
+    margin-left: 0%;
+    border-radius: 5px;
+    margin-top: 0%;
+    border: 1px solid #707070;
+}
+
+.Search{
+  margin-top: 2.5%;
+  float: right;
+  margin-right: 17.5%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+textarea{
+  margin-left: 41%;
+  margin-top: -5%;
+  }
+.drop{
+    height: 40px;
+    width: 450px;
+    margin-left: 0%;
+    border-radius: 5px;
+    margin-top: 0%;
+
+}
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="tl" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="tltasks" class="col" id="sidebox1">TRAINEES</a>
+  <a href="tlprojects" class="col" id="sidebox1">TASKS</a>
+  <a href="tlperformance" class="col" id="sidebox1">PROJECTS</a>
+  <a href="tlemployeess" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="tlreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="tlPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="tlattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">GIVE TASKS</label>
+
+<div id="firstbox" class="shadow p-3 bg-white">
+<form action="tlgivetasksadd" method="post">
+    {% csrf_token %}
+    <div>
+      <label>SELECT TRAINEE</label>&nbsp
+       <select id="regdetailsdept" name="name" class="drop" required>
+      <option value=""> </option>
+          {% for regdetails in tr %}
+             <option value="{{ regdetails.name}}">{{ regdetails.name }}</option>
+          {% endfor %}
+      </select>
+     </div>
+<div>
+     <div>
+         <br><label style="color: #4ec3c7">TASK</label>&nbsp
+        <textarea rows="4" cols="59" name="task" required></textarea>
+     </div>
+     <div class="row">
+      <div class="col">
+        <label>DATE</label></div>
+        <h5 name="date">{% now 'd-M-Y' %}</h5>
+     </div>
+     <div>
+     <label style="width:255px; ">DUE DATE</label>
+     <input type="date" class="birthday" name="duedate" required>
+     </div>
+    <button type="submit" class="btn btn-primary Search">UPLOAD</button>
+</div>
+</form>
+  </div>
+</div>
+
+</body>
+</html>

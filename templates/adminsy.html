@@ -1,0 +1,37 @@
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+<style>
+#but{
+  background-color: white;
+  float: right;
+  width: 20cm;
+  padding: 0% 10% 0% 10%;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+#buttons{
+  float: left;
+  margin: 0% 0% 0% 10%;
+    margin-top: -5%;
+  margin-left: 20%;
+}
+#allbut{
+  width: 1000px;
+  float: right;
+  margin: 0% 12% 0% 5%;
+}
+</style>
+{% for repot in Desig %}
+    {% if forloop.first %} {% endif %}
+    <div id="allbut">
+        <div id="buttons">
+          <a href="adminsylbranch2?empid={{ repot.id }}"><div id="but" class="shadow p-3 bg-white">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static '/circle.png' %}" width="25" height="25">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size: 23px;color: black">{{ repot.topic }}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 23px;color: #58B7AA">{{ repot.date}}</span>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="color: #58B7AA;font-size: 24px;">{{ repot.duedate}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size: 23px;color: red;">Reports</label>
+
+          </div></a>
+        </div>
+    </div>
+{% endfor %}

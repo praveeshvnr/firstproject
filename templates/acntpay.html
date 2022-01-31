@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+      <tr>
+        <th>PARTICULARS</th>
+        <th>EMPLOYEE NUMBER</th>
+        <th>ACCOUNT NUMBER</th>
+        <th>BANK NAME</th>
+        <th>BRANCH</th>
+        <th>EMAIL-ID </th>
+        <th>VIEW SLIP</th>
+      </tr>
+    <tbody>
+  {% for pa in names %}
+   {% if forloop.first %} {% endif %}
+      <tr>
+        <td>{{ pa.ename }}</td>
+        <td>{{ pa.eno }}</td>
+        <td>{{ pa.acntno }}</td>
+        <td>{{ pa.bank }}</td>
+        <td>{{ pa.branch }}</td>
+        <td>{{ pa.email }}</td>
+        <td><a href="acntpay1?empid={{ pa.id }}">View slip</a></td>
+      </tr>
+  {% endfor %}
+    </tbody>
+  </table>

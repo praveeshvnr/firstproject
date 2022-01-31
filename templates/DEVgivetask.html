@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+      <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>DEVgivetask</title>
+
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 120px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+.Search{
+  margin-top: 10%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+thead{
+  color: #58B7AA;
+}
+table{
+  float: left;
+  margin-left: 60%;
+  margin-top: 10%;
+}
+#date{
+  width: 450px;
+  padding: 0.5%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+.dropdown-menu{
+  width: 400px;
+  border-color: #707070;
+}
+
+  </style>
+  </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+      <a href="DEVmyprof1" class="col" id="sidebox1">MY PROFILE</a>
+      <a href="DEVtrainees1" class="col" id="sidebox1">TRAINEES</a>
+      <a href="DEVtask" class="col" id="sidebox1">TASKS</a>
+      <a href="DEVproject" class="col" id="sidebox1">PROJECTS</a>
+      <a href="DEVattendance3" class="col" id="sidebox1">ATTENDANCE</a>
+      <a href="DEVreportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+      <a href="DEVpayments" class="col" id="sidebox1">PAYMENTS</a>
+      <a href="DEVapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">GIVE TASK</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+<form action="DEVgivetaskview" method="post">
+{% csrf_token %}
+{#   <div>#}
+{#       <label>Select Trainee </label>&nbsp#}
+{#       <select id="regdetailsdept" name="employee" class="drop" required STYLE="width: 450px; height: 40px;">#}
+{#            {% for t in employees %}#}
+{#       <option value=""> </option>#}
+{##}
+{#             <option value="{{t.name}}">{{t.name}}</option>#}
+{#            <input type="hidden" name="desi" {{ t.designation }}>#}
+{#            <input type="hidden"name="depart" {{ t.department }}>#}
+{##}
+{#          {% endfor %}#}
+{#       </select>#}
+{#   </div>#}
+
+{#    <label>Select Department </label>&nbsp#}
+{#       <select id="regdetailsdept" name="department" class="drop" required>#}
+{#      <option value=""> </option>#}
+{#          {% for regdetails in departments %}#}
+{#             <option value="{{ regdetails.department}}">{{ regdetails.department }}</option>#}
+{#          {% endfor %}#}
+{#      </select>#}
+{#     </div>#}
+{#<div>#}
+{#     <label>Select Designation</label>&nbsp#}
+{#      <select id="regdetailsdesi" name="designation" class="drop" required>#}
+{#      </select>#}
+{#     </div>#}
+     <div>
+     <label>Select Trainee</label>&nbsp
+      <select id="regdetailsempl" name="employee" class="drop" required style="width: 450px; height: 40px;">
+            {% for t in employees %}
+       <option value=""> </option>
+
+             <option value="{{t.name}}">{{t.name}}</option>
+{#            <input type="hidden" name="desi" {{ t.designation }}>#}
+{#            <input type="hidden"name="depart" {{ t.department }}>#}
+
+          {% endfor %}
+      </select>
+     </div>
+
+    <div>
+        <br><label style="margin-top: 30px;  color: #4ec3c7" >Task</label>&nbsp
+        <textarea rows="4" cols="59" name="task" required></textarea>
+    </div>
+    <div class="">
+      <label>DATE</label>&nbsp
+      <p name="date" style="margin-left: 330px; margin-top: -35px;">{% now 'd-M-Y' %}</p>
+    </div>
+
+    <div class="">
+      <label >DUE DATE</label>&nbsp
+      <input type="date" name="duedate" id="date">
+    </div>
+    <button type="submit" class="btn btn-primary Search">Upload</button>
+</form>
+</div>
+
+
+
+</div>
+
+
+
+<script>
+   {# $("#regdetailsdept").change(function () {#}
+   {#     <!-- const url = $("#personForm").attr("data-cities-url"); -->#}
+   {#     const deptId = $(this).val();#}
+   {##}
+   {#     $.ajax({#}
+   {#         url: 'loadhrdesi',#}
+   {#         data: {#}
+   {#             'desi_id': deptId#}
+   {#         },#}
+   {#         success: function (data) {#}
+   {#             $("#regdetailsdesi").html(data);#}
+   {#             console.log(data);#}
+   {#         }#}
+   {#     });#}
+   {# });#}
+   {# $("#regdetailsdesi").change(function () {#}
+   {##}
+   {#     const desiId = $(this).val();#}
+   {#      const deptiId =$("#regdetailsdept").val();#}
+   {##}
+   {#     $.ajax({#}
+   {#         url: 'loadhremployeess',#}
+   {#         data: {#}
+   {#             'desi_id': desiId,#}
+   {#             'dept_id': deptiId#}
+   {#         },#}
+   {#         success: function (data) {#}
+   {#             $("#regdetailsempl").html(data);#}
+   {#             console.log(data);#}
+   {#         }#}
+   {#     });#}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

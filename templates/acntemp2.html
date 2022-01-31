@@ -1,0 +1,182 @@
+{% extends 'acntpayslipsidebar.html' %}
+{% load static %}
+{% block content  %}
+
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%; 
+   border-radius: 15px;
+  border-color:#707070;
+}
+firstbox div{
+  float: left; 
+} 
+#firstbox label{
+  margin-left: 10px;
+ /* padding-top: 14px; */
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+  
+}
+.Search{ 
+  width: 100%;
+  padding-right: 7%;
+}
+h5{
+  font-weight: 400;
+  margin-top: 5px;
+  text-align: center;
+  /* margin-bottom: 21px; */
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+th{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #313135;
+  
+}
+thead{
+  background-color:#c1f1f3;
+}
+td{
+  text-align: center;
+}
+
+@media(max-width:991px){
+  #firstbox{
+  background-color: white;
+  height: auto;
+  /* float: right;*/
+  /* width: 75%; */
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%; 
+  border-radius: 15px;
+  border-color: #707070;
+}
+}
+  </style>
+      </head>
+
+<div><label id="myprofile">EMPLOYEES</label>
+<div class="row">
+  <div class="col-md-12">
+<div id="firstbox" class="shadow p-3  bg-white">
+  <div class="col-md-2"></div>
+<form action="acntdefine" method="post">
+{% csrf_token %}
+{% for regdetails in emp %}
+<div class="row max-width-12" >
+  <div class="col-md-4"></div>
+    <div class="col-md-4"><h5><b>SALARY DETAILS</b></h5></div>
+  </div>
+  <div class="row m-3">
+<label style="width:200px;text-transform: uppercase;">Name</label>
+<div class="col-md-1"></div>
+<div class="col-md-4">
+<label style="width:900px;" name="ename">{{ regdetails.name }}</label>
+</div>
+</div>
+<div class="row m-3">
+  <label style="width:200px;text-transform: uppercase;">Effective From</label>
+  <div class="col-md-1"></div>
+<div class="col-md-4">
+  <input type="date" class="form-control" name="dateef" required></div>
+  <input type="hidden" name="enam" value="{{ regdetails.name }}">
+  <input type="hidden" name="employeeid" value="{{ regdetails.employeeid }}">
+  <input type="hidden" name="email" value="{{ regdetails.email }}">
+  <input type="hidden" name="bankname" value="{{ regdetails.bankname }}">
+  <input type="hidden" name="acntno" value="{{ regdetails.acntno }}">
+  <input type="hidden" name="branch" value="{{ regdetails.branch }}">
+  <input type="hidden" name="department" value="{{ regdetails.department }}">
+  <input type="hidden" name="designation" value="{{ regdetails.designation }}">
+  <input type="hidden" name="pr" value="{{ regdetails.pr }}">
+  <input type="hidden" name="pf" value="{{ regdetails.pf }}">
+  <input type="hidden" name="taxengime" value="{{ regdetails.taxregime }}">
+  <input type="hidden" name="uan" value="{{ regdetails.uan }}">
+  <input type="hidden" name="esi" value="{{ regdetails.esi }}">
+  <input type="hidden" name="pan" value="{{ regdetails.pan }}">
+  <input type="hidden" name="datejoin" value="{{ regdetails.dateofappoinment}}"></div>
+  <br>
+ {% endfor %}
+
+<div class="row">
+  <div class="col-md-12">
+  <div class=" table-responsive">
+  <table class="table table-bordered w-100">
+    <thead>
+      <tr>
+        <th><b>Pay head</b></th>
+        <th><b>Pay</b></th>
+        <th><b>Pay head type </b></th>
+      </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td style="text-transform: uppercase;">Basic salary</td> 
+        <td><input type="text" class="form-control" name="basicpay"></td>
+        <td>
+          <select  required style="color: #444F4D; width:75%;" name="basictype">
+          <option value="Earning for Employees">Earning for Employees</option>
+          <option value="Deduction for Employees">Deduction for Employees</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td  style="text-transform: uppercase;">Hra</td>
+        <td><input type="text" class="form-control" name="hrapay"></td>
+        <td>
+          <select  required style="color: #444F4D; width:75%" name="hratype">
+          <option value="Earning for Employees">Earning for Employees</option>
+          <option value="Deduction for Employees">Deduction for Employees</option>
+          </select> 
+        </td>
+      </tr>
+      <tr>
+        <td  style="text-transform: uppercase;">Conveyence allowance</td>
+        <td><input type="text" class="form-control" name="conpay"></td>
+        <td>
+          <select  required style="color: #444F4D; width:75%" name="contype">
+          <option value="Earning for Employees">Earning for Employees</option>
+          <option value="Deduction for Employees">Deduction for Employees</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-transform: uppercase;">Profesional tax</td>
+        <td><input type="text" class="form-control" name="propay"></td>
+        <td>
+          <select  required style="color: #444F4D; width:75%" name="protype">
+          <option value="Earning for Employees">Earning for Employees</option>
+          <option value="Deduction for Employees">Deduction for Employees</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  <div class="row max-width-12" >
+    <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+     <button type="submit" style="margin-top: 20px;" class="btn btn-primary Search">Save</button></a></div>
+     </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+{% endblock content  %}

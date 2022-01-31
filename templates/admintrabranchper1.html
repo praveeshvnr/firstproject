@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  width: 79%;
+  float: right;
+  margin-left: 21%;
+}
+#firstbox label{
+  width: 150px;
+}
+#firstbox div{
+  padding-left: 5%;
+
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 400px;
+}
+#bigimage{
+  float: left;
+}
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'icon.png'%}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">BRANCH</label>
+    {% for regdetails in regdetails %}
+        {% if forloop.first %} {% endif %}
+<div id="firstbox" class="shadow p-3 bg-white rounded col-sm-12">
+  <div class="row">
+    <img class="row" src="{% static 'icon.png'%}" width="150" height="150" id="bigimage">
+    <div style="margin-left: 70px;margin-top: 20px;"><h4 id="adname"style="">{{ regdetails.name }}</h4>
+    <h5 style="font-weight: 400;margin-top: 10px;">
+    <span style="">{{ regdetails.designation }}</span><span style="color: #58B7AA;width: 300px;margin-left: 30px;">Department</span><span style="margin-left: 20px;">{{ regdetails.department }}</span><span style="margin-left: 30px;color: #58B7AA;">Joining Date</span><span style="margin-left: 20px;">{{ regdetails.dateofappoinment }}</span></h5></div>
+  </div></div></div>
+<div id="firstbox" class="shadow p-3 bg-white rounded col-sm-12" style="margin-top: 10px;">
+  <span><img src="{% static 'graph1.png'%}" height="300" width="250"></span>
+  <span><img src="{% static 'ring.png'%}" height="220" width="220" style="margin-left: 120px;">
+    <label style="margin-left: -145px;font-size: 40px;color:#58B7AA; ">20%</label></span>
+  <span><img src="{% static 'bar2.png'%}" height="300" width="350" style="margin-left: 150px;"></span>
+
+
+
+
+
+
+
+
+
+</div>
+{% endfor %}
+</body>
+</html>

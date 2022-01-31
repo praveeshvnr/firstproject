@@ -1,0 +1,241 @@
+{% extends 'sidebarnew.html'%}
+{%load static%}
+{%block content%}
+<style>
+.container{
+  background-color: white;
+  height: 160px;
+  float: right;
+  width: 150%;
+  margin-right: -10vh;
+
+}
+#firstbox div{
+  padding-left: 5%;
+  float: left;
+}
+#firstbox1{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 79%;
+  margin-top: 2%;
+}
+#firstbox1 div{
+  padding-left: 5%;
+  float: left;
+}
+#adname{
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 600;
+  max-width: 300px;
+}
+#bigimage{
+  float: left;
+}
+#smallbox{
+  background-color: white;
+  width: 300px;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  margin-left: 50px;
+  padding: 20px;
+}
+#smallbox h1{
+  margin-left: 15%;
+}
+#smallbox span{
+  color: #475151;
+}
+#boxes{
+  max-width: 75%;
+  float: right;
+  margin-right: 8%;
+  margin-top: 4.5%;
+}
+.Search1{
+  margin-top: 3%;
+  float:left;
+  margin-left: 18%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 130px;
+}
+.Search2{
+  margin-top: 3%;
+  float: left;
+  margin-left: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 130px;
+}
+.Search3{
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 130px;
+}
+#span{
+  margin-left: 30px;
+  width: 300px;
+}
+@media (max-width: 61.938em){
+  .container{
+    background-color: white;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; 
+    /* margin-left: 50%; */
+    overflow: auto;
+  }
+  #span{
+    margin-left: 5px;
+    
+    width: 300px;
+    
+  }
+  .Search1{
+    margin-top: 4%;
+    float: right;
+    margin-right: 56%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 90px;
+  }
+  .Search2{
+    margin-top: 4%;
+    float: right;
+    margin-right: 56%; 
+    padding-left: 4%;
+    padding-right: 3%;
+    width: 90px;
+  }
+  .Search3{
+    margin-top:4%;
+    float: right;
+    margin-right: 56%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 90px;
+  }
+  #adname{
+    padding-top: 14px;
+    color: #58B7AA;
+    font-weight: 600;
+    max-width: 300px;
+  }
+
+
+  #names{
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+  #des{
+    font-weight: 400;
+    margin-top: 30%;
+  }
+  #date{
+    margin-top:20px;
+    margin-left: 20px;
+    color: #58B7AA;
+  }
+  #dept{
+    margin-left: 20px;
+  }
+  #appointment{
+
+    margin-left: 10px;
+  }
+  #designation1{
+    width: 600px;
+   
+  }
+
+
+}
+  </style>
+      </head>
+<body>
+<!-- <div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four"><img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div> -->
+<!-- <div class="sidenav">
+<nav class="nav1" onclick="navclick()">
+  <ul class="menu nav " >
+     <a  href="hr" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+      <a  href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+    <a href="hrperformance" class="col" id="sidebox1">PERFORMANCE </a>
+      <a  href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+    <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+    <a  href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+    <a  href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+    <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a  href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+    
+  </ul>
+  </nav>
+  </div> -->
+<!-- <div class="sidenav">
+  <a href="hr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="hrtasks" class="col" id="sidebox1">TASKS</a>
+  <a href="hrprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="hrperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="hremployeess" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="hrtrainees1" class="col" id="sidebox1">TRAINEES </a>
+  <a href="hrreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="hrmarketing1" class="col" id="sidebox1">MARKETING</a>
+  <a href="hrPayments1" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="hrattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="hrattendance2" class="col" id="sidebox1">APPLY LEAVE</a>
+</div> -->
+<div><label id="myprofile">PERFORMANCE</label></div>
+{% for pa in emp %}
+<div class="container shadow p-3 bg-white rounded ">
+  <div class="row"id="col">
+    <div class="col-lg-12"> 
+      <div class="col-sm-4"><img src="{{ pa.employeeimage.url }}"  width="140" height="140" id="bigimage"></div>
+      <div id="names"><h4 id="adname"style="">{{ pa.name }}</h4></div>
+      <h5 id="des">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2">
+                <div id="designation1">{{ pa.designation}}</div>
+              </div>
+              <div class="col-sm-4">
+                <div  style="color: #58B7AA;">Department <span style="color: black;">{{ pa.department }}</span></div>
+              </div>
+              <div class="col-sm-6">
+                <div style="color: #58B7AA;">Joining Date  <span style="color:black" >  {{ pa.dateofappoinment}}</span></div>
+              </div>
+          </div>
+        </div>
+      </h5>
+    </div>
+    
+    </div>
+  </div>
+  </div>
+  <a href="pie_chart?empid={{ pa.id }}"><button type="button" class="btn btn-primary Search1">Piechart</button> </a>
+  <a href="bar_chart?empid={{ pa.id }}"><button type="button" class="btn btn-primary Search2">Barchart</button> </a>
+  <a href="hrperformance2?empid={{ pa.id }}"><button type="button" class="btn btn-primary Search3">Update</button> </a>
+    
+ 
+  
+    
+{% endfor %}
+
+{%endblock%}
+

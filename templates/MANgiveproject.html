@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 65%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 50px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #58B7AA;
+
+}
+.drop{
+    height: 40px;
+    width: 450px;
+    margin-left: 0%;
+    border-radius: 5px;
+    margin-top: 0%;
+
+}
+.birthday{
+  font-weight: 400;
+  margin-top: 30px;
+  margin-left:10px;
+  font-size: 18px;
+
+
+}
+.dp{
+  float: right;
+  margin-top: 8px;
+}
+.dropdown-menu{
+  width: 350px;
+
+}
+.Search{
+  margin-top: 2%;
+  float: right;
+  margin-right: 20%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+ 
+.inputlg{
+  margin-top: 1%;
+  margin-left: 40%;
+  height: auto;
+  width: 70px;
+
+
+  }
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="MANmanagerprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="MANtask" class="col" id="sidebox1">TASKS</a>
+  <a href="MANprojects" class="col" id="sidebox1">PROJECTS </a>
+  <a href="MANperformance" class="col" id="sidebox1">PERFORMANCE </a>
+  <a href="MANemployees" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="MANtrainees" class="col" id="sidebox1">TRAINEES </a>
+  <a href="MANreportedissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="MANmarketing" class="col" id="sidebox1">MARKETING</a>
+  <a href="MANPayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="MANmanageHR" class="col" id="sidebox1">MANAGE HR</a>
+  <a href="MANattendance" class="col" id="sidebox1">ATTENDANCE</a>
+
+</div>
+<div><label id="myprofile">GIVE PROJECT</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+<form action="manprojectsuccess" method="post">
+    {% csrf_token %}
+    <div>
+      <label>Select Department </label>&nbsp
+       <select id="regdetailsdept" name="department" class="drop" required>
+      <option value=""> </option>
+          {% for regdetails in departments %}
+             <option value="{{ regdetails.department}}">{{ regdetails.department }}</option>
+          {% endfor %}
+      </select>
+     </div>
+<div>
+     <label>Select Designation</label>&nbsp
+      <select id="regdetailsdesi" name="designation" class="drop" required>
+      </select>
+     </div>
+     <div>
+     <label>Select Employee</label>&nbsp
+      <select id="regdetailsempl" class="drop" required>
+      </select>
+     </div>
+    <div>
+      <label>Select Tester </label>&nbsp
+       <select id="regdetailsdept" name="tester" class="drop" required>
+      <option value=""> </option>
+          {% for regdetails in tester %}
+             <option value="{{ regdetails.name}}">{{ regdetails.name }}</option>
+          {% endfor %}
+      </select>
+     </div>
+
+     <div>
+        <label style="color: #4ec3c7">Platform</label>&nbsp
+        <input id="inputlg" type="text" style="width: 445px" name="platform">
+    </div>
+    <div>
+        <label style="color: #4ec3c7">project Title</label>&nbsp
+        <input id="inputlg" type="text" style="width: 445px" name="title">
+    </div>
+    <div class="row">
+      <div class="col">
+        <label>Email</label></div>
+        <h5 style="color: #616767;width:500px;" name="email" id="regdetailsemaildiv"></h5>
+        <input name="email" type="hidden" id="regdetailsemail">
+    </div>
+    <div class="row">
+      <div class="col">
+        <label>Phone</label></div>
+
+        <h5 style="color: #616767; width:500px;" name="phone" id="regdetailsphonediv"></h5>
+        <input type="hidden" name="phone" id="regdetailsphone">
+    </div>
+
+
+       <!-- <h5 style="color: #616767; width:500px;" name="name" id="regdetailsnamediv"></h5>-->
+        <input type="hidden"  name="employee" id="regdetailsname">
+        <input type="hidden" name="branch" id="regdetailsbranch" >
+
+     <div class="row">
+      <div class="col">
+        <label>Date</label></div>
+        <h5 name="date">{% now 'd-M-Y' %}</h5>
+     </div>
+     <div>
+         <div class="col">
+     <label style="width: 100px">Due Date</label>
+     <input type="date" class="birthday" name="duedate" required>
+         </div>
+     </div>
+     <div>
+        <label>Project Description</label>
+        <textarea rows="4" cols="100" name="description"></textarea>
+
+     </div>
+    <button type="submit" style="margin-right: 15%" class="btn btn-primary Search">Assign</button>
+</form>
+    </div>
+  </div>
+<script>
+    $("#regdetailsdept").change(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const deptId = $(this).val();
+
+        $.ajax({
+            url: 'loadmanprodesi',
+            data: {
+                'desi_id': deptId
+            },
+            success: function (data) {
+                $("#regdetailsdesi").html(data);
+                console.log(data);
+            }
+        });
+    });
+    $("#regdetailsdesi").change(function () {
+
+        const desiId = $(this).val();
+         const deptiId =$("#regdetailsdept").val();
+
+        $.ajax({
+            url: 'loadmanprogive',
+            data: {
+                'desi_id': desiId,
+                'dept_id': deptiId
+            },
+            success: function (data) {
+                $("#regdetailsempl").html(data);
+                console.log(data);
+            }
+        });
+   });
+    $("#regdetailsempl").change(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const empID = $(this).val();
+        $.ajax({
+            url: 'loadmanproemp',
+            data: {
+                'emp_id': empID
+            },
+            success: function (data) {
+                const str = data.split(","); <!-- /[\s,]+/); -->
+                $("#regdetailsemaildiv").html(str[0]);
+                $("#regdetailsemail").val(str[0]);
+                $("#regdetailsphonediv").html(str[1]);
+                $("#regdetailsphone").val(str[1]);
+                 $("#regdetailsnamediv").html(str[2]);
+                $("#regdetailsname").val(str[2]);
+                $("#regdetailsbranchdiv").html(str[3]);
+                $("#regdetailsbranch").val(str[3]);
+                console.log(data);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

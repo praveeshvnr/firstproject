@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>DEVpayments2</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 75%;
+  margin-right: 1%;
+  border-radius: 15px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 30px;
+  padding-top: 14px;
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+  width: 200px;
+}
+.Search{
+  margin-top: 4%;
+  float: right;
+  margin-right: 15%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.Search1{
+  margin-top: 4%;
+  float: right;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-right: -21%
+
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  text-align: left;
+  color: #1CA9BE;
+  font-size: 28px;
+  margin-left: 2%;
+}
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+}
+#firstbox2{
+  height: 40px;
+  width: 95%;
+  margin-left: 2%;
+  background: #1CB1BD 0% 0% no-repeat padding-box;
+
+}
+#firstbox3{
+  height: auto;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox3 label{
+  padding-bottom: 0.1%;
+  padding-top: 0.1%;
+  color: #2F3232;
+}
+#firstbox4{
+  height: 60px;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox4 label{
+  color: #2F3232;
+  width: 900px;
+  text-align: center;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+  }
+table{
+  margin-top: 4%;
+  margin-left: 0%;
+  border:1px solid #1CB1BD;
+
+}
+th,td,thead,tbody{
+  width: 16.66%;
+  text-align: center;
+  color: #2F3232;
+  font-weight: 400px;
+  border:1px solid #1CB1BD;
+
+}
+table.table-bordered{
+    border:1px solid #1CB1BD;
+  }
+#firstbox5{
+  height: auto;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox5 label{
+  padding-bottom: 0.1%;
+  padding-top: 0.1%;
+  color: #2F3232;
+}
+#firstbox6{
+  height: auto;
+  width: 95%;
+  margin-left: 2%;
+  border: 1px solid #1CB1BD;
+  margin-top: 1%;
+}
+#firstbox6 label{
+  padding-bottom: 0.1%;
+  padding-top: 0.1%;
+  color: #2F3232;
+  width: 1800px;
+  margin-left: 18%;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+     <a href="DEVmyprof1" class="col" id="sidebox1">MY PROFILE</a>
+      <a href="DEVtrainees1" class="col" id="sidebox1">TRAINEES</a>
+      <a href="DEVtask" class="col" id="sidebox1">TASKS</a>
+      <a href="DEVproject" class="col" id="sidebox1">PROJECTS</a>
+      <a href="DEVattendance3" class="col" id="sidebox1">ATTENDANCE</a>
+      <a href="DEVreportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+      <a href="DEVpayments" class="col" id="sidebox1">PAYMENTS</a>
+      <a href="DEVapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PAYMENTS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+<h5><b>INFOX TECHNOLOGIES<b></h5>
+<div id="firstbox2"></div>
+<div id="firstbox3" class="shadow p-3 bg-white">
+  <label style="width:420px;">Name of employee</label><label style="width:520px;">No of Days in month</label>
+  <label style="width:420px;">Employee code</label><label style="width:520px;">No of Days worked</label>
+  <label style="width:420px;" >Month</label><label style="width:520px;">Date of joining</label>
+  <label style="width:420px;">Designation</label><label style="width:520px;">Leaves taken</label>
+  <label style="width:420px;">Department</label></div>
+<div id="firstbox4" class="shadow p-3 bg-white">
+<label>CONFIRMED SALARY 35000</label></div>
+<div class="table">
+  <table class="table table-bordered" style="border-color: #1CB1BD">
+      <tr style="border-color: #1CB1BD">
+        <th style="border-color: #1CB1BD">Particulars</th>
+        <th colspan="2" style="border-color: #1CB1BD">Amount Rs</th>
+        <th style="border-color: #1CB1BD">Deductions </th>
+        <th style="border-color: #1CB1BD">Amount Rs </th>
+      </tr>
+      <tr style="border-color: #1CB1BD">
+        <th style="border-color: #1CB1BD" ></th>
+        <th style="border-color: #1CB1BD">Gross</th>
+        <th style="border-color: #1CB1BD">Payable</th>
+        <th style="border-color: #1CB1BD"></th>
+        <th style="border-color: #1CB1BD"></th>
+
+      </tr>
+    <tbody>
+      <tr style="border-color: #1CB1BD" >
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+      </tr>
+      <tr style="border-color: #1CB1BD">
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+      </tr>
+      <tr style="border-color: #1CB1BD">
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+      </tr>
+      <tr style="border-color: #1CB1BD">
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+        <td style="border-color: #1CB1BD"></td>
+      </tr>
+      <tr style="border-color: #1CB1BD">
+        <th style="border-color: #1CB1BD"></th>
+        <th style="border-color: #1CB1BD"></th>
+        <th style="border-color: #1CB1BD"></th>
+        <th style="border-color: #1CB1BD">Total Deduction</th>
+        <th style="border-color: #1CB1BD"></th>
+      </tr>
+    </tbody>
+  </table>
+  <div id="firstbox5" class="shadow p-3 bg-white">
+  <label>Net salary</label></div>
+  <div id="firstbox6" class="shadow p-3 bg-white">
+  <label>RUPEES THIRTY THREE THOUSAND FOUR HUNDREAD AND NINE ONLY</label></div>
+</div>
+</div>
+</div>
+</body>
+</html>

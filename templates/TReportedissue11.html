@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Reported issue11</title>
+<style>
+
+
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 60%;
+  margin-right: 15%;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 1px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 30px;
+  width: 10px;
+}
+
+#hiddendiv{
+  height: auto;
+  width: 75%;
+  float: right;
+
+}
+.col h5{
+  font-weight: 400;
+  margin-left: 4%;
+}
+.col span{
+  color: #58B7AA;
+  width:450px;
+  float: left;
+}
+#firstbox .col{
+  float: left;
+}
+.Search{
+  margin-top: 5%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.last{
+  margin-left: 50%;
+}
+
+.img{
+  margin-left: 40px; 
+}
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+    <a href="Tmyprofile1" class="col" id="sidebox1">MY PROFILE</a>
+    <a href="Ttopics" class="col" id="sidebox1">TOPICS</a>
+    <a href="Tweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+    <a href="Tprojects" class="col" id="sidebox1">PROJECTS</a>
+    <a href="Tattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+    <a href="TReportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+    <a href="TPayments" class="col" id="sidebox1">PAYMENTS</a>
+    <a href="TApplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">REPORT ISSUES</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+{% for issue in emp %}
+  <div class="col">
+    <h5><img src="{% static 'Icon awesome-circle-notch.png' %}" width="20" height="20"><span>Issue Reported By{{ issue.reportedby }}  </span></h5>
+    </div><br>
+   <br>
+  <div class="col">
+    <h5 style="font-size: 17px;color: black;">{{ issue.issue }}</h5>
+  </div><br><br>
+  </div><br><br>
+
+  <div id="firstbox" class="shadow p-3 bg-white">
+  <div class="col">
+
+    <h5 style="margin-left: 80%"><span>Action Taken &nbsp<img src="{% static 'Icon awesome-circle-notch.png' %}" width="20" height="20"></span></h5>
+    </div><br>
+   <br>
+
+  <div class="col">
+    <h5 style="font-size: 17px;color: black;">{{ issue.actiontaken }}</h5>
+  </div><br><br>
+      {% endfor %}
+  </div><br><br>
+
+
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link rel="stylesheet"  href="{% static 'main.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Infox core</title>
+<style>
+.container{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 65%;
+  margin-right: 13%;
+  border-radius: 15px;
+  border:2px solid #707070;
+}
+#enum{
+    width:180px;
+}
+#tax{
+   width:180px; 
+   
+}
+#dep{
+    width:180px;
+    
+}
+#income{
+    width:180px;
+    
+}
+#desi{
+   width:180px;
+  
+}
+#univ{
+    width:180px;
+}
+#loc{
+    width:180px;
+}
+#pf{
+    width: 180px;
+ }
+#bank{
+    width: 180px;
+}
+#esi{
+     width:180px;
+} 
+#date{
+    width: 180px;
+}  
+#pr{
+      width: 180px;
+}  
+#leave{
+      width: 180px;
+} 
+@media(max-width:61.938em){
+     .container{
+         width:100%;
+         position:relative;
+         left:40px;
+         border:0px;
+        }
+    #enum{
+        width:180px;
+        padding-left: 10px;
+        }
+    #tax{
+        width:100px; 
+        padding-left: 10px;
+        }
+    #dep{
+        width:180px;
+        padding-left: 10px;
+        } 
+    #income{
+        width:180px;
+        padding-left: 10px;
+        }
+    #desi{
+        width:180px;
+        padding-left: 10px;
+        }
+    #univ{
+        width:180px;
+        padding-left:10px;
+    
+    } 
+    #loc{
+     width:180px;
+     padding-left: 10px;
+    } 
+    #pf{
+      width: 180px;
+      padding-left: 10px;
+    } 
+    #bank{
+     width: 180px;
+     padding-left: 10px;
+    } 
+    #esi{
+     width :180px;
+     padding-left: 10px;
+    } 
+    #date{
+     width: 180px;
+     padding-left: 10px;
+     } 
+    #pr{
+     width: 180px;
+     padding-left: 10px;
+     } 
+    #leave{
+     width: 180px;
+     padding-left: 10px;
+    }
+    #eno{
+    padding-left: 10px;
+    } 
+    #taxe{
+    padding-left: 10px;
+    }
+    #depa{
+    padding-left: 10px;
+    } 
+    #intax{
+     padding-left: 10px;
+    } 
+    #desig{
+    padding-left: 10px;
+    } 
+    #uan{
+    padding-left: 10px;
+    }
+    #branch{
+    padding-left: 10px;
+    }
+    #pfa{
+    padding-left: 10px;
+    }
+    #banki{
+    padding-left: 10px;
+    }
+    #esi1{
+    padding-left: 10px;
+    }
+    #join{
+    padding-left: 10px;
+    }
+    #pr1{
+    padding-left: 10px;
+    }
+    #A{
+    position: relative;
+    left:10px;
+    width:100px;
+    }
+  
+}
+#A{
+    margin-left: 30px;
+    width:100px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 30px;
+  padding-top: 14px;
+  color: #050505;
+  font-weight: 400;
+  font-size: 18px;
+  width: 170px;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  text-align: center;
+}
+  </style>
+      </head>
+<body>
+<div id="firstbox" class="container shadow p-3 bg-white">
+   {% for pa in emp %}
+   {% if forloop.first %} {% endif %}
+   <input type="hidden"  name="team_id" value={{ pa.id }}>
+   <h5>PAYSLIP FOR {{ pa.dateef}}</h5>
+   <h5>{{ pa.ename }}</h5>
+   <label id="enum" >Employee number</label><label id="eno">{{ pa.eno }}</label>
+   <label id="tax">Tax engine</label><label id="taxe">{{ pa.taxengime}}</label>
+   <label id="dep">Department</label><label id="depa">{{ pa.department}}</label>
+   <label id="income">Income tax number</label><label id="intax">{{ pa.incometax}}</label>
+   <label id="desi" >Designation</label><label id="desig">{{ pa.designation}}</label>
+   <label id="univ" >Universal account number</label><label id="uan">{{ pa.uan}}</label>
+   <label id="loc" >Location</label><label id="branch">{{ pa.branch }}</label>
+   <label id="pf" >PF account number</label><label id="pfa">{{ pa.pf}}</label>
+   <label id="bank" >Bank details</label><label id="banki">{{ pa.bank}}</label>
+   <label id="esi" >ESI number</label><label id="esi1">{{ pa.esi}}</label>
+   <label id="date" >Date of joining</label><label id="join">{{ pa.datejoin }}</label>
+   <label id="pr" >PR account number</label><label id="pr1">{{ pa.pr }}</label>
+   <label id="leave" >Leaves Taken</label><input type="text" id="A"  name="leaveno" value="{{ pa.leavesno }}">
+   <input type="hidden" id="B" value="500">
+   <div class="table-responsive">
+   <table id="tab"  class="table table-bordered  mt-5">
+      <thead>
+      <tr>
+        <th>Particulars</th>
+        <th colspan="2" >Earnings</th>
+        <th colspan="2">Deductions </th>
+      </tr>
+      <tr>
+        <th></th>
+        <th >Gross</th>
+        <th >Payable</th>
+        <th>Gross</th>
+        <th>Payable</th>
+      </tr>
+      </thead>
+    <tbody>
+      <tr>
+          <td>Basic salary</td>
+          <td>
+            {% if pa.basictype == 'Earning for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.basictype == 'Earning for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.basictype == 'Deduction for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.basictype == 'Deduction for Employees' %}
+                {{ pa.basicpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+        <td>Hra</td>
+         <td>
+            {% if pa.hratype == 'Earning for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.hratype == 'Earning for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.hratype == 'Deduction for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.hratype == 'Deduction for Employees' %}
+                {{ pa.hrapay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+        <td>Conveyence allowance</td>
+        <td>{% if pa.contype == 'Earning for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.contype == 'Earning for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.contype == 'Deduction for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.contype == 'Deduction for Employees' %}
+                {{ pa.conpay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+        <td>Profesional tax</td>
+        <td>{% if pa.protype == 'Earning for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.protype == 'Earning for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.protype == 'Deduction for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+          <td>
+            {% if pa.protype == 'Deduction for Employees' %}
+                {{ pa.propay }}
+            {% else %}
+                0000.00
+                {% endif %}</td>
+      </tr>
+      <tr>
+      <th>Total </th>
+      <th id="totalsalary7"  colspan="2 " ></th>
+      <th id="totalsalary8"  colspan="2"></th>
+      </tr>
+      <tr>
+      <th colspan="4">Net Amount</th>
+      <th id="totalsalary" class="subjects" hidden></th>
+      <th id="totalsalary5" class="subjects"  hidden ></th>
+      <th id="TotMarks" class="subjects" name="netamt"></th>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+{% endfor %}
+<script>
+    $(document).ready(function () {
+        var empsalary;
+        var totalsalary = 0;
+        $('td:nth-child(2)').each(function () {
+            empsalary = $(this).html();
+            totalsalary += parseInt(empsalary);
+            $('#totalsalary').text(totalsalary);
+        });
+    });
+        $(document).ready(function () {
+        var empsalary3;
+        var totalsalary3 = 0;
+        $('td:nth-child(3)').each(function () {
+            empsalary3 = $(this).html();
+            totalsalary3 += parseInt(empsalary3);
+            $('#totalsalary3').text(totalsalary3);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary4;
+        var totalsalary4 = 0;
+        $('td:nth-child(4)').each(function () {
+            empsalary4 = $(this).html();
+            totalsalary4 += parseInt(empsalary4);
+            $('#totalsalary4').text(totalsalary4);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary5;
+        var totalsalary5 = 0;
+        $('td:nth-child(5)').each(function () {
+            empsalary5 = $(this).html();
+            totalsalary5 += parseInt(empsalary5);
+            $('#totalsalary5').text(totalsalary5);
+        });
+    });
+    $('#A, #B').on('input',function(e){
+    $('#C').val(parseInt($('#A').val()) * parseInt($('#B').val()));
+    });
+    $(document).ready(function ()
+    {
+       $('tr').each(function ()
+       {
+        var totmarks=0;
+        $(this).find('.subjects').each(function ()
+        {
+          var marks=$(this).text();
+          if (marks.length!==0)
+          {
+              totmarks=-parseFloat(marks)-totmarks;
+          }
+       });
+        $(this).find('#TotMarks').html(totmarks);
+       });
+    });
+            $(document).ready(function () {
+        var empsalary7;
+        var totalsalary7 = 0;
+        $('td:nth-child(3)').each(function () {
+            empsalary7 = $(this).html();
+            totalsalary7 += parseInt(empsalary7);
+            $('#totalsalary7').text(totalsalary7);
+        });
+    });
+            $(document).ready(function () {
+        var empsalary8;
+        var totalsalary8 = 0;
+        $('td:nth-child(4)').each(function () {
+            empsalary8 = $(this).html();
+            totalsalary8 += parseInt(empsalary8);
+            $('#totalsalary8').text(totalsalary8);
+        });
+    });
+</script>
+</div>
+</body>
+</html>

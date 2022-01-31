@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'core.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>DEVview attendace1</title>
+
+
+<style>
+
+#firstbox{
+  background-color: white;
+  height: 450px;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 120px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+.Search{
+  margin-top: 10px;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+
+}
+thead{
+  color: #58B7AA;
+}
+table{
+  float: left;
+  margin-left: 60px;
+  margin-top: 10%;
+}
+#date{
+  width: 450px;
+  padding: 0.5%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+.dropdown-menu{
+  width: 400px;
+  border-color: #707070;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+        <span class="four"><img src="{% static 'Ellipse2.png' %}" width="50" height="50" id="img2" class="topimg"></span>
+
+</div>
+
+
+<div class="sidenav">
+      <a href="DEVmyprof1" class="col" id="sidebox1">MY PROFILE</a>
+      <a href="DEVtrainees1" class="col" id="sidebox1">TRAINEES</a>
+      <a href="DEVtask" class="col" id="sidebox1">TASKS</a>
+      <a href="DEVproject" class="col" id="sidebox1">PROJECTS</a>
+      <a href="DEVattendance3" class="col" id="sidebox1">ATTENDANCE</a>
+      <a href="DEVreportissue" class="col" id="sidebox1">REPORT ISSUES</a>
+      <a href="DEVpayments" class="col" id="sidebox1">PAYMENTS</a>
+      <a href="DEVapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">ATTENDANCE</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+    <div class="dropdown">
+      <label>SELECT DEPARTMENT</label>&nbsp
+      <select id="regdetailsdept" name="regdetails" class="drop" required STYLE="width: 450px; height: 40px;" >
+        {% for t in results %}
+            {% if forloop.first %}
+                <option value=""> </option>
+
+                <option value="{{t.department}}">{{t.department }}</option>
+
+
+  </select>
+  </div>
+    <div class="dropdown">
+      <label>SELECT TRAINEE</label>&nbsp
+
+      <select id="regdetailsdept" name="regdetails" class="drop" required STYLE="width: 450px; height: 40px;" >
+
+
+            <option value=""> </option>
+            <option value="{{t.employee}}">{{t.employee }}</option>
+
+{#{#    </div>#}
+
+      </select>
+    </div>
+
+
+    <div class="col">
+      <label style="margin-left: 100px;">SELECT FROM DATE</label>&nbsp
+      <input type="date" name="" id="date">
+    </div>
+
+
+    <div class="col">
+      <label style="margin-left: 100px;">SELECT TO DATE</label>&nbsp
+      <input type="date" name="" id="date">
+    </div>
+    <a href="DEVviewattendance2"><button type="button" class="btn btn-primary Search">Search</button></a>
+
+</div>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  function showDiv() {
+   document.getElementById('hiddendiv').style.display = "block";
+}
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

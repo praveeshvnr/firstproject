@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+
+}
+#firstbox label{
+  margin-left: 120px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+select{
+  width: 490px;
+  padding: .75% 0% .75% 0%;
+  border-radius: 5px;
+}
+.Search{
+  margin-top: 5%;
+  float: right;
+  margin-right: 21%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.input{
+  width: 490px;
+  padding: .75% 0% .75% 0%;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.invalid-feedback{
+  margin-left: 330px;
+  width: 700px;
+}
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="adminmyprofile" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="adminbranch1" class="col" id="sidebox1">BRANCH</a>
+  <a href="admininternshipregistration1" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="adminregnew" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="adminexperiencecertificate1" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="admintasksandproject1" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="adminmarketingadm1" class="col" id="sidebox1">MARKETING</a>
+  <a href="adminattendance1" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">REGISTER NEW</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+
+<form action="adminregnewadd" method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+<label>NAME</label>&nbsp
+<a><input class="input" type="text" name="name" required>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+
+<label>EMAIL ID</label>&nbsp
+    <a><input class="input" type="text" name="email" required>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+<br>
+<label>EMPLOYEE ID</label>&nbsp
+    <a><input class="input" type="text" name="employeeid" required>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+<br>
+<label>CONTACT NO:</label>&nbsp
+    <a><input class="input" type="text" name="mobile" required>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+    <br>
+<label>DATE OF JOINING</label>&nbsp
+    <a><input class="input" type="date" name="dateofappoinment" required>
+    <br>
+<label>DEPARTMENT</label>&nbsp&nbsp<select id="countySel" size="1" required name="department">
+<option value="" selected="selected"></option>
+</select>
+<br>
+<label>DESIGNATION</label>&nbsp&nbsp<select id="stateSel" size="1" required name="designation">
+<option value="" selected="selected"></option>
+</select>
+<input type="hidden" id="citySel" size="1" name="city">
+
+<div class="invalid-feedback">Please fill out this field.</div></a>
+<br>
+<div>
+           <label>SELECT COUNTRY</label>&nbsp
+           <select id="regdetailsdept" name="country" class="drop" required>
+           <option value=""> </option>
+              {% for regdetails in edepartments %}
+                 <option value="{{ regdetails.country}}">{{ regdetails.country }}</option>
+              {% endfor %}
+          </select>
+        </div>
+    <div>
+          <label>SELECT CITY</label>&nbsp
+            <select id="regdetailsDesig" name="city" class="drop" required>
+           </select>
+        </div>
+    <div>
+    <label>SELECT BRANCH</label>&nbsp
+     <select id="regdetailsempl" name="branch" class="drop" required>
+     </select><br><br>
+    </div>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+    <div class="invalid-feedback">Please fill out this field.</div></a>
+<label>PASSWORD</label>&nbsp
+    <a><input class="input" type="password" name="password" required>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+<br>
+<label> CONFIRMED SALARY</label>&nbsp
+    <a><input class="input" type="text" name="confirmsalary" required>
+<div class="invalid-feedback">Please fill out this field.</div></a>
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                        <div class="form-input" style="">
+                            <div class="preview">
+                                <img id="file-ip-1-preview">
+                            </div>
+                            <br>
+                         <label>IMAGE</label> &nbsp;<input type="file" id="file-ip-1" name="employeeimage" accept="image/*" onchange="showPreview(event);">
+                        </div>
+                </div>
+            </div>
+            <br><br>
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                        <div class="form-input" style="">
+                            <div class="preview">
+                                <img id="file-ip-1-preview">
+                            </div>
+                            <br>
+                         <label>ID PROOF</label> &nbsp;<input type="file" id="file-ip-1" name="idproof" accept="file/*" onchange="showPreview(event);">
+                        </div>
+                </div>
+            </div>
+            <br><br>
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                        <div class="form-input" style="">
+                            <div class="preview">
+                                <img id="file-ip-1-preview">
+                            </div>
+                            <br>
+                         <label>SIGNATURE</label> &nbsp;<input type="file" id="file-ip-1" name="signature" accept="file/*" onchange="showPreview(event);">
+                        </div>
+                </div>
+            </div>
+            <br><br>
+<br><br><br><br>
+<button type="submit" class="btn btn-primary Search">REGISTER</button>
+        </form>
+        </form>
+        </form>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+    $("#regdetailsdep").change(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const deptId = $(this).val();
+
+        $.ajax({
+            url: 'adminregsmall',
+            data: {
+                'dept_id': deptId
+            },
+            success: function (data) {
+                $("#regdetailsDesig").html(data);
+                console.log(data);
+            }
+        });
+
+    });
+</script>
+
+<script>
+var stateObject = {
+"Manager": {
+"MANAGER": [],
+},
+"HR": {
+"Executive": [],
+},
+"Account": {
+ "account":[],
+},
+"Testing": {
+"Tester": [],
+},
+"Software": {
+ "Python":[],
+ "ML":[],
+ "Android":[],
+ "PHP":[],
+ "TL":[],
+},
+ "Marketing":{
+ "Marketing TL":[],
+ "Data Collector ":[],
+ "Marketing Executive":[],
+ },
+}
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+citySel = document.getElementById("citySel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
+}
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+citySel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
+}
+}
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+citySel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done
+var city = stateObject[countySel.value][this.value];
+for (var i = 0; i < city.length; i++) {
+citySel.options[citySel.options.length] = new Option(city[i], city[i]);
+}
+}
+}
+</script>
+
+
+<script type="text/javascript">
+    $("#regdetailsdept").change(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const deptId = $(this).val();
+
+        $.ajax({
+            url: 'seradmintraineedesi',
+            data: {
+                'dept_id': deptId
+            },
+            success: function (data) {
+                $("#regdetailsDesig").html(data);
+                console.log(data);
+            }
+        });
+
+    });
+     $("#regdetailsDesig").change(function () {
+
+     const desiId = $(this).val();
+      const deptiId =$("#regdetailsdept").val();
+
+     $.ajax({
+         url: 'seradminloademployeess',
+         data: {
+             'desi_id': desiId,
+             'dept_id': deptiId
+         },
+         success: function (data) {
+             $("#regdetailsempl").html(data);
+             console.log(data);
+         }
+     });
+});
+    $("#btnSearch").click(function () {
+        <!-- const url = $("#personForm").attr("data-cities-url"); -->
+        const deptId = $("#regdetailsdept").val();
+        const desgId = $("#regdetailsDesig").val();
+        const branchId = $("#regdetailsempl").val();
+
+        $.ajax({
+            url: 'admintaskmanager',
+            data: {
+                'dept_id': deptId,
+                'desig_id':desgId,
+                'branch_id':branchId
+            },
+            success: function (data) {
+                $("#hiddendiv").html(data);
+            }
+        });
+    });
+  function showDiv() {
+      document.getElementById('hiddendiv').style.display = "block";
+  }
+</script>
+</body>
+</html>

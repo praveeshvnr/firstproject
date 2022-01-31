@@ -1,0 +1,115 @@
+{%extends 'acntpayslipsidebar.html'%}
+{%load static%}
+{%block content%}
+<style>
+  #myprofile{
+    margin-left:0;
+  }
+  #firstbox{
+    background-color: white;
+    height: auto;
+    overflow:auto; 
+    width: 100%;
+    margin-right: 5%;
+    border:2px solid gray;
+  }
+  #firstbox div{
+     float: left;
+    }
+  table {
+    border: 2px;
+    color: #000000;
+    opacity: 1;
+    padding: 10px;
+    margin-top: 5%;
+  }
+  th{
+    font-weight: 300;
+    color: #313135;
+  }
+   .Search{
+    margin-top: 3%;
+    margin-left:10em;
+    /* padding-right: 3%;
+    /* padding-left: 3%;  */
+  }  
+  .to{
+    margin-left: 2%;
+  }
+  @media (max-width: 61.938em){
+    #firstbox{
+      background-color: white;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      border:2px transparent;
+      width: 100%; 
+      /* overflow:auto; */
+    }
+    #hiddendiv{
+      height:auto;
+      width:130%;
+      margin-left: 0vh;
+      overflow:auto; 
+    }
+     #btnSearch{
+      margin-top: 3%;
+      margin-left: 9em;
+      
+      padding-right: 3%;
+      padding-left: 3%;
+      
+    } 
+    .to{
+      margin-top: 4%;
+      margin-left: 0.8%;
+    }
+    
+  }
+</style>
+{% for t in mem %}
+{% if forloop.first %}{% endif %}
+{% endfor %}
+<div><label id="myprofile">PAYSLIPS</label>
+  <div class="container shadow p-3 mb-4 bg-white rounded">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3 " style="margin-top: 1%;">
+        <div class="from">
+          <label style="width: 50px;">FROM</label>&nbsp
+          <input type="date" name="fromdate" id="regfd" >
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3 " style="margin-top: 1%;">
+        <div class="to">
+          <label style="width: 50px;">TO</label>&nbsp
+          <input type="date" name="todate" id="regtd"><br>
+        
+        <button id="btnSearch" type="button" class="btn btn-primary Search" >Search</button></div>
+      </div>
+      <div id="hiddendiv" >
+
+      </div>
+    </div>
+  </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+        $("#btnSearch").click(function () {
+        const url = $("#personForm").attr("data-cities-url"); 
+        const deptId = $("#regfd").val();
+        const desgId = $("#regtd").val();
+        $.ajax({
+            url: 'acntpay',
+            data: {
+                'dept_id': deptId,
+                'desig_id':desgId
+            },
+            success: function (data) {
+                $("#hiddendiv").html(data);
+            }
+        });
+    });
+  function showDiv() {
+   document.getElementById('hiddendiv').style.display = "block";
+}
+</script>
+{%endblock%}

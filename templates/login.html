@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+  </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+</div>
+<form class="" action="home" method="POST" input align="center">
+    {% csrf_token %}
+    <div class="">
+<br><br><br><br>
+        <center><label for="uname">Username</label><br>
+        <center><input type="text" name="email" class="form-control" style="width: 300px" required="required"></center><br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" style="width: 300px" required="required"><br><br>
+
+        <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon-plus"></span> SUBMIT</button>
+
+    </div>
+</form>
+</body>
+</html>

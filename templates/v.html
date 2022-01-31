@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Hello, world!</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 80px;
+  padding-top: 14px;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+#firstbox span{
+  color:#58B7AA ;
+  float: left;
+}
+
+input{
+  width: 500px;
+  margin-top: 10px;
+  padding-top: 14px;
+}
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem1 %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="{% url 'adminmyprofile' %}" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="{% url 'adminbranch1' %}" class="col" id="sidebox1">BRANCH</a>
+  <a href="{% url 'admininternshipregistration1' %}" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="{% url 'adminregnew' %}" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="{% url 'adminexperiencecertificate1' %}" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="{% url 'admintasksandproject1' %}" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="{% url 'adminmarketingadm1' %}" class="col" id="sidebox1">MARKETING</a>
+  <a href="{% url 'adminattendance1' %}" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">VIEW DETAILS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+
+                {% for inter in mem %}
+
+                <div class="modal-body">
+
+                 <form action="logindp" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+  <div>
+    <label id="labl"><span>Name</span></label>
+    <input type="text" name="name" value="{{ inter.name }}">
+  </div>
+  <div>
+    <label id="labl"><span>Email</span></label>
+    <input type="text" name="email" value="{{ inter.email }}">
+  </div>
+  <div>
+    <label id="labl"><span>Mobile</span></label>
+    <input type="text" name="mobile" value="{{ inter.mobile }}">
+  </div>
+  <div>
+    <label id="labl"><span>Alternative No</span></label>
+    <input type="text" name="altermobile" value="{{ inter.altermobile }}">
+  </div>
+  <div>
+    <label id="labl"><span>Fathers name</span></label>
+    <input type="text" name="dadname" value="{{ inter.dadname }}">
+  </div>
+  <div>
+    <label id="labl"><span>Mothers name</span></label>
+    <input type="text" name="momname" value="{{ inter.momname }}">
+  </div>
+  <div>
+    <label id="labl"><span>Present address</span></label>
+    <input type="text" name="presntadd1" value="{{ inter.presntadd1 }}">
+    <input type="text" name="presntadd2" style="margin-left: 335px;" value="{{ inter.presntadd2 }}">
+    <input type="text" name="presntadd3" style="margin-left: 335px;" value="{{ inter.presntadd3 }}">
+    <input type="text" name="presntadd4" style="margin-left: 335px;" value="{{ inter.presntadd4 }}">
+  </div>
+  <div>
+    <label id="labl"><span>Permanant address</span></label>
+    <input type="text" name="permanantadd1" value="{{ inter.permanantadd1 }}">
+    <input type="text" name="permanantadd2" style="margin-left: 335px;" value="{{ inter.permanantadd2 }}">
+    <input type="text" name="permanantadd3" style="margin-left: 335px;" value="{{ inter.permanantadd3 }}">
+    <input type="text" name="permanantadd4" style="margin-left: 335px;" value="{{ inter.permanantadd4 }}">
+  </div>
+  <div>
+    <label id="labl"><span><h3>Accademic Profile</h3></span></label><br>
+    <label id="labl"><span><h4>Plus two</h4></span></label><br>
+  </div>
+    <div>
+    <label id="labl"><span>School</span></label>
+    <input type="text" name="schhol" value="{{ inter.schhol }}">
+  </div>
+  <div>
+    <label id="labl"><span>Aggregate</span></label>
+    <input type="text" name="aggregateschool" value="{{ inter.aggregateschool }}">
+{% if inter.viewcertficateplustwo %}
+    <a href="{{ inter.viewcertficateplustwo.url }}" style="font-size: 15px;" >&nbsp;&nbsp;View Certificate</a>    </div>
+{% endif %}
+    <div>
+    <label id="labl"><span><h4>UG</h4></span></label><br>
+  </div>
+    <div>
+    <label id="labl"><span>Degree</span></label>
+    <input type="text" name="degreeug" value="{{ inter.degreeug }}">
+  </div>
+  <div>
+    <label id="labl"><span>Stream</span></label>
+    <input type="text" name="streamug" value="{{ inter.streamug }}">
+  </div>
+  <div>
+    <label id="labl"><span>Passout year</span></label>
+    <input type="text" name="passoutyearug" value="{{ inter.passoutyearug }}">
+  </div>
+  <div>
+    <label id="labl"><span>Aggregate</span></label>
+    <input type="text" name="aggregateug" value="{{ inter.aggregateug }}">
+      {% if inter.viewcertficateug %}
+    <a href="{{ inter.viewcertficateug.url }}" style="font-size: 15px;" >&nbsp;&nbsp;View Certificate</a>    </div>
+  {% endif %}
+        <div>
+    <label id="labl"><span><h4>PG</h4></span></label><br>
+  </div>
+  <div>
+    <label id="labl"><span>Degree</span></label>
+    <input type="text" name="degreepg" value="{{ inter.degreepg }}">
+{% if inter.viewcertficatepg %}
+    <a href="{{ inter.viewcertficatepg.url }}" style="font-size: 15px;" >&nbsp;&nbsp;View Certificate</a>  </div>
+{% endif %}
+        <div>
+    <label id="labl"><span><h3>Extra curricular</h3></span></label><br>
+    <label id="labl"><span><h4>Internship</h4></span></label><br>
+  </div>
+  <div>
+    <label id="labl"><span>Details</span></label>
+    <input type="text" name="intenshipdetails" value="{{ inter.intenshipdetails }}">
+  </div>
+  <div>
+    <label id="labl"><span>Duration</span></label>
+    <input type="text" name="intenshipduration" value="{{ inter.intenshipduration }}">
+  </div>
+  <div>
+    <label id="labl"><span>Certification</span></label>
+    <input type="text" name="intenshipcertification" value="{{ inter.intenshipcertification }}">
+  </div>
+  <div>
+    <label id="labl"><span><h4>Online Training</h4></span></label><br>
+  </div>
+  <div>
+    <label id="labl"><span>Details</span></label>
+    <input type="text" name="onlinetrainingdetails" value="{{ inter.onlinetrainingdetails }}">
+  </div>
+  <div>
+    <label id="labl"><span>Duration</span></label>
+    <input type="text" name="onlinetrainingduration" value="{{ inter.onlinetrainingduration }}">
+  </div>
+  <div>
+    <label id="labl"><span>Certification</span></label>
+    <input type="text" name="onlinetrainingcertification" value="{{ inter.onlinetrainingcertification }}">
+  </div>
+  <div>
+    <label id="labl"><span><h3>Project Details</h3></span></label><br>
+  </div>
+  <div>
+    <label id="labl"><span>Project title</span></label>
+    <input type="text" name="projecttitle" value="{{ inter.projecttitle }}">
+  </div>
+  <div>
+    <label id="labl"><span>Description</span></label>
+    <input type="text" name="desc" value="{{ inter.desc }}">
+  </div>
+  <div>
+    <label id="labl"><span>URL</span></label>
+    <input type="text" name="url" value="{{ inter.url }}">
+  </div>
+  <div>
+    <label id="labl"><span>Duration</span></label>
+    <input type="text" name="projectduration" value="{{ inter.projectduration }}">
+  </div>
+
+  <div>
+    <label id="labl"><span>Skills</span></label><br>
+    <label id="labl"><span>Skill 1</span></label>
+    <input type="text" name="skill1" value="{{ inter.skill1 }}">
+  </div>
+  <div>
+    <label id="labl"><span>Skill 2</span></label>
+    <input type="text" name="skill2" value="{{ inter.skill2 }}">
+  </div>
+  <div>
+    <label id="labl"><span>Skill 3</span></label>
+    <input type="text" name="skill3" value="{{ inter.skill3 }}">
+  </div>
+  <div>
+
+      <label id="labl" style="width: 20cm;"><span>Photo</span>
+{% if inter.employeeimage %}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ inter.employeeimage.url }}" style="font-size: 15px;" >&nbsp;&nbsp;View</a></label>
+{% endif %}
+
+
+                          <input style="padding-left: 2cm" type="file" id="file-ip-1" name="employeeimage" accept="image/*" onchange="showPreview(event);">
+
+
+<br>
+  <div>
+      <label id="labl" style="width: 20cm"><span>ID Proof</span>
+{% if inter.idproof %}
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ inter.idproof.url }}" style="font-size: 15px;" >View</a></label>
+{% endif %}
+
+                          <input style="padding-left: 2cm" type="file" id="file-ip-1" name="idproof" accept="file/*" onchange="showPreview(event);">
+
+
+      <label id="labl" style="width: 20cm"><span>Signature</span>
+{% if inter.signature %}
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ inter.signature.url }}" style="font-size: 15px;" >View</a></label>
+{% endif %}
+
+                          <input style="padding-left: 2cm" type="file" id="file-ip-1" name="signature" accept="file/*" onchange="showPreview(event);">
+
+
+  <div>
+
+      <label id="labl" style="width: 20cm;"><span></span></label>
+<input type="hidden" id="file-ip-1" name=""  onchange="showPreview(event);">
+
+
+        <input type="hidden" id="leavId" name="team_id" value={{inter.id}}>
+
+        <button type="submit" class="btn btn-primary" style="width: 100px;margin-left: 22cm;" >Save</button>
+  </div>
+  </div>
+                 </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                {% endfor %}
+</body>

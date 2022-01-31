@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 6%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 20px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 180px;
+}
+.Search{
+  margin-top: 5%;
+  float: right;
+  margin-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+#bigbox{
+  width: 325px;
+  padding: 0.75% 0% 0.75% 0%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+#right{
+  margin-left: 150px;
+}
+#date,#inpt,select{
+  width: 185px;
+  padding: 1% 0% 1% 0%;
+  border-radius: 4px;
+  border-width: 1px;
+}
+.clg{
+  background-color: #565AA8;
+  color: white;
+  margin-top: 2.5%;
+  margin-left: 5%;
+}
+
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+<div class="sidenav">
+  <a href="{% url 'adminmyprofile' %}" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="{% url 'adminbranch1' %}" class="col" id="sidebox1">BRANCH</a>
+  <a href="{% url 'admininternshipregistration1' %}" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="{% url 'adminregnew' %}" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="{% url 'adminexperiencecertificate1' %}" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="{% url 'admintasksandproject1' %}" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="{% url 'adminmarketingadm1' %}" class="col" id="sidebox1">MARKETING</a>
+  <a href="{% url 'adminattendance1' %}" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">VIEW DETAILS</label>
+<div id="firstbox" class="shadow p-3 bg-white">
+{% block content %}
+
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+        {% csrf_token %}
+                            <div>
+                             <label>NAME</label>&nbsp
+                          <input type="text" name="name" style="width: 20cm" id="bigbox" value="{{ prod.name }}">
+                            </div>
+            <div id="">
+                <label>EMAIL</label>&nbsp
+                <input type="text" name="email" id="inpt" style="width: 20cm" value="{{ prod.email }}">
+            </div>
+        <div id="">
+      <label>MOBILE</label>&nbsp
+      <input type="text" name="mobile" id="inpt" style="width: 20cm" value="{{ prod.mobile }}">
+    </div>
+    <div id="">
+      <label>COURSE</label>&nbsp
+      <input type="text" name="course" id="inpt" style="width: 20cm" value="{{ prod.course }}">
+    </div>
+
+    <div>
+      <label>PLATFORM</label>&nbsp
+        <select name="platform" id="" style="width: 20cm">
+            <option>{{ prod.platform }}</option>
+            <option value=""></option>
+            <option value="Python">Python</option>
+            <option value="Machine learning">Machine learning</option>
+        </select>
+    </div>
+    <div>
+      <label>STARTING DATE</label>&nbsp
+      <input id="date" style="width: 20cm" type="date" name="startdate"  value="{{ prod.startdate }}">
+    </div>
+    <div id="">
+      <label>ENDIND DATE</label>&nbsp
+      <input id="date" style="width: 20cm" type="date" name="enddate" value="{{ prod.enddate }}">
+    </div>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h6 id="labl" style="color:#58B7AA;font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;PHOTO AND ID PROOF FOR ID CARD GENERATION</h6>
+  </div><br>
+                             <div class="col">
+
+                                <label for="" class="form-label">IMAGE</label><!--<a href="{{ intern.image.url }}" style="font-size: 15px;" >Click me</a></label>-->
+                                <input type="file" name="image" class="form-control">
+
+                                <label for="" class="form-label">ID PROOF</label><!--<a href="{{ intern.idproof.url }}" style="font-size: 15px;" >Click me</a></label>-->
+                                <input type="file" name="idproof" class="form-control">
+                            </div>
+                        <div>
+
+                            <button type="submit" class="btn btn-primary" style="margin-left: 23.3cm;margin-top: 1cm;width: 2.5cm;">Update</button>
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

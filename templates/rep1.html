@@ -1,0 +1,36 @@
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+<style>
+#but{
+  background-color: white;
+  float: right;
+  width: 20cm;
+  padding: 0% 10% 0% 10%;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+#buttons{
+  float: left;
+  margin: 0% 0% 0% 10%;
+    margin-top: -5%;
+  margin-left: 20%;
+}
+#allbut{
+  width: 1000px;
+  float: right;
+  margin: 0% 12% 0% 5%;
+}
+</style>
+{% for repot in report %}
+    {% if forloop.first %} {% endif %}
+    <div id="allbut">
+        <div id="buttons">
+          <a href="adminrepbranch1?empid={{ repot.id }}"><div id="but" class="shadow p-3 bg-white">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static '/circle.png' %}" width="25" height="25">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size: 23px;color: black">Reported issue</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 23px;color: black">{{ repot.reportedby}}</span>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="color: #58B7AA;font-size: 21px;">{{ repot.date}}</label>
+          </div></a>
+        </div>
+    </div>
+{% endfor %}

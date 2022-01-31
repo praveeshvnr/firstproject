@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Infox core</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+    </head>
+    <body>
+    <div class='details' style="margin-left: 16cm;color: white">
+        .<br><br><br>
+    </div>
+        <div class='wrapper'>
+            <div class='header'>
+                <p class='title'style="color: black"><b>Letter of Appoinment</b></p>
+            </div>
+        <div>
+    {% for regdetails in names %}
+    {% if forloop.first %} {% endif %}
+        <div class='details'>
+            <span style="font-size: 16px">{{ regdetails.presntadd1 }}<br>
+                {{ regdetails.presntadd2 }}<br>
+                {{ regdetails.presntadd3 }}<br>
+                {{ regdetails.presntadd4 }}<br><br><br>
+                Dear</span><span style="font-size: 16px"> {{ regdetails.name }},</span><span style="font-size: 16px"> <br><br><br>
+            I am pleased to inform you that iNFOX Technologies offering you an appoinment as {{ regdetails.designation }} by virtue of the interview and further discussions with us, effective from {{ regdetails.dateofappoinment }} on the following coditions:<br><br><br>
+            1.{{ regdetails.updatecondition }} <br>
+            2. Your normal working hours will be 37.5 hours per week, to be worked Monday to Friday. If&nbsp;&nbsp;&nbsp;company suggests at times, you are requested to work on holidays also.<br>
+            3. You are entitled for 12 days lesve for each months continued service.<br>
+            4. If company suggests at times, you are requested to relocate to other job locations also.<br>
+            5. The notice period for resigning from the job is 2 months on your relieve, you have to complete and submit all the assignesd work properly, unless you have to pay compensation.<br>
+            6. The Company has the rights to terminate you from the job immediately at any time for genuine reasons like misbehaviour, malpractices, spy works, lack of performance in work, illegal activities and so on.<br>
+            7.{{ regdetails.addcondition }}<br>
+            We look forward to you having a long and frutiful relationship with iNFOX Technologies.</span><br><br>
+
+            <span style="font-size: 16px">For iNFOX Technologies,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 16px">Yours Sincerely,</span><br><br>
+                    {% if regdetails.qr %}<center><img src="{{ regdetails.qr.path }}" alt="..." height="120px"><br></center>{% endif %}
+<br><span style="font-size: 17px">Anand</span><br>
+
+        </div>
+    </div>
+        {% endfor %}
+    </body>
+</html>

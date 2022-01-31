@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+ #firstbox{
+  background-color: white;
+  height: 10.7cm;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 15px;
+  margin-top: 0;
+}
+ #firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 75px;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  width: 200px;
+}
+#firstbox2{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 38%;
+  margin-right: 39%;
+  border-radius: 15px;
+  margin-top: 2%;
+
+}
+#firstbox2 label{
+  margin-left: 10%;
+  padding-top: 14px;
+  color: #58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 30px;
+  width: 200px;
+}
+#box2{
+  padding: 0.7% 5% 0.7% 4%;
+  background-color: white;
+  border-radius: 10px;
+  float: left;
+  margin-top: 1.5%;
+  margin-left: 1%;
+  width: 97%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+#box2 h5,#box2 img{
+  float: left;
+  margin-right: 30px;
+  color: #393D3D;
+  margin-top:1.5%;
+}
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  color:  #393D3D;
+}
+
+
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span><a href="logout" style="padding-right: 1%;padding-top: 1%;color: white">LOGOUT</a>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="dr" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="drtopics" class="col" id="sidebox1">TOPICS</a>
+  <a href="drweeklytask" class="col" id="sidebox1">WEEKLY TASKS</a>
+  <a href="drprojects" class="col" id="sidebox1">PROJECTS</a>
+  <a href="drattendance" class="col" id="sidebox1">ATTENDANCE</a>
+  <a href="drreportissues" class="col" id="sidebox1">REPORTED ISSUES</a>
+  <a href="drpayments" class="col" id="sidebox1">PAYMENTS</a>
+  <a href="drapplyleave" class="col" id="sidebox1">APPLY LEAVE</a>
+</div>
+<div><label id="myprofile">PAYMENT NOTIFICATION</label>
+
+</div>
+
+<div id="firstbox" class="shadow p-3 bg-white">
+<div><label id="myprofile"></label>
+{% block body %}
+{% load static %}
+<div class="page-content">
+
+    <form action="drpaymentnotifications2add" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="col">
+      <div class="row">
+        <label  style="padding-left: 3cm;width: 10cm;font-size: 19px">Amount paid</label><br>
+    <input type="text" name="amountpaid"  id="date" style="width: 10cm;height: 1cm" required>
+  </div></div><br><br><br>
+  <div class="col">
+      <div class="row">
+        <label  style="padding-left: 3cm;width: 10cm;font-size: 19px">Paymentdate</label><br>
+    <input type="date" name="paymentdate" id="date" style="width: 10cm;height: 1cm" required>
+  </div></div><br>
+  <div>
+
+      <label  style="padding-left: 3cm;width: 10cm;font-size: 19px">Upload receipt</label><input style="padding-top: 1cm" type="file"  name="receipt" accept="file/*" required>
+  </div><br><br><br><br><br>
+  <div class="col">
+      <div class="row" style="font-size: 20px;padding-top: 2cm;padding-left: 1cm">
+         <button type="submit" class="btn btn-primary Search" style="width: 3cm;margin-left: 20cm">Send</button>
+      </div>
+  </div>
+{% for hrassignedtasks in names %}
+{% if forloop.first %} {% endif %}
+        <input type="hidden" id="leavId" name="team_id" value={{hrassignedtasks.id}}>
+
+    </form>
+{% endfor %}
+<div>
+    <label></label>
+  </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+</div>
+</body>
+</html>

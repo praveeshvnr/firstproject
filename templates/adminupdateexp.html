@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<style>
+
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 70%;
+  margin-right: 5%;
+  border-radius: 20px;
+
+}
+#firstbox div{
+  float: left;
+}
+#firstbox label{
+  margin-left: 80px;
+  padding-top: 14px;
+  color:#58B7AA;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 200px;
+  float: left;
+}
+button{
+  float: right;
+  margin-top: 100px;
+  margin-right: -200px;
+  width: 100px;
+}
+input{
+  width: 400px;
+  margin-top: 24px;
+}
+
+
+  </style>
+      </head>
+<body>
+<div  id="nav" class="container-fluid">
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+
+
+<div class="sidenav">
+  <a href="{% url 'adminmyprofile' %}" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="{% url 'adminbranch1' %}" class="col" id="sidebox1">BRANCH</a>
+  <a href="{% url 'admininternshipregistration1' %}" class="col" id="sidebox1">INTERNSHIP REGISTRATION</a>
+      <a href="{% url 'adminregnew' %}" class="col" id="sidebox1">REGISTER NEW</a>
+  <a href="{% url 'adminregistration' %}" class="col" id="sidebox1">REGISTRATION DETAILS</a>
+  <a href="{% url 'adminexperiencecertificate1' %}" class="col" id="sidebox1">EXPERIENCE CERTIFICATES</a>
+  <!--<a href="adminmanageinternship1" class="col" id="sidebox1">MANAGE INTERNSHIP</a>-->
+  <a href="{% url 'admintasksandproject1' %}" class="col" id="sidebox1">TASKS AND PROJECTS</a>
+  <a href="{% url 'adminmarketingadm1' %}" class="col" id="sidebox1">MARKETING</a>
+  <a href="{% url 'adminattendance1' %}" class="col" id="sidebox1">ATTENDANCE</a>
+</div>
+<div><label id="myprofile">EXPERIENCE CERTIFICATE</label>
+
+
+<div id="firstbox" class="shadow p-3 bg-white">
+    <form method="post" action="updateexperiencedetails/{{ intern.id }}">
+    {% csrf_token %}
+  <div>
+    <label>SL.NO</label>
+    <input type="text" name="slno" id="box" value="{{ intern.slno }}">
+  </div>
+  <div>
+    <label>NAME</label>
+    <input type="text" name="name" id="box" value="{{ intern.name }}">
+  </div>
+  <div>
+    <label>EMAIL</label>
+    <input type="text" name="email" id="box" value="{{ intern.email }}">
+  </div>
+  <div>
+    <label>PASSWORD</label>
+    <input type="text" name="password" id="box" value="{{ intern.password }}">
+  </div>
+  <div>
+    <label>QUALIFICATION</label>
+    <input type="text" name="qualification" id="box" value="{{ intern.qualification }}">
+  </div>
+  <div>
+    <label>DUARATION</label>
+    <input type="text" name="duration" id="box" value="{{ intern.duration }}">
+  </div>
+  <div>
+    <label>PLATFORM</label>
+    <input type="text" name="department" id="box" value="{{ intern.department }}">
+  </div>
+  <div>
+    <label>STARTING DATE</label>
+    <input type="date" name="dateofappoinment" id="box" value="{{ intern.dateofappoinment }}">
+  </div>
+  <div>
+    <label>ENDING DATE</label>
+    <input type="date" name="	dateofrelieve" value="{{ intern.dateofrelieve }}" id="box">
+  </div>
+  <div>
+    <label>REG ID</label>
+    <input type="text" name="regid" id="box"value="{{ intern.regid }}">
+  </div>
+  <div>
+    <label>PAYMENT</label>
+    <input type="text" name="payment" id="box" value="{{ intern.payment }}">
+  </div>
+  <div>
+    <label>PERFORMANCE</label>
+    <input type="text" name="performance" id="box" value="{{ intern.performance }}">
+  </div>
+  <div style="margin-right: 10px;"><div>
+    <a href="adminexperiencecertificate2"><button class="btn btn-primary">Save</button></a>
+  </div>
+</div>
+    </form>
+</div>
+</div>
+
+</body>
+</html>

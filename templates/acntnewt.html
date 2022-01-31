@@ -1,0 +1,294 @@
+{% extends 'acntpayslipsidebar.html' %}
+{% load static %}
+{% block content %}
+
+
+<!--<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet"  href="{% static 'main.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Infox core</title>
+<!--<style>
+#firstbox{
+  background-color: white;
+  height: auto;
+  float: right;
+  width: 100%;
+  margin-right: 0%;
+  border-radius: 20px;
+}
+#firstbox div{
+  float: right;
+}
+table table-bordered{
+  border: 2px;
+  color: #000000;
+  opacity: 1;
+  padding: 10px;
+  margin-bottom: 10%;
+}
+
+h5{
+  font-weight: 400;
+  color:#565AA8;
+  margin-left: 0.8%;
+}
+.h-divider{
+ margin-top:6px;
+ margin-bottom:5px;
+ height:1px;
+ width:100%;
+ border-top:1px solid gray;
+}
+th,td{
+  text-align: left;
+  margin-top: 1%;
+
+}
+thead{
+  background-color: #CEFFF8;
+
+}
+#date{
+  width: 20%;
+  border-width: 1px;
+  margin-left:-1.5%;
+}
+.Search{
+  margin-top: 0.5%;
+  float: right;
+  margin-right: 0.3%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+th, td{
+  text-align: center;
+}
+
+
+  </style>
+      </head>-->
+<style>
+#firstbox{
+    background-color: white;
+    /* height: auto; */
+    /* float: right; */
+    /* width: 100%;  */
+    margin-right: 3%;
+    margin-left: 3%;
+    border-radius: 20px;
+}
+table {
+    border: 2px;
+    color: #000000;
+    opacity: 1;
+    padding: 10px;
+}
+th{
+    font-weight: 500;
+    color: #313135;
+    text-align: center;
+  
+}
+h5{
+    font-weight: 500;
+    color:#565AA8;
+    margin-left: 0.8%;
+}
+.h-divider{
+    margin-top:6px;
+    margin-bottom:5px;
+    height:1px;
+    width:100%;
+    border-top:1px solid gray;
+}
+.Search{
+    margin-top: 0.5%;
+    float: right;
+    margin-right: 0.3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+}
+/* td:hover{
+    background-color: rgba(25, 26, 25, 0.219);
+} */
+
+@media (max-width: 991px){
+  input{
+      width: 70%;
+  }
+}
+
+</style>
+<body>
+  <!--<div class="row">
+<div  id="nav" class="container-fluid">
+    
+        <a class="one" id="infox"><b>iNFOX</b></a>
+        <a class="two" id="core"><b>Core</b></a>
+        <a class="three" id=""></a>
+          {% for t in mem %}
+    {% if forloop.first %}{% endif %}
+        <span class="four">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ t.employeeimage.url }}" class="rounded-circle"  width="50" height="50" id="img2"></span>
+{% endfor %}
+</div>
+</div>
+
+  
+<div class="sidenav">
+  <a href="accounts" class="col" id="sidebox1">MY PROFILE</a>
+  <a href="acntemp" class="col" id="sidebox1">EMPLOYEES </a>
+  <a href="acntpayslips" class="col" id="sidebox1">PAYSLIPS </a>
+  <a href="acntreceipts" class="col" id="sidebox1">RECEIPTS</a>
+  <a href="acntexpenses" class="col" id="sidebox1">EXPENSES</a>
+
+</div>-->
+
+
+  <div><label id="myprofile" ></label>
+      <div class="container ">
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="firstbox" class="shadow p-3 bg-white">
+                          <h5>EXPENSES</h5>
+                          <div class="h-divider"></div><br>
+                          <form action="acntnewtsave" method="post">
+                          {% csrf_token %}
+                        
+                              <div class="row">
+                                <input type="hidden" class="form-control" name="team_id" >
+                                    <div class="col-md-3">
+                                        <label style="margin-left:4%;width: 80px;"> PAYEE </label>  
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="payee" style="width: 100%" >
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label style="margin-left:4% ;margin-top:2% ;width:200px;">PAYMENT ACCOUNT</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" style="width: 100%" name="payacnt"  >
+                                    </div><br><br>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-3">
+                                      <label style="margin-left:4% ;margin-top:2%; width:130px;">PAYMENT DATE</label>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <input type="date" class="form-control" name="paydate" id="date" style="color: #444F4D;width: 100%;" >
+                                  </div><br><br>
+                                  <div class="col-md-3">
+                                      <label style="margin-left:4% ;margin-top:2% ;width:200px;">PAYMENT METHOD</label>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <input type="text" class="form-control" style="width: 100%" name="paymethod" >
+                                  </div><br><br>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-3">
+                                      <label style="margin-left:4% ;margin-top:2%; width:110px;">REF NO</label>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <input type="text" class="form-control" name="refno" style="width:100%"  ><br><br>
+                                  </div>
+                              </div>
+                              <div class="h-divider"></div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="table-responsive">
+                                          <h5>CATEGORY DETAILS</h5>
+                                          <table class="table table-bordered w-80">
+                                              <thead style="background-color: #CEFFF8;">
+                                                  <tr>
+                                                      <th>CATEGORY</th>
+                                                      <th>DESCRIPTION</th>
+                                                      <th>AMOUNT</th>
+                                                      <th>TAX</th>
+                                                  </tr><br>
+                                              </thead>
+                                              <tbody>
+                                                  <tr> 
+                                                      <td><input type="text" class="form-control" name="category" ></td>
+                                                      <td><input type="text" class="form-control" name="description"></td>
+                                                      <td><input type="number" class="form-control" name="amount" id="amount" ></td>
+                                                      <td><input type="number" class="form-control" name="tax" style="width: 100%;" id="tax" ></td>
+                                                  </tr>
+                                             
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-3"></div>
+                                  <div class="col-md-3"></div>
+                                  <div class="col-md-3"></div>
+                                  <div class="col-md-3">
+                                      <input type="hidden" id="total" name="total" readonly>
+                                      <button type="submit" class="btn btn-primary Search">Save</button>
+                                  </div>
+                              </div>
+                          </form>
+                         <!-- <tr>
+                            <td colspan="5"><b>Total</b></td>
+                            <td id="grandtotal" colspan="2"></td>
+                        </tr>-->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>  
+  <script>
+      //$('#A, #B').on('input',function(e){
+      //$('#C').val(parseInt($('#A').val()) + parseInt($('#B').val()));
+     // });
+//      $(document).ready(function() {
+//      var $fields = $('#amount, #tax');
+//      $fields.keyup(function() {
+//      var A = parseFloat($('#amount').val());
+//      var B = parseFloat($('#tax').val());
+//      var C = total = A + B;
+//      $('#total').val(total);
+//   });
+// });
+   // function myFunction(){
+        // var amount = document.getElementById("amount").value;
+        // var tax = document.getElementById("tax").value;
+        // var total = document.getElementById('total');
+        //var total = +amount + +tax;
+       // document.getElementById("C").innerHTML = total;
+
+        // function calculate(){
+        //     total.innerHTML = (amount)+(tax)
+        // }
+
+   // }
+    $(function() {
+    $("#amount, #tax").on("keyup", total);
+ 	function total() {
+ 	$("#total").val(Number($("#amount").val()) + Number($("#tax").val()));
+ 	//$("#subt").val(Number($("#num1").val()) - Number($("#num2").val()));
+	}
+ });
+//  $(document).on("change", ".total", function() {
+//     var sum = 0;
+//     $(".total").each(function(){
+//         sum += +$(this).val();
+//     });
+//     $("grandtotal").val(sum);
+// });
+ 
+  </script>
+  
+</body>
+{% endblock %}
